@@ -1,0 +1,1 @@
+/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Hotel.dir/main.cpp.o CMakeFiles/Hotel.dir/Logica.cpp.o CMakeFiles/Hotel.dir/Quarto.cpp.o CMakeFiles/Hotel.dir/Estoque.cpp.o  -o Hotel 
