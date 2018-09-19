@@ -7,9 +7,9 @@
 #include <iostream>
 using namespace std;
 /*
- * a ideia dessa classe é administar as pessoas como um quarto,
- * assim podemos separar melhor os gastos, porem tem que ser estipulado antes valores fixos,
- * como valor por pessoa fixo.
+
+* Edit Caio:Classe para cadastrar os quartos assim depois que cadastrar ,
+ dependendo do tipo de quarto que a pessoa quiser só precisaremos chamar a classe.
  */
 class Quarto {
 public:
@@ -23,10 +23,14 @@ public:
 
     }
 private:
-    int nPessoas;
-    float consumo;
-    float valor_adulto;
-    float valor_crianca;
+    float valor_diaria;
+    int limitePessoas;
+    String estado; //Disponivel ou Ocupado;
+    String tipoQuarto;
+    String descricao;//Exemplo:Quarto de frente pro mar
+    int numero;
+    int andar;
+    //Fazer um List que armazena os quartos cadastrados,
 };
 
 
