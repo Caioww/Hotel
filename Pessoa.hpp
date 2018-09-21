@@ -54,10 +54,12 @@ public:
     }
 
 private:
-    string nome;
-    int idade;
-    string sexo;
-    bool adulto;
+        String nome;
+        String RG;
+        String sexo;
+        String email;
+        String tipoQuarto;
+        bool adulto;
 
 };
 
