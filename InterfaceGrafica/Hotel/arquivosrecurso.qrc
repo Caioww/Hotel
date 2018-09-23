@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>imagens/hotem-imagem.jpg</file>
+        <file>imagens/icone-cadastro-cliente-png.png</file>
+        <file>imagens/icone-cadastro-cliente3-png.png</file>
+        <file>imagens/buscar-cliente.png</file>
+        <file>imagens/calendario.png</file>
+        <file>imagens/quarto-adicionar.jpg</file>
+    </qresource>
+</RCC>

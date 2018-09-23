@@ -5,6 +5,8 @@
 
 namespace Ui {
 class MenuInicial;
+
+
 }
 
 class MenuInicial : public QMainWindow
@@ -14,6 +16,11 @@ class MenuInicial : public QMainWindow
 public:
     explicit MenuInicial(QWidget *parent = nullptr);
     ~MenuInicial();
+
+private slots:
+    void on_btnCadastroCliente_clicked();
+
+    void on_btnBuscar_clicked();
 
 private:
     Ui::MenuInicial *ui;
