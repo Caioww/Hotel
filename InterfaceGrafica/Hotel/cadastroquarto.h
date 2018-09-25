@@ -2,6 +2,8 @@
 #define CADASTROQUARTO_H
 
 #include <QDialog>
+#include <QtCore>
+#include <QMainWindow>
 
 namespace Ui {
 class cadastroQuarto;
@@ -17,11 +19,14 @@ public:
 
 private slots:
     void on_btnConfirmar_clicked();
+    void updateClients(bool);
 
     void on_btnLimpar_clicked();
 
 private:
     Ui::cadastroQuarto *ui;
+    QFile *file;
+    QTextStream stream;
 };
 
 #endif // CADASTROQUARTO_H
