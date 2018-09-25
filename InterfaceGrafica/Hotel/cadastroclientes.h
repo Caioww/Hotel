@@ -17,7 +17,6 @@ public:
 
 private slots:
     void on_btnConfirmar_clicked();
-
     void on_btnLimpar_clicked();
 
 private:

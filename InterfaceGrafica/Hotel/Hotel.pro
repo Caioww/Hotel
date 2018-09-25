@@ -28,17 +28,20 @@ SOURCES += \
         main.cpp \
         menuinicial.cpp \
     cadastroquarto.cpp \
-    cadastroclientes.cpp
+    cadastroclientes.cpp \
+    busca.cpp
 
 HEADERS += \
         menuinicial.h \
     cadastroquarto.h \
-    cadastroclientes.h
+    cadastroclientes.h \
+    busca.h
 
 FORMS += \
         menuinicial.ui \
     cadastroquarto.ui \
-    cadastroclientes.ui
+    cadastroclientes.ui \
+    busca.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

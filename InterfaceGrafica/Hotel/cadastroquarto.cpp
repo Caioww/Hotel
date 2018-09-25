@@ -7,6 +7,9 @@ cadastroQuarto::cadastroQuarto(QWidget *parent) :
     ui(new Ui::cadastroQuarto)
 {
     ui->setupUi(this);
+    connect(ui->btnConfirmar,SIGNAL(clicked()),this,SLOT(on_btnConfirmar_clicked()));
+    connect(ui->btnLimpar,SIGNAL(clicked()),this,SLOT(on_btnLimpar_clicked()));
+
 }
 
 cadastroQuarto::~cadastroQuarto()
@@ -25,7 +28,7 @@ void cadastroQuarto::on_btnConfirmar_clicked()
     QString estado = ui->comboEstado->currentText();
     QString tipoQuarto = ui->comboQuarto->currentText();
 
-    QMessageBox::information(this,"\nandar"+andar,"\ndiaria"+diaria,"\npessoas"+pessoas,"\nestado"+estado,"\ntipoQuarto"+tipoQuarto);
+    QMessageBox::information(this,"\nandar"+numero,"\ndiaria"+descricao,"\npessoas"+caracteristicas,"\nestado"+estado,"\ntipoQuarto"+tipoQuarto);
 }
 
 void cadastroQuarto::on_btnLimpar_clicked()

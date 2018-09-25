@@ -6,6 +6,8 @@ cadastroclientes::cadastroclientes(QWidget *parent) :
     ui(new Ui::cadastroclientes)
 {
     ui->setupUi(this);
+    connect(ui->btnConfirmar,SIGNAL(clicked()),this,SLOT(on_btnConfirmar_clicked()));
+    connect(ui->btnLimpar,SIGNAL(clicked()),this,SLOT(on_btnLimpar_clicked()));
 }
 
 cadastroclientes::~cadastroclientes()
