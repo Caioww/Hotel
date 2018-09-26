@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Pessoa.hpp"
 #include "Configuracoes.hpp"
+#include "Senha.hpp"
 using namespace std;
 /*
 
@@ -17,16 +18,25 @@ class Quarto: public Pessoa {
 public:
 //a funcao quarto serve apenas para iniciar tudo zerado
     Quarto() {
-       
+       valor_diaria = -1;
+       nPessoas = -1;
+       estado = false;
+       tipoQuarto = "-1";
+       descricao = "-1";
+       numero = -1;
+       andar = -1;
     }
-/*
- * a laco é um laco de repeticao comum para todas as categorias de quarto e elas
- * dao valor por pessoa para o quarto levando em conta se sao ou nao criancas
- */
+
+    void adcionaQuarto(){
+
+}
 
 private:
 
-  
+    int checaNivel(){
+        Senha var;
+        return var.confereSenha();
+}
 
     float valor_diaria;
     int nPessoas;

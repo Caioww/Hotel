@@ -258,6 +258,33 @@ Recepcao.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.s
 .PHONY : Recepcao.cpp.s
 
+Senha.o: Senha.cpp.o
+
+.PHONY : Senha.o
+
+# target to build an object file
+Senha.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.o
+.PHONY : Senha.cpp.o
+
+Senha.i: Senha.cpp.i
+
+.PHONY : Senha.i
+
+# target to preprocess a source file
+Senha.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.i
+.PHONY : Senha.cpp.i
+
+Senha.s: Senha.cpp.s
+
+.PHONY : Senha.s
+
+# target to generate assembly for a file
+Senha.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.s
+.PHONY : Senha.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -309,6 +336,9 @@ help:
 	@echo "... Recepcao.o"
 	@echo "... Recepcao.i"
 	@echo "... Recepcao.s"
+	@echo "... Senha.o"
+	@echo "... Senha.i"
+	@echo "... Senha.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

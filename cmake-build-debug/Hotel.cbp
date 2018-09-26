@@ -110,6 +110,12 @@
 		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.hpp">
 			<Option target="Hotel"/>
 		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.hpp">
+			<Option target="Hotel"/>
+		</Unit>
 		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/main.cpp">
 			<Option target="Hotel"/>
 		</Unit>
