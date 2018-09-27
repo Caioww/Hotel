@@ -27,9 +27,22 @@ public:
        andar = -1;
     }
 
+    //para adcionar quartos, porem os unicos que pode fazer isso é o gerente e o dono
     void adcionaQuarto(){
+    if(checaNivel() == 1){
+        puts("Tipo do quarto");
+        cin>>tipoQuarto;
+        puts("Descrição");
+        cin>>descricao;
+        puts("Valor da diaria");
+        cin>>valor_diaria;
+    }
+    else{
+        puts("voce nao tem permissao para adcionar quartos");
+    }
 
 }
+
 
 private:
 

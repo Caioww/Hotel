@@ -5,9 +5,10 @@
 #ifndef HOTEL_CONFIGURACOES_HPP
 #define HOTEL_CONFIGURACOES_HPP
 #include <iostream>
+#include "Senha.hpp"
 using namespace std;
 
-class Configuracoes {
+class Configuracoes: public Senha{
 public:
     int Qluxo() {
         return quantidade_quartos_luxo;
