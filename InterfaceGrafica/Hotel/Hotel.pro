@@ -26,22 +26,28 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        menuinicial.cpp \
     cadastroquarto.cpp \
     cadastroclientes.cpp \
-    busca.cpp
+    busca.cpp \
+    login.cpp \
+    menu.cpp \
+    cadastrar.cpp
 
 HEADERS += \
-        menuinicial.h \
     cadastroquarto.h \
     cadastroclientes.h \
-    busca.h
+    busca.h \
+    login.h \
+    menu.h \
+    cadastrar.h
 
 FORMS += \
-        menuinicial.ui \
     cadastroquarto.ui \
     cadastroclientes.ui \
-    busca.ui
+    busca.ui \
+    login.ui \
+    menu.ui \
+    cadastrar.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

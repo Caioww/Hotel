@@ -3,12 +3,12 @@
 #include <QMessageBox>
 #include <fstream>
 
+
 cadastroQuarto::cadastroQuarto(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::cadastroQuarto)
 {
     ui->setupUi(this);
-    file=new QFile("teste.txt");
 
 
     connect(ui->btnConfirmar,SIGNAL(clicked()),this,SLOT(updateClients(bool)));
@@ -73,6 +73,7 @@ void cadastroQuarto::updateClients(bool){
     QString buffer;
     while (fin.get(temp)) {
         buffer.push_back(QChar(temp));
+
     }
 
     }

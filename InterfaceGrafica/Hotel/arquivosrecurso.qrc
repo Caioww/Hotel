@@ -6,5 +6,7 @@
         <file>imagens/buscar-cliente.png</file>
         <file>imagens/calendario.png</file>
         <file>imagens/quarto-adicionar.jpg</file>
+        <file>imagens/login.jpg</file>
+        <file>imagens/cadastrar-func.png</file>
     </qresource>
 </RCC>
