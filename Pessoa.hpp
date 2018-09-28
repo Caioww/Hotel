@@ -96,7 +96,6 @@ private:
         string modeloCarro;
         string placa;
         bool adulto;
-
 };
 
 
