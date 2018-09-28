@@ -12,6 +12,26 @@ using namespace std;
 class Pessoa {
 public:
     Pessoa(){
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        nome = "ninguem";
+        idade = -1;
+        sexo = "indefinido";
+    }
+    void setNome(string txt){
+        nome = nome;
+    }
+
+    void setIdade(int um){
+        if(um <= 10){
+            adulto = true;
+        } else{
+            adulto = false;
+        }
+        idade = um;
+=======
+>>>>>>> parent of 1893e6f... conflito
         nome = "-1";
         sexo = "-1";
         RG = "-1";
@@ -65,6 +85,10 @@ public:
 
     void setNome(string txt){
         nome = nome;
+<<<<<<< HEAD
+=======
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
+>>>>>>> parent of 1893e6f... conflito
     }
 
     void setSexo(string txt){
@@ -83,11 +107,31 @@ public:
         return nome;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    int getIdade(){
+        return idade;
+    }
+
+=======
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
+>>>>>>> parent of 1893e6f... conflito
     string getSexo(){
         return sexo;
     }
 
 private:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        String nome;
+        String RG;
+        String sexo;
+        String email;
+        String tipoQuarto;
+=======
+>>>>>>> parent of 1893e6f... conflito
         string nome;
         string RG;
         string sexo;
@@ -95,7 +139,13 @@ private:
         string tipoQuarto;
         string modeloCarro;
         string placa;
+<<<<<<< HEAD
         bool adulto;
+=======
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
+        bool adulto;
+
+>>>>>>> parent of 1893e6f... conflito
 };
 
 
