@@ -26,7 +26,11 @@ public:
             string sex,name;
             int id,op;
             puts("");
+<<<<<<< HEAD
             clientes->setNpessoas(aux);
+=======
+            //clientes->setNpessoas(aux);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             for (int i = 0; i < aux; i++) {
                 puts("insira o nome");
                 cin>>name;
@@ -34,11 +38,19 @@ public:
                 cin>>id;
                 puts("insira a sexo");
                 cin>>sex;
+<<<<<<< HEAD
                 unidade[i].setIdade(id);
                 unidade[i].setNome(name);
                 unidade[i].setSexo(sex);
             }
             clientes->luxo(unidade);
+=======
+                //unidade[i].setIdade(id);
+                unidade[i].setNome(name);
+                unidade[i].setSexo(sex);
+            }
+            //clientes->luxo(unidade);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             base.setLuxo(base.Qluxo() -1);
             delete(unidade);
         }
@@ -49,7 +61,11 @@ public:
             string sex,name;
             int id,op;
             puts("");
+<<<<<<< HEAD
             clientes->setNpessoas(aux);
+=======
+            //clientes->setNpessoas(aux);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             for (int i = 0; i < aux; i++) {
                 puts("insira o nome");
                 cin>>name;
@@ -57,11 +73,19 @@ public:
                 cin>>id;
                 puts("insira a sexo");
                 cin>>sex;
+<<<<<<< HEAD
                 unidade[i].setIdade(id);
                 unidade[i].setNome(name);
                 unidade[i].setSexo(sex);
             }
             clientes->comum(unidade);
+=======
+                //unidade[i].setIdade(id);
+                unidade[i].setNome(name);
+                unidade[i].setSexo(sex);
+            }
+            //clientes->comum(unidade);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             base.setComom(base.Qcomum() -1);
             delete(unidade);
         }
@@ -72,7 +96,11 @@ public:
             string sex,name;
             int id,op;
             puts("");
+<<<<<<< HEAD
             clientes->setNpessoas(aux);
+=======
+            //clientes->setNpessoas(aux);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             for (int i = 0; i < aux; i++) {
                 puts("insira o nome");
                 cin>>name;
@@ -80,12 +108,20 @@ public:
                 cin>>id;
                 puts("insira a sexo");
                 cin>>sex;
+<<<<<<< HEAD
                 unidade[i].setIdade(id);
+=======
+                //unidade[i].setIdade(id);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
                 unidade[i].setNome(name);
                 unidade[i].setSexo(sex);
             }
             base.setEconomico(base.Qeconomico() - 1);
+<<<<<<< HEAD
             clientes->economico(unidade);
+=======
+            //clientes->economico(unidade);
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
             delete(unidade);
         }
     }

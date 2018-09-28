@@ -71,7 +71,11 @@ CMAKE_BINARY_DIR = /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semest
 CMakeFiles/Hotel.dir/all:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/depend
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/build
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Hotel"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Hotel"
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
 .PHONY : CMakeFiles/Hotel.dir/all
 
 # Include target in all.
@@ -81,7 +85,11 @@ all: CMakeFiles/Hotel.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Hotel.dir/rule: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles 5
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles 8
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Hotel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Hotel.dir/rule

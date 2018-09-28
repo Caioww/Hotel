@@ -8,9 +8,15 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+<<<<<<< HEAD
   "CMakeFiles/3.12.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeSystem.cmake"
+=======
+  "CMakeFiles/3.12.2/CMakeCCompiler.cmake"
+  "CMakeFiles/3.12.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.12.2/CMakeSystem.cmake"
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
   "/Volumes/HD_EXTERNO/computador/web/CLion.app/Contents/bin/cmake/mac/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "/Volumes/HD_EXTERNO/computador/web/CLion.app/Contents/bin/cmake/mac/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "/Volumes/HD_EXTERNO/computador/web/CLion.app/Contents/bin/cmake/mac/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"

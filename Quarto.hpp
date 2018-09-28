@@ -7,6 +7,10 @@
 #include <iostream>
 #include "Pessoa.hpp"
 #include "Configuracoes.hpp"
+<<<<<<< HEAD
+=======
+#include "Senha.hpp"
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
 using namespace std;
 /*
 
@@ -17,6 +21,7 @@ class Quarto: public Pessoa {
 public:
 //a funcao quarto serve apenas para iniciar tudo zerado
     Quarto() {
+<<<<<<< HEAD
        
     }
 /*
@@ -27,12 +32,51 @@ public:
 private:
 
   
+=======
+       valor_diaria = -1;
+       nPessoas = -1;
+       estado = false;
+       tipoQuarto = "-1";
+       descricao = "-1";
+       numero = -1;
+       andar = -1;
+    }
+
+    //para adcionar quartos, porem os unicos que pode fazer isso é o gerente e o dono
+    void adcionaQuarto(){
+    if(checaNivel() == 1){
+        puts("Tipo do quarto");
+        cin>>tipoQuarto;
+        puts("Descrição");
+        cin>>descricao;
+        puts("Valor da diaria");
+        cin>>valor_diaria;
+    }
+    else{
+        puts("voce nao tem permissao para adcionar quartos");
+    }
+
+}
+
+
+private:
+
+    int checaNivel(){
+        Senha var;
+        return var.confereSenha();
+}
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
 
     float valor_diaria;
     int nPessoas;
     bool estado; //Disponivel ou Ocupado;
+<<<<<<< HEAD
     String tipoQuarto;
     String descricao;//Exemplo:Quarto de frente pro mar
+=======
+    string tipoQuarto;
+    string descricao;//Exemplo:Quarto de frente pro mar
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
     int numero;
     int andar;
     //Fazer um List que armazena os quartos cadastrados,

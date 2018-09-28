@@ -12,6 +12,7 @@ using namespace std;
 class Pessoa {
 public:
     Pessoa(){
+<<<<<<< HEAD
         nome = "ninguem";
         idade = -1;
         sexo = "indefinido";
@@ -27,6 +28,61 @@ public:
             adulto = false;
         }
         idade = um;
+=======
+        nome = "-1";
+        sexo = "-1";
+        RG = "-1";
+        tipoQuarto = "-1";
+        email = "-1";
+        modeloCarro = "-1";
+        placa = "-1";
+        adulto = false;
+
+    }
+
+    void setCarro(string model){
+        modeloCarro = model;
+    }
+
+    string getCarro(){
+        return modeloCarro;
+    }
+
+    void setPlaca(string abc){
+        placa = abc;
+    }
+
+    string getPlaca(){
+        return placa;
+    }
+
+    void setRG(string txt){
+        RG = txt;
+    }
+
+    string getRG(){
+        return RG;
+    }
+
+    void setEmail(string txt){
+        email = txt;
+    }
+
+    string getEmail(){
+        return email;
+    }
+
+    void setQuarto(string txt){
+        tipoQuarto = txt;
+    }
+
+    string getQuarto(){
+        return tipoQuarto;
+    }
+
+    void setNome(string txt){
+        nome = nome;
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
     }
 
     void setSexo(string txt){
@@ -45,20 +101,33 @@ public:
         return nome;
     }
 
+<<<<<<< HEAD
     int getIdade(){
         return idade;
     }
 
+=======
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
     string getSexo(){
         return sexo;
     }
 
 private:
+<<<<<<< HEAD
         String nome;
         String RG;
         String sexo;
         String email;
         String tipoQuarto;
+=======
+        string nome;
+        string RG;
+        string sexo;
+        string email;
+        string tipoQuarto;
+        string modeloCarro;
+        string placa;
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
         bool adulto;
 
 };

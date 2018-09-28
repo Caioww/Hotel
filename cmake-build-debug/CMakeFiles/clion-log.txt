@@ -1,4 +1,5 @@
 /Volumes/HD_EXTERNO/computador/web/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel
+<<<<<<< HEAD
 -- The C compiler identification is unknown
 -- The CXX compiler identification is unknown
 CMake Error at CMakeLists.txt:2 (project):
@@ -31,3 +32,8 @@ See also "/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrut
 
 Cannot get compiler information:
 	Cannot run program "/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++" (in directory "/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug"): error=2, No such file or directory
+=======
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug
+>>>>>>> e37bbf4ca020fbae6247235562b6fa37cfdb5204
