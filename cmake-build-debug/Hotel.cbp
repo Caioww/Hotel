@@ -44,11 +44,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -66,11 +65,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
-					<Add directory="/Volumes/HD_EXTERNO/computador/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
@@ -82,22 +80,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Estoque.cpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Estoque.hpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.hpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Logica.cpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.cpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Logica.hpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.hpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Quarto.cpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDS.cpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Quarto.hpp">
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDS.hpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.hpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.hpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.hpp">
 			<Option target="Hotel"/>
 		</Unit>
 		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/main.cpp">

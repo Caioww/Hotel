@@ -123,86 +123,167 @@ Hotel/fast:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/build
 .PHONY : Hotel/fast
 
-Estoque.o: Estoque.cpp.o
+LDDE.o: LDDE.cpp.o
 
-.PHONY : Estoque.o
-
-# target to build an object file
-Estoque.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Estoque.cpp.o
-.PHONY : Estoque.cpp.o
-
-Estoque.i: Estoque.cpp.i
-
-.PHONY : Estoque.i
-
-# target to preprocess a source file
-Estoque.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Estoque.cpp.i
-.PHONY : Estoque.cpp.i
-
-Estoque.s: Estoque.cpp.s
-
-.PHONY : Estoque.s
-
-# target to generate assembly for a file
-Estoque.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Estoque.cpp.s
-.PHONY : Estoque.cpp.s
-
-Logica.o: Logica.cpp.o
-
-.PHONY : Logica.o
+.PHONY : LDDE.o
 
 # target to build an object file
-Logica.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Logica.cpp.o
-.PHONY : Logica.cpp.o
+LDDE.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.o
+.PHONY : LDDE.cpp.o
 
-Logica.i: Logica.cpp.i
+LDDE.i: LDDE.cpp.i
 
-.PHONY : Logica.i
+.PHONY : LDDE.i
 
 # target to preprocess a source file
-Logica.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Logica.cpp.i
-.PHONY : Logica.cpp.i
+LDDE.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.i
+.PHONY : LDDE.cpp.i
 
-Logica.s: Logica.cpp.s
+LDDE.s: LDDE.cpp.s
 
-.PHONY : Logica.s
+.PHONY : LDDE.s
 
 # target to generate assembly for a file
-Logica.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Logica.cpp.s
-.PHONY : Logica.cpp.s
+LDDE.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.s
+.PHONY : LDDE.cpp.s
 
-Quarto.o: Quarto.cpp.o
+LDE.o: LDE.cpp.o
 
-.PHONY : Quarto.o
+.PHONY : LDE.o
 
 # target to build an object file
-Quarto.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Quarto.cpp.o
-.PHONY : Quarto.cpp.o
+LDE.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDE.cpp.o
+.PHONY : LDE.cpp.o
 
-Quarto.i: Quarto.cpp.i
+LDE.i: LDE.cpp.i
 
-.PHONY : Quarto.i
+.PHONY : LDE.i
 
 # target to preprocess a source file
-Quarto.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Quarto.cpp.i
-.PHONY : Quarto.cpp.i
+LDE.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDE.cpp.i
+.PHONY : LDE.cpp.i
 
-Quarto.s: Quarto.cpp.s
+LDE.s: LDE.cpp.s
 
-.PHONY : Quarto.s
+.PHONY : LDE.s
 
 # target to generate assembly for a file
-Quarto.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Quarto.cpp.s
-.PHONY : Quarto.cpp.s
+LDE.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDE.cpp.s
+.PHONY : LDE.cpp.s
+
+LDS.o: LDS.cpp.o
+
+.PHONY : LDS.o
+
+# target to build an object file
+LDS.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.o
+.PHONY : LDS.cpp.o
+
+LDS.i: LDS.cpp.i
+
+.PHONY : LDS.i
+
+# target to preprocess a source file
+LDS.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.i
+.PHONY : LDS.cpp.i
+
+LDS.s: LDS.cpp.s
+
+.PHONY : LDS.s
+
+# target to generate assembly for a file
+LDS.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.s
+.PHONY : LDS.cpp.s
+
+Pilha.o: Pilha.cpp.o
+
+.PHONY : Pilha.o
+
+# target to build an object file
+Pilha.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Pilha.cpp.o
+.PHONY : Pilha.cpp.o
+
+Pilha.i: Pilha.cpp.i
+
+.PHONY : Pilha.i
+
+# target to preprocess a source file
+Pilha.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Pilha.cpp.i
+.PHONY : Pilha.cpp.i
+
+Pilha.s: Pilha.cpp.s
+
+.PHONY : Pilha.s
+
+# target to generate assembly for a file
+Pilha.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Pilha.cpp.s
+.PHONY : Pilha.cpp.s
+
+Recepcao.o: Recepcao.cpp.o
+
+.PHONY : Recepcao.o
+
+# target to build an object file
+Recepcao.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.o
+.PHONY : Recepcao.cpp.o
+
+Recepcao.i: Recepcao.cpp.i
+
+.PHONY : Recepcao.i
+
+# target to preprocess a source file
+Recepcao.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.i
+.PHONY : Recepcao.cpp.i
+
+Recepcao.s: Recepcao.cpp.s
+
+.PHONY : Recepcao.s
+
+# target to generate assembly for a file
+Recepcao.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.s
+.PHONY : Recepcao.cpp.s
+
+Senha.o: Senha.cpp.o
+
+.PHONY : Senha.o
+
+# target to build an object file
+Senha.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.o
+.PHONY : Senha.cpp.o
+
+Senha.i: Senha.cpp.i
+
+.PHONY : Senha.i
+
+# target to preprocess a source file
+Senha.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.i
+.PHONY : Senha.cpp.i
+
+Senha.s: Senha.cpp.s
+
+.PHONY : Senha.s
+
+# target to generate assembly for a file
+Senha.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Senha.cpp.s
+.PHONY : Senha.cpp.s
 
 main.o: main.cpp.o
 
@@ -240,15 +321,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Hotel"
-	@echo "... Estoque.o"
-	@echo "... Estoque.i"
-	@echo "... Estoque.s"
-	@echo "... Logica.o"
-	@echo "... Logica.i"
-	@echo "... Logica.s"
-	@echo "... Quarto.o"
-	@echo "... Quarto.i"
-	@echo "... Quarto.s"
+	@echo "... LDDE.o"
+	@echo "... LDDE.i"
+	@echo "... LDDE.s"
+	@echo "... LDE.o"
+	@echo "... LDE.i"
+	@echo "... LDE.s"
+	@echo "... LDS.o"
+	@echo "... LDS.i"
+	@echo "... LDS.s"
+	@echo "... Pilha.o"
+	@echo "... Pilha.i"
+	@echo "... Pilha.s"
+	@echo "... Recepcao.o"
+	@echo "... Recepcao.i"
+	@echo "... Recepcao.s"
+	@echo "... Senha.o"
+	@echo "... Senha.i"
+	@echo "... Senha.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

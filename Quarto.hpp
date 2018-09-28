@@ -5,32 +5,61 @@
 #ifndef HOTEL_QUARTO_HPP
 #define HOTEL_QUARTO_HPP
 #include <iostream>
+#include "Pessoa.hpp"
+#include "Configuracoes.hpp"
+#include "Senha.hpp"
 using namespace std;
 /*
 
 * Edit Caio:Classe para cadastrar os quartos assim depois que cadastrar ,
  dependendo do tipo de quarto que a pessoa quiser só precisaremos chamar a classe.
  */
-class Quarto {
+class Quarto: public Pessoa {
 public:
-    void luxo(){
-
+//a funcao quarto serve apenas para iniciar tudo zerado
+    Quarto() {
+       valor_diaria = -1;
+       nPessoas = -1;
+       estado = false;
+       tipoQuarto = "-1";
+       descricao = "-1";
+       numero = -1;
+       andar = -1;
     }
-    void comum(){
 
+    //para adcionar quartos, porem os unicos que pode fazer isso é o gerente e o dono
+    void adcionaQuarto(){
+    if(checaNivel() == 1){
+        puts("Tipo do quarto");
+        cin>>tipoQuarto;
+        puts("Descrição");
+        cin>>descricao;
+        puts("Valor da diaria");
+        cin>>valor_diaria;
     }
-    void economico(){
+    else{
+        puts("voce nao tem permissao para adcionar quartos");
+    }
 
-    }
+}
+
+
 private:
+
+    int checaNivel(){
+        Senha var;
+        return var.confereSenha();
+}
+
     float valor_diaria;
-    int limitePessoas;
-    String estado; //Disponivel ou Ocupado;
-    String tipoQuarto;
-    String descricao;//Exemplo:Quarto de frente pro mar
+    int nPessoas;
+    bool estado; //Disponivel ou Ocupado;
+    string tipoQuarto;
+    string descricao;//Exemplo:Quarto de frente pro mar
     int numero;
     int andar;
     //Fazer um List que armazena os quartos cadastrados,
+
 };
 
 

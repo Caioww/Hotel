@@ -6,7 +6,7 @@
 #define FILA_FILA_HPP
 #include <iostream>
 using namespace std;
-#define max 10
+#define max 1000
 template <typename T>
 class Fila {
 private:
