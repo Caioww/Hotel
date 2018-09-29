@@ -11,26 +11,39 @@ class Senha {
 public:
     /*
      * funcao para cadastrar um novo funcionario e dar certa autoridade a ele
-     * nas configuracoes
+     * nas configuracoes.
+     * inicialmente a senha é 0 para cadastrar inicialmente, assim o dono pode adcionar pessoas e
+     * depois muda a propria senha
      */
-    void novaPessoa(){
-        puts("Cargo do Funcionario");
-        cin>>cargo;
-        cin>>nivel;
-        if(((cargo == "gerente")||(cargo == "Gerente")||(cargo == "Chefe")||(cargo == "chefe")) &&
-                (nivel == 1)) {
+    void novaPessoa() {
+        FILE *arquivo;
+        if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
+            fprintf(arquivo, "0\n");
+            fclose(arquivo);
+        }
+        arquivo = fopen("Senhas.txt", "r");
+        string txt;
+        fscanf(arquivo, "%s", &txt);
+        cin >> senha;
+        if (senha == txt) {
+            puts("Cargo do Funcionario");
+            cin >> cargo;
+            puts("Nivel do Funcionario");
+            cin >> nivel;
             puts("Nome da pessoa");
-            cin >>nome;
+            cin >> nome;
             puts("Senha escolhida");
-            cin >>senha;
+            cin >> senha;
             puts("Nivel de comando");
-            cin >>nivel;
-            senha_antiga = senha;
+            cin >> nivel;
+            fclose(arquivo);
         }
         else{
-            puts("voce nao tem autorizacao aqui");
+            puts("voce nao tem autorizacao");
         }
     }
+
+
     //uma funcao para caso o funcionario queira mudar sua senha
     void mudaSenha(){
         string eu,cod;

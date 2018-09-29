@@ -9,10 +9,19 @@ CMakeFiles/Hotel.dir/LDE.cpp.o: ../LDE.cpp
 CMakeFiles/Hotel.dir/LDE.cpp.o: ../LDE.hpp
 CMakeFiles/Hotel.dir/LDE.cpp.o: ../No.hpp
 
+CMakeFiles/Hotel.dir/LDS.cpp.o: ../LDS.cpp
+CMakeFiles/Hotel.dir/LDS.cpp.o: ../LDS.hpp
+
+CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Pilha.cpp
+CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Pilha.hpp
+
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Fila.hpp
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Pessoa.hpp
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.cpp
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.hpp
+
+CMakeFiles/Hotel.dir/Senha.cpp.o: ../Senha.cpp
+CMakeFiles/Hotel.dir/Senha.cpp.o: ../Senha.hpp
 
 CMakeFiles/Hotel.dir/main.cpp.o: ../Configuracoes.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Estoque.hpp
