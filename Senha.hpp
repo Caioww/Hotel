@@ -5,6 +5,7 @@
 #ifndef HOTEL_SENHA_HPP
 #define HOTEL_SENHA_HPP
 #include <iostream>
+#include "LDE.hpp"
 using namespace std;
 
 class Senha {
@@ -43,7 +44,6 @@ public:
         }
     }
 
-
     //uma funcao para caso o funcionario queira mudar sua senha
     void mudaSenha(){
         string eu,cod;
@@ -60,14 +60,26 @@ public:
         }
     }
 
-    /* funcao pendente para conferir o nivel da senha, lembrando quanto mais baixo
-     * maior é a permissao
+    /*
+     * mudei para ler de um arquivo para buscar a senha e retornar o nivel do funcionario
      */
-    int confereSenha(){
-        cin>>senha;
-        return nivel;
-    }
+    int confereSenha() {
+        LDE<string> segredo;
+        cin >> senha;
+        string aux;
+        FILE *arquivo = fopen("Senhas.txt", "r");
+        while ((fscanf(arquivo, "%i", &aux) != EOF) && (senha != aux)) {
 
+        }
+        if (senha == aux) {
+            fclose(arquivo);
+            return nivel;
+        } else {
+            fclose(arquivo);
+            puts("senha nao confere");
+            return 10000;
+        }
+    }
 
 
 private:
