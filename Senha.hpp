@@ -19,29 +19,41 @@ public:
     void novaPessoa() {
         FILE *arquivo;
         if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
+            fclose(arquivo);
+            arquivo = fopen("Senhas.txt", "w");
             fprintf(arquivo, "0\n");
             fclose(arquivo);
         }
         arquivo = fopen("Senhas.txt", "r");
-        string txt;
-        fscanf(arquivo, "%s", &txt);
+        char txt[20];
+        fscanf(arquivo, "%s", txt);
         cin >> senha;
         if (senha == txt) {
-            puts("Cargo do Funcionario");
-            cin >> cargo;
-            puts("Nivel do Funcionario");
-            cin >> nivel;
-            puts("Nome da pessoa");
-            cin >> nome;
-            puts("Senha escolhida");
-            cin >> senha;
-            puts("Nivel de comando");
-            cin >> nivel;
             fclose(arquivo);
+            arquivo = fopen("Senhas.txt", "w");
+            string aux;
+            int num;
+            puts("Cargo do Funcionario");
+            cin >> aux;
+            cargo = aux;
+            puts("Nivel do Funcionario");
+            cin >> num;
+            nivel = num;
+            puts("Nome da pessoa");
+            cin >> aux;
+            nome = aux;
+            puts("Senha escolhida");
+            cin >> aux;
+            senha = aux;
+            fprintf(arquivo,"%s\n%s\n%s\n%i\n", senha.c_str(),cargo.c_str(),nome.c_str(),
+                    nivel);
+            fclose(arquivo);
+            puts("contato salvo");
         }
         else{
             puts("voce nao tem autorizacao");
         }
+        fclose(arquivo);
     }
 
     //uma funcao para caso o funcionario queira mudar sua senha

@@ -20,16 +20,20 @@ CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Pessoa.hpp
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.cpp
 CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.hpp
 
+CMakeFiles/Hotel.dir/Senha.cpp.o: ../LDE.hpp
+CMakeFiles/Hotel.dir/Senha.cpp.o: ../No.hpp
 CMakeFiles/Hotel.dir/Senha.cpp.o: ../Senha.cpp
 CMakeFiles/Hotel.dir/Senha.cpp.o: ../Senha.hpp
 
 CMakeFiles/Hotel.dir/main.cpp.o: ../Configuracoes.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Estoque.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../FilaDinamica.hpp
+CMakeFiles/Hotel.dir/main.cpp.o: ../LDE.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Logica.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../No.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Pessoa.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Quarto.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../SalvaEstoque.hpp
+CMakeFiles/Hotel.dir/main.cpp.o: ../Senha.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../main.cpp
 

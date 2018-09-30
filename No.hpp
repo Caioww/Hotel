@@ -1,29 +1,28 @@
-//
-// Created by djalma cunha on 31/08/2018.
-//
-
-#ifndef FILA_NO_HPP
-#define FILA_NO_HPP
+#ifndef NO_HPP
+#define NO_HPP
 
 #include <iostream>
 using namespace std;
 
 template <typename T>
-class FilaDinamica;
+class LDE;
 
 template <typename T>
 class No{
 private:
-    T dado;
-    No<T> proximo;
-    No(T dado): dado(dado), proximo(NULL){
+    T valor;
+    No<T>* proximo;
+    No(T valor): valor(valor), proximo(nullptr){
 
     }
 public:
     ~No(){
         cout << "deletando no" << endl;
     }
-    friend class FilaDinamica<T>;
+
+    friend class LDE<T>;
+
 };
 
-#endif //FILA_NO_HPP
+
+#endif
