@@ -11,5 +11,6 @@
         <file>imagens/config.png</file>
         <file>imagens/remover.png</file>
         <file>imagens/lixeira.jpg</file>
+        <file>imagens/cadastros.png</file>
     </qresource>
 </RCC>

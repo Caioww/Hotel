@@ -6,21 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
-    <height>702</height>
+    <width>501</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(136, 136, 136);</string>
+   <string notr="true">background-color: rgb(136, 136, 136);
+background-color: rgb(243, 243, 243);</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>380</y>
+     <x>270</x>
+     <y>220</y>
      <width>221</width>
      <height>121</height>
     </rect>
@@ -50,14 +51,14 @@
     </font>
    </property>
    <property name="text">
-    <string>CADASTRAR CLIENTE</string>
+    <string>CADASTRO</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>500</y>
+     <x>270</x>
+     <y>340</y>
      <width>221</width>
      <height>21</height>
     </rect>
@@ -74,28 +75,6 @@
     <string>BUSCAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnBuscar">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>220</y>
-     <width>221</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="whatsThis">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/imagens/quarto-adicionar.jpg)</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btnCadastroCliente">
    <property name="geometry">
     <rect>
@@ -106,59 +85,16 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/imagens/icone-cadastro-cliente3-png.png)</string>
+    <string notr="true">background-image: url(:/imgs/imagens/cadastros.png)</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>340</y>
-     <width>221</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>CADASTRAR QUARTO</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>500</y>
-     <width>221</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>AGENDAR RESERVA</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>0</y>
      <width>461</width>
      <height>211</height>
@@ -174,27 +110,11 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>380</y>
-     <width>221</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/imgs/imagens/calendario.png)</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>540</y>
+     <y>370</y>
      <width>221</width>
      <height>121</height>
     </rect>
@@ -209,8 +129,8 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>540</y>
+     <x>270</x>
+     <y>370</y>
      <width>221</width>
      <height>121</height>
     </rect>
@@ -226,7 +146,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>670</y>
+     <y>490</y>
      <width>221</width>
      <height>21</height>
     </rect>
@@ -246,8 +166,8 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>670</y>
+     <x>270</x>
+     <y>490</y>
      <width>221</width>
      <height>21</height>
     </rect>
