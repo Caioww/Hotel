@@ -19,6 +19,7 @@ Login::~Login()
     delete ui;
 }
 
+
 bool Login::validacaoLogin(){
     QString usuario = ui->txtNome->text();
     QString senha = ui->txtSenha->text();

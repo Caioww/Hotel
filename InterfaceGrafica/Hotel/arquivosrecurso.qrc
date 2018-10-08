@@ -8,5 +8,8 @@
         <file>imagens/quarto-adicionar.jpg</file>
         <file>imagens/login.jpg</file>
         <file>imagens/cadastrar-func.png</file>
+        <file>imagens/config.png</file>
+        <file>imagens/remover.png</file>
+        <file>imagens/lixeira.jpg</file>
     </qresource>
 </RCC>

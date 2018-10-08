@@ -31,7 +31,8 @@ SOURCES += \
     busca.cpp \
     login.cpp \
     menu.cpp \
-    cadastrar.cpp
+    cadastrar.cpp \
+    agendarreserva.cpp
 
 HEADERS += \
     cadastroquarto.h \
@@ -39,7 +40,8 @@ HEADERS += \
     busca.h \
     login.h \
     menu.h \
-    cadastrar.h
+    cadastrar.h \
+    agendarreserva.h
 
 FORMS += \
     cadastroquarto.ui \
@@ -47,7 +49,8 @@ FORMS += \
     busca.ui \
     login.ui \
     menu.ui \
-    cadastrar.ui
+    cadastrar.ui \
+    agendarreserva.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

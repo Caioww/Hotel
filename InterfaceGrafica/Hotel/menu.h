@@ -17,6 +17,7 @@ public:
 
 private slots:
     void on_btnBuscar_clicked();
+    void on_btnCadastroCliente_clicked();
 
 private:
     Ui::Menu *ui;

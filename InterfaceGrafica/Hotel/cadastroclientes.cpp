@@ -1,5 +1,6 @@
 #include "cadastroclientes.h"
 #include "ui_cadastroclientes.h"
+#include "agendarreserva.h"
 
 cadastroclientes::cadastroclientes(QWidget *parent) :
     QDialog(parent),
@@ -23,6 +24,11 @@ void cadastroclientes::on_btnConfirmar_clicked()
     QString RG = ui->txtRG->text();
     QString Email = ui->txtEmail->text();
     QString fone = ui->txtTelefone->text();
+
+    agendarReserva agendar;
+    agendar.exec();
+
+
 }
 
 
