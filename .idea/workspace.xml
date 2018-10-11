@@ -14,9 +14,6 @@
     <list default="true" id="f51e185b-4fe8-4aaa-8a77-bdf4b8f20305" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Senha.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Senha.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Hotel" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Hotel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Senhas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Senhas.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/vcs.xml" beforeDir="false" />
@@ -70,12 +67,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cpp" value="66" />
-          <entry key="hpp" value="4052" />
+          <entry key="hpp" value="4087" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="4118" />
+          <entry key="ObjectiveC" value="4153" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -87,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Senha.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <state relative-caret-position="265">
+              <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
               <folding>
                 <element signature="e#95#114#0" expanded="true" />
               </folding>
@@ -243,18 +240,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="209" y="23" width="1052" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24927256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="10" />
@@ -456,8 +454,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Senha.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="265">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
           <folding>
             <element signature="e#95#114#0" expanded="true" />
           </folding>

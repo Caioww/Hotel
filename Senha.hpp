@@ -25,11 +25,12 @@ public:
             fclose(arquivo);
         }
         arquivo = fopen("Senhas.txt", "r");
-        char txt[20];
+        char txt[2];
         bool libera;
         fscanf(arquivo, "%s", txt);
+        int quant = stod(txt);
         cin >> senha;
-        if (senha == txt) {
+        if (quant == 0) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
             string aux;
@@ -49,16 +50,55 @@ public:
             /*
              * primeiro a ser impresso é a senha depois,cargo,nome,nivel
              */
-            int quant = stod(txt);
             quant++;
             fprintf(arquivo, "%i\n", quant);
             fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                     nivel);
             fclose(arquivo);
             puts("contato salvo");
-        }
-        else{
-            puts("voce nao tem autorizacao");
+        } else {
+            funcionario vet[quant];
+            char sem[50];
+            for (int i = 0; i < quant; i++) {
+                fgets(sem,50,arquivo);
+                vet[i].senha = sem;
+                fgets(sem,50,arquivo);
+                vet[i].cargo = sem;
+                fgets(sem,50,arquivo);
+                vet[i].nome = sem;
+                fgets(sem,50,arquivo);
+                int dois = stod(sem);
+                vet[i].nivel = dois;
+
+            }
+            puts("insira a sua senha");
+            fclose(arquivo);
+            arquivo = fopen("Senhas.txt", "w");
+            string aux;
+            int num;
+            puts("Cargo do Funcionario");
+            cin >> aux;
+            cargo = aux;
+            puts("Nivel do Funcionario");
+            cin >> num;
+            nivel = num;
+            puts("Nome da pessoa");
+            cin >> aux;
+            nome = aux;
+            puts("Senha escolhida");
+            cin >> aux;
+            senha = aux;
+            /*
+             * primeiro a ser impresso é a senha depois,cargo,nome,nivel
+             */
+            quant++;
+            fprintf(arquivo, "%i\n", quant);
+            fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
+                    nivel);
+            fclose(arquivo);
+            puts("contato salvo");
+
+            puts("voce não tem autorização");
         }
         fclose(arquivo);
     }
@@ -107,6 +147,15 @@ private:
     string senha;
     string senha_antiga;
     int nivel;
+
+    struct funcionario{
+        string nome;
+        int nivel;
+        string cargo;
+        string senha;
+    };
+
+    typedef struct funcionario funcionario;
 
 };
 
