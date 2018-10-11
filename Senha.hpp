@@ -26,6 +26,7 @@ public:
         }
         arquivo = fopen("Senhas.txt", "r");
         char txt[20];
+        bool libera;
         fscanf(arquivo, "%s", txt);
         cin >> senha;
         if (senha == txt) {
@@ -45,7 +46,13 @@ public:
             puts("Senha escolhida");
             cin >> aux;
             senha = aux;
-            fprintf(arquivo,"%s\n%s\n%s\n%i\n", senha.c_str(),cargo.c_str(),nome.c_str(),
+            /*
+             * primeiro a ser impresso é a senha depois,cargo,nome,nivel
+             */
+            int quant = stod(txt);
+            quant++;
+            fprintf(arquivo, "%i\n", quant);
+            fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                     nivel);
             fclose(arquivo);
             puts("contato salvo");
