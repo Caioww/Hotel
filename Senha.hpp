@@ -15,9 +15,12 @@ public:
      * nas configuracoes.
      * inicialmente a senha é 0 para cadastrar inicialmente, assim o dono pode adcionar pessoas e
      * depois muda a propria senha
+     *
+     * quanto menor o nivel maior é o controle, 1 é o dono 3 é um atendente
      */
     void novaPessoa() {
         FILE *arquivo;
+        //caso nao exista um arquivo na maquina esse if cria um e salva um 0 inicialmente
         if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
@@ -26,10 +29,9 @@ public:
         }
         arquivo = fopen("Senhas.txt", "r");
         char txt[2];
-        bool libera;
+        bool libera = false;
         fscanf(arquivo, "%s", txt);
         int quant = stod(txt);
-        cin >> senha;
         if (quant == 0) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
@@ -38,6 +40,7 @@ public:
             puts("Cargo do Funcionario");
             cin >> aux;
             cargo = aux;
+            //tomar precaucoes para nao por string no nivel
             puts("Nivel do Funcionario");
             cin >> num;
             nivel = num;
@@ -57,50 +60,74 @@ public:
             fclose(arquivo);
             puts("contato salvo");
         } else {
+            //puts("insira sua senha para cadastrar um novo funcionario ou alterar sua senha");
+            //cin>>senha;
+            fclose(arquivo);
+            arquivo = fopen("Senhas.txt", "r");
             funcionario vet[quant];
             char sem[50];
+            //esse primeiro fgets serve simplismente para não salvar o numero inicial
+            fgets(sem, 50, arquivo);
             for (int i = 0; i < quant; i++) {
-                fgets(sem,50,arquivo);
+                fgets(sem, 50, arquivo);
                 vet[i].senha = sem;
-                fgets(sem,50,arquivo);
+                fgets(sem, 50, arquivo);
                 vet[i].cargo = sem;
-                fgets(sem,50,arquivo);
+                fgets(sem, 50, arquivo);
                 vet[i].nome = sem;
-                fgets(sem,50,arquivo);
+                fgets(sem, 50, arquivo);
                 int dois = stod(sem);
                 vet[i].nivel = dois;
-
             }
+            fclose(arquivo);
             puts("insira a sua senha");
-            fclose(arquivo);
-            arquivo = fopen("Senhas.txt", "w");
-            string aux;
-            int num;
-            puts("Cargo do Funcionario");
-            cin >> aux;
-            cargo = aux;
-            puts("Nivel do Funcionario");
-            cin >> num;
-            nivel = num;
-            puts("Nome da pessoa");
-            cin >> aux;
-            nome = aux;
-            puts("Senha escolhida");
-            cin >> aux;
-            senha = aux;
-            /*
-             * primeiro a ser impresso é a senha depois,cargo,nome,nivel
-             */
-            quant++;
-            fprintf(arquivo, "%i\n", quant);
-            fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
-                    nivel);
-            fclose(arquivo);
-            puts("contato salvo");
-
-            puts("voce não tem autorização");
+            string code;
+            cin >> code;
+            //code = "abc";
+            code = code + "\n";
+            for (int j = 0; j < quant; j++) {
+                string ver = vet[j].senha;
+                if ((vet[j].senha == code) && (vet[j].nivel) == 1) {
+                    libera = true;
+                }
+            }
+            if (libera == true) {
+                arquivo = fopen("Senhas.txt", "w");
+                string aux;
+                int num;
+                puts("Cargo do Funcionario");
+                cin >> aux;
+                cargo = aux;
+                puts("Nivel do Funcionario");
+                cin >> num;
+                nivel = num;
+                puts("Nome da pessoa");
+                cin >> aux;
+                nome = aux;
+                puts("Senha escolhida");
+                cin >> aux;
+                senha = aux;
+                /*
+                 * primeiro a ser impresso é a senha depois,cargo,nome,nivel
+                 */
+                quant++;
+                fprintf(arquivo, "%i\n", quant);
+                for (int i = 0; i < (quant-1); i++) {
+                    fprintf(arquivo, "%s%s%s%i\n", vet[i].senha.c_str(),
+                            vet[i].cargo.c_str(), vet[i].nome.c_str(),
+                            vet[i].nivel);
+                }
+                fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
+                        nivel);
+                fclose(arquivo);
+                puts("contato salvo");
+            }
+            else{
+                puts("voce não tem autorização");
+            }
         }
         fclose(arquivo);
+        return;
     }
 
     //uma funcao para caso o funcionario queira mudar sua senha
