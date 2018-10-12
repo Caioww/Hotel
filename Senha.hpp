@@ -21,7 +21,7 @@ public:
     void novaPessoa() {
         FILE *arquivo;
         //caso nao exista um arquivo na maquina esse if cria um e salva um 0 inicialmente
-        if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
+        if ((arquivo = fopen("Senhas.txt", "r")) == nullptr) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
             fprintf(arquivo, "0\n");
@@ -31,7 +31,7 @@ public:
         char txt[2];
         bool libera = false;
         fscanf(arquivo, "%s", txt);
-        int quant = stod(txt);
+        int quant = static_cast<int>(stod(txt));
         if (quant == 0) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
@@ -64,25 +64,13 @@ public:
             //cin>>senha;
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "r");
-            funcionario vet[quant];
-            char sem[50];
+            funcionario *vet = nullptr;
+            fazVetor(vet);
             //esse primeiro fgets serve simplismente para não salvar o numero inicial
-            fgets(sem, 50, arquivo);
-            for (int i = 0; i < quant; i++) {
-                fgets(sem, 50, arquivo);
-                vet[i].senha = sem;
-                fgets(sem, 50, arquivo);
-                vet[i].cargo = sem;
-                fgets(sem, 50, arquivo);
-                vet[i].nome = sem;
-                fgets(sem, 50, arquivo);
-                int dois = stod(sem);
-                vet[i].nivel = dois;
-            }
-            fclose(arquivo);
             puts("insira a sua senha");
             string code;
-            cin >> code;
+            //cin >> code;
+            code = "123";
             //code = "abc";
             code = code + "\n";
             for (int j = 0; j < quant; j++) {
@@ -91,7 +79,7 @@ public:
                     libera = true;
                 }
             }
-            if (libera == true) {
+            if (libera) {
                 arquivo = fopen("Senhas.txt", "w");
                 string aux;
                 int num;
@@ -127,7 +115,6 @@ public:
             }
         }
         fclose(arquivo);
-        return;
     }
 
     //uma funcao para caso o funcionario queira mudar sua senha
@@ -168,6 +155,8 @@ public:
     }
 
 
+
+
 private:
     string nome;
     string cargo;
@@ -177,12 +166,38 @@ private:
 
     struct funcionario{
         string nome;
-        int nivel;
+        int nivel{};
         string cargo;
         string senha;
     };
 
     typedef struct funcionario funcionario;
+
+    void fazVetor(funcionario* var){
+        FILE* arquivo;
+        arquivo = fopen("Senhas.txt", "r");
+        char txt[2];
+        fscanf(arquivo, "%s", txt);
+        int quant = stod(txt);
+        //da um bug aqui
+        funcionario vet[quant];
+        char sem[50];
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        fgets(sem, 50, arquivo);
+        for (int i = 0; i < quant; i++) {
+            fgets(sem, 50, arquivo);
+            vet[i].senha = sem;
+            fgets(sem, 50, arquivo);
+            vet[i].cargo = sem;
+            fgets(sem, 50, arquivo);
+            vet[i].nome = sem;
+            fgets(sem, 50, arquivo);
+            int dois = stod(sem);
+            vet[i].nivel = dois;
+        }
+        *var = *vet;
+        fclose(arquivo);
+    }
 
 };
 

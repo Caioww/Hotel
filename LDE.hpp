@@ -1,5 +1,5 @@
 #include <iostream>
-#include "No.hpp"
+#include "Funcionario.hpp"
 
 #ifndef LDE_HPP
 #define LDE_HPP
@@ -10,7 +10,7 @@ template <typename T>
 class LDE{
     private:
         int n;
-        No<T>* primeiro;
+        Funcionario<T>* primeiro;
 
     public:
         LDE(): n(0), primeiro(nullptr){
@@ -18,12 +18,12 @@ class LDE{
         }
 
         bool insere(T valor){
-            No<T>* novo = new No<T>(valor);
+            Funcionario<T>* novo = new Funcionario<T>(valor);
             if(novo == nullptr)
                 return false;
 
-            No<T>* anterior = nullptr;
-            No<T>* atual = primeiro;
+            Funcionario<T>* anterior = nullptr;
+            Funcionario<T>* atual = primeiro;
 
             while(atual && valor > atual->valor){
                 anterior = atual;
@@ -40,8 +40,8 @@ class LDE{
             return true;
         }
 
-        No<T>* busca(int valor){
-            No<T>* atual = primeiro;
+        Funcionario<T>* busca(int valor){
+            Funcionario<T>* atual = primeiro;
             while(atual && atual->valor < valor){
                 atual = atual->proximo;
             }
@@ -49,14 +49,14 @@ class LDE{
         }
 
         bool remove(int valor){
-            No<T>* atual = primeiro;
-            No<T>* fututo = primeiro->proximo;
+            Funcionario<T>* atual = primeiro;
+            Funcionario<T>* fututo = primeiro->proximo;
             while(atual && fututo->valor < valor){
                 atual = atual->proximo;
                 fututo = atual->proximo;
             }
             if(fututo->valor == valor){
-                No<T>* aux = fututo;
+                Funcionario<T>* aux = fututo;
                 atual->proximo = fututo->proximo;
                 delete fututo;
             } else{
@@ -66,7 +66,7 @@ class LDE{
         }
 
     void imprime(){
-        No<T>* atual = primeiro;
+        Funcionario<T>* atual = primeiro;
         while(atual){
             cout << atual->valor << " ";
             atual = atual->proximo;
@@ -75,8 +75,8 @@ class LDE{
     }
 
     virtual ~LDE(){
-        No<T>* atual = primeiro;
-        No<T>* prox;
+        Funcionario<T>* atual = primeiro;
+        Funcionario<T>* prox;
         while(atual){
             prox = atual->proximo;
             delete atual;

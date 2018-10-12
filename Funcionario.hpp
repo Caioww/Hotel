@@ -8,15 +8,15 @@ template <typename T>
 class LDE;
 
 template <typename T>
-class No{
+class Funcionario{
 private:
     T valor;
-    No<T>* proximo;
-    No(T valor): valor(valor), proximo(nullptr){
+    Funcionario<T>* proximo;
+    Funcionario(T valor): valor(valor), proximo(nullptr){
 
     }
 public:
-    ~No(){
+    ~Funcionario(){
         cout << "deletando no" << endl;
     }
 

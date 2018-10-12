@@ -5,7 +5,7 @@
 #ifndef FILA_FILADINAMICA_HPP
 #define FILA_FILADINAMICA_HPP
 
-#include "No.hpp"
+#include "Funcionario.hpp"
 #include <iostream>
 using namespace std;
 #define max 0

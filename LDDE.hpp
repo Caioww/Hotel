@@ -1,15 +1,15 @@
 #ifndef LDDE_HPP
 #define LDDE_HPP
 #include <iostream>
-#include "No.hpp"
+#include "Funcionario.hpp"
 
 using namespace std;
 
 template <typename T>
 class LDDE{
 private:
-    No<T>* primeiro;
-    No<T>* ultimo;
+    Funcionario<T>* primeiro;
+    Funcionario<T>* ultimo;
     int n;
 public:
     LDDE(): primeiro(NULL), ultimo(NULL), n(0){
@@ -17,12 +17,12 @@ public:
     }
 
     bool insere(T valor){
-        No<T>* novo = new No<T>(valor);
+        Funcionario<T>* novo = new Funcionario<T>(valor);
         if(!novo)
             return false;
 
-        No<T>* ptrAnterior = NULL;
-        No<T>* ptrAtual = primeiro;
+        Funcionario<T>* ptrAnterior = NULL;
+        Funcionario<T>* ptrAtual = primeiro;
 
         while(ptrAtual && ptrAtual -> valor < valor){
             ptrAnterior = ptrAtual;
@@ -51,8 +51,8 @@ public:
 
     }
 
-    No<T>* busca(int valor){
-        No<T>* atual = primeiro;
+    Funcionario<T>* busca(int valor){
+        Funcionario<T>* atual = primeiro;
         while(atual && atual->valor < valor){
             atual = atual->proximo;
         }
@@ -61,7 +61,7 @@ public:
 
 
     void imprime(){
-        No<T>* ptr = primeiro;
+        Funcionario<T>* ptr = primeiro;
         while(ptr){
             cout << ptr -> valor << " ";
             ptr = ptr -> proximo;
@@ -70,7 +70,7 @@ public:
     }
 
     void limpa(){
-        No<T>* ptr = primeiro;
+        Funcionario<T>* ptr = primeiro;
         while(ptr){
             delete(ptr);
             ptr = ptr -> proximo;
@@ -78,7 +78,7 @@ public:
         delete(ptr);
     }
     bool remove(T valor){
-        No<T>* ptrAtual = primeiro;
+        Funcionario<T>* ptrAtual = primeiro;
 
         while(ptrAtual && ptrAtual-> valor < valor){
             ptrAtual = ptrAtual -> proximo;
@@ -88,8 +88,8 @@ public:
             return false;
         }
 
-        No<T>* ptrAnterior = ptrAtual -> anterior;
-        No<T>* ptrProximo = ptrAtual -> proximo;
+        Funcionario<T>* ptrAnterior = ptrAtual -> anterior;
+        Funcionario<T>* ptrProximo = ptrAtual -> proximo;
 
         if(ptrAnterior)
             ptrAnterior -> proximo = ptrProximo;
