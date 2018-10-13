@@ -20,6 +20,8 @@ private slots:
 
     void on_btnConfirmar_clicked();
 
+    void on_btnCancelar_clicked();
+
 private:
     Ui::cadastrar *ui;
     QFile *file;

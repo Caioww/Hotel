@@ -4,6 +4,7 @@
 #include "menu.h"
 #include <fstream>
 #include "cadastrar.h"
+#include "menupainel.h"
 
 Login::Login(QWidget *parent) :
     QMainWindow(parent),
@@ -58,7 +59,8 @@ void Login::on_btnEntrar_clicked()
 
     if(validacaoLogin()==true){
 
-        Menu menu;
+        close();
+        menupainel menu;
         menu.exec();
 
 
@@ -76,3 +78,5 @@ void Login::on_btnCadastrar_clicked()
     cadastrar cadastra;
     cadastra.exec();
 }
+
+

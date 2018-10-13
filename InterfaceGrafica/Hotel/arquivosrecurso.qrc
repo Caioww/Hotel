@@ -3,7 +3,6 @@
         <file>imagens/hotem-imagem.jpg</file>
         <file>imagens/icone-cadastro-cliente-png.png</file>
         <file>imagens/icone-cadastro-cliente3-png.png</file>
-        <file>imagens/buscar-cliente.png</file>
         <file>imagens/calendario.png</file>
         <file>imagens/quarto-adicionar.jpg</file>
         <file>imagens/login.jpg</file>
@@ -12,5 +11,17 @@
         <file>imagens/remover.png</file>
         <file>imagens/lixeira.jpg</file>
         <file>imagens/cadastros.png</file>
+        <file>imagens/cadastrar-cliente.png</file>
+        <file>imagens/icone-cadastro-cliente4-png.png</file>
+        <file>imagens/close-btn.png</file>
+        <file>imagens/configuracoes.png</file>
+        <file>imagens/configuracoes2.png</file>
+        <file>imagens/icone-cadastro-png.png</file>
+        <file>imagens/buscar-cliente.png</file>
+        <file>imagens/reservas.png</file>
+        <file>imagens/hotel2.jpg</file>
+        <file>imagens/cliente.png</file>
+        <file>imagens/quartoregistro.png</file>
+        <file>imagens/home.png</file>
     </qresource>
 </RCC>

@@ -3,7 +3,7 @@
 #include "cadastroquarto.h"
 #include "cadastroclientes.h"
 #include "agendarreserva.h"
-#include "cadastros.h"
+
 #include "busca.h"
 
 Menu::Menu(QWidget *parent) :
@@ -26,8 +26,8 @@ void Menu::on_btnBuscar_clicked()
 
 void Menu::on_btnCadastroCliente_clicked()
 {
-    cadastros cadastro;
-    cadastro.exec();
+    cadastroclientes cliente;
+    cliente.exec();
 }
 
 void Menu::on_pushButton_clicked()

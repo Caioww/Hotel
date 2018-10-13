@@ -2,6 +2,7 @@
 #include "ui_cadastrar.h"
 #include <QMessageBox>
 #include <fstream>
+#include "login.h"
 
 
 cadastrar::cadastrar(QWidget *parent) :
@@ -32,7 +33,14 @@ void cadastrar::on_btnConfirmar_clicked()
       fout <<senha.toStdString()<<endl;
       QMessageBox::information(this,"Cadastro","Cadastrado com sucesso");
 
+
+
     }else{
         QMessageBox::warning(this,"Senha","As senhas não conferem");
     }
+}
+
+void cadastrar::on_btnCancelar_clicked()
+{
+    close();
 }

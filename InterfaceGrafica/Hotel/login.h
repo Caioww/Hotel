@@ -24,6 +24,8 @@ private slots:
 
     void on_btnCadastrar_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Login *ui;
     QFile *file;
