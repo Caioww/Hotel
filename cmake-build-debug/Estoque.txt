@@ -1,0 +1,13 @@
+3
+agua
+500
+100
+2000
+toalha
+100
+10
+200
+papel higienico
+100
+10
+1000

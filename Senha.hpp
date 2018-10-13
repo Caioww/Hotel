@@ -7,7 +7,10 @@
 #include <iostream>
 #include "LDE.hpp"
 using namespace std;
-
+/**
+ * temos que colocar os vetores como LDE, por enquanto esta como vetor para facilitar
+ * na logica mas temos que resolver isso!!!
+ */
 class Senha {
 public:
     /*
@@ -36,14 +39,22 @@ public:
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
             string aux;
-            int num;
             puts("Cargo do Funcionario");
             cin >> aux;
             cargo = aux;
-            //tomar precaucoes para nao por string no nivel
             puts("Nivel do Funcionario");
-            cin >> num;
-            nivel = num;
+            char num[2];
+            scanf("%s", num);
+            /*
+             * esse while garante que o usuario não vai tentar inserir uma letra como nivel
+             * apenas numero e garante ser maior que 0 e menor que 10
+             */
+            while(((num[0] >= 'a') && (num[0] <= 'z')) || ((num[0] >= 'A') && (num[0] <= 'Z'))||
+                    ((stod(num) > 9) || stod(num) < 0) ){
+                puts("nivel invalido insira outro");
+                scanf("%s", num);
+            }
+            nivel = stod(num);
             puts("Nome da pessoa");
             cin >> aux;
             nome = aux;
@@ -60,8 +71,6 @@ public:
             fclose(arquivo);
             puts("contato salvo");
         } else {
-            //puts("insira sua senha para cadastrar um novo funcionario ou alterar sua senha");
-            //cin>>senha;
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "r");
             funcionario vet[quant];
@@ -83,24 +92,34 @@ public:
             puts("insira a sua senha");
             string code;
             cin >> code;
-            //code = "abc";
             code = code + "\n";
+            //no momento em que a senha inserida for de nivel 1 ja sai do for
             for (int j = 0; j < quant; j++) {
                 string ver = vet[j].senha;
                 if ((vet[j].senha == code) && (vet[j].nivel) == 1) {
                     libera = true;
+                    break;
                 }
             }
             if (libera == true) {
                 arquivo = fopen("Senhas.txt", "w");
                 string aux;
-                int num;
                 puts("Cargo do Funcionario");
                 cin >> aux;
                 cargo = aux;
                 puts("Nivel do Funcionario");
-                cin >> num;
-                nivel = num;
+                char num[2];
+                scanf("%s", num);
+                /*
+                 * esse while garante que o usuario não vai tentar inserir uma letra como nivel
+                 * apenas numero e garante ser maior que 0 e menor que 10
+                 */
+                while(((num[0] >= 'a') && (num[0] <= 'z')) || ((num[0] >= 'A') && (num[0] <= 'Z'))||
+                      ((stod(num) > 9) || stod(num) < 0) ){
+                    puts("nivel invalido insira outro");
+                    scanf("%s", num);
+                }
+                nivel = stod(num);
                 puts("Nome da pessoa");
                 cin >> aux;
                 nome = aux;
