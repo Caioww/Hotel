@@ -6,26 +6,25 @@
 
 using namespace std;
 
-template <typename T>
 class LDE{
     private:
         int n;
-        Funcionario<T>* primeiro;
+        Funcionario* primeiro;
 
     public:
         LDE(): n(0), primeiro(nullptr){
 
         }
 
-        bool insere(T valor){
-            Funcionario<T>* novo = new Funcionario<T>(valor);
+        bool insere(string nome,string cargo,string senha,int nivel){
+            Funcionario* novo = new Funcionario;
             if(novo == nullptr)
                 return false;
 
-            Funcionario<T>* anterior = nullptr;
-            Funcionario<T>* atual = primeiro;
+            Funcionario* anterior = nullptr;
+            Funcionario* atual = primeiro;
 
-            while(atual && valor > atual->valor){
+            while(atual){
                 anterior = atual;
                 atual = atual->proximo;
             }
@@ -40,23 +39,23 @@ class LDE{
             return true;
         }
 
-        Funcionario<T>* busca(int valor){
-            Funcionario<T>* atual = primeiro;
-            while(atual && atual->valor < valor){
+        Funcionario* busca(string senha){
+            Funcionario* atual = primeiro;
+            while(atual && atual->senha != senha){
                 atual = atual->proximo;
             }
             return atual;
         }
 
-        bool remove(int valor){
-            Funcionario<T>* atual = primeiro;
-            Funcionario<T>* fututo = primeiro->proximo;
-            while(atual && fututo->valor < valor){
+        bool remove(string nome,string cargo){
+            Funcionario* atual = primeiro;
+            Funcionario* fututo = primeiro->proximo;
+            while(atual && atual->nome != nome){
                 atual = atual->proximo;
                 fututo = atual->proximo;
             }
-            if(fututo->valor == valor){
-                Funcionario<T>* aux = fututo;
+            if(fututo->nome == nome){
+                Funcionario* aux = fututo;
                 atual->proximo = fututo->proximo;
                 delete fututo;
             } else{
@@ -66,17 +65,20 @@ class LDE{
         }
 
     void imprime(){
-        Funcionario<T>* atual = primeiro;
+        Funcionario* atual = primeiro;
         while(atual){
-            cout << atual->valor << " ";
+            cout << atual->senha << endl;
+            cout << atual->nome << endl;
+            cout << atual->cargo << endl;
+            cout << atual->nivel << endl;
             atual = atual->proximo;
         }
         cout << endl;
     }
 
     virtual ~LDE(){
-        Funcionario<T>* atual = primeiro;
-        Funcionario<T>* prox;
+        Funcionario* atual = primeiro;
+        Funcionario* prox;
         while(atual){
             prox = atual->proximo;
             delete atual;

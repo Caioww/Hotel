@@ -4,24 +4,22 @@
 #include <iostream>
 using namespace std;
 
-template <typename T>
 class LDE;
 
-template <typename T>
+
 class Funcionario{
 private:
-    T valor;
-    Funcionario<T>* proximo;
-    Funcionario(T valor): valor(valor), proximo(nullptr){
-
-    }
+    string cargo;
+    string senha = NULL;
+    string nome;
+    int nivel;
+    Funcionario* proximo;
 public:
     ~Funcionario(){
-        cout << "deletando no" << endl;
+        cout << "deletando funcionario" << endl;
     }
 
-    friend class LDE<T>;
-
+    friend class LDE;
 };
 
 

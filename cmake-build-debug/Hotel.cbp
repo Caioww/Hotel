@@ -80,12 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp">
-			<Option target="Hotel"/>
-		</Unit>
-		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.hpp">
-			<Option target="Hotel"/>
-		</Unit>
 		<Unit filename="/Users/djalmacunha/Desktop/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.cpp">
 			<Option target="Hotel"/>
 		</Unit>
