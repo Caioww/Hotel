@@ -43,3 +43,23 @@ void menupainel::on_btnMenu_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
+void menupainel::on_btnConsulta_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void menupainel::on_btnReserva_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void menupainel::on_btnRenovar_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void menupainel::on_btnCheckout_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}

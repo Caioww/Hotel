@@ -23,5 +23,11 @@
         <file>imagens/cliente.png</file>
         <file>imagens/quartoregistro.png</file>
         <file>imagens/home.png</file>
+        <file>imagens/buscar1.png</file>
+        <file>imagens/checkout.png</file>
+        <file>imagens/renovar.png</file>
+        <file>imagens/homemenu.png</file>
+        <file>imagens/renovacaoreserva.png</file>
+        <file>imagens/renovarreserva.png</file>
     </qresource>
 </RCC>
