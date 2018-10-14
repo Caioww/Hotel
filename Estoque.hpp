@@ -72,6 +72,37 @@ public:
         fclose(arquivo);
     }
 
+    //para quando muda-se a quantidade(comprou mais, pegou alguns)
+    void altera(string nome, int nQuantidade){
+        nome = nome + "\n";
+        FILE* arquivo;
+        arquivo = fopen("Estoque.txt", "r");
+        bool ok = false;
+        char txt[5];
+        fscanf(arquivo, "%s", txt);
+        int tamanho = stod(txt);
+        produto vet[tamanho];
+        fclose(arquivo);
+        fazVetor(vet);
+        arquivo = fopen("Estoque.txt", "w");
+        fprintf(arquivo,"%i\n",tamanho);
+        for (int i = 0; i < tamanho; i++) {
+            if(vet[i].nome == nome){
+                vet[i].quantidade = nQuantidade;
+                ok = true;
+            }
+            fprintf(arquivo,"%s%i\n%i\n%i\n",vet[i].nome.c_str(),vet[i].quantidade,vet[i].min,vet[i].maximo);
+        }
+        fclose(arquivo);
+        if(ok){
+            puts("produto alterado com sucesso");
+        }
+        else{
+            puts("produto não foi encontrado");
+        }
+
+    }
+
     //essa funcao como o proprio nome sugere apenas imprime o estoque ja cadastrado
     void imprimeEstoque(){
         FILE *arquivo;
@@ -87,8 +118,8 @@ public:
             char sem[50];
             //esse primeiro fgets serve simplismente para não salvar o numero inicial
             fgets(sem, 50, arquivo);
+            puts("=================||=====================");
             for (int i = 0; i < quant; i++) {
-                puts("=================||=====================");
                 fgets(sem, 50, arquivo);
                 cout<<"nome do produto: "<<sem<<endl;
                 fgets(sem, 50, arquivo);
@@ -117,6 +148,28 @@ private:
     };
 
 typedef struct produto produto;
+
+    void fazVetor(produto* vetor){
+        FILE* arquivo;
+        arquivo = fopen("Estoque.txt", "r");
+        char txt[5];
+        fscanf(arquivo, "%s", txt);
+        int tamanho = stod(txt);
+        char sem[50];
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        fgets(sem, 50, arquivo);
+        for (int i = 0; i < tamanho; i++) {
+            fgets(sem, 50, arquivo);
+            vetor[i].nome = sem;
+            fgets(sem, 50, arquivo);
+            vetor[i].quantidade = stod(sem);
+            fgets(sem, 50, arquivo);
+            vetor[i].min = stod(sem);
+            fgets(sem, 50, arquivo);
+            vetor[i].maximo = stod(sem);
+        }
+        fclose(arquivo);
+    }
 
 };
 
