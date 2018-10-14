@@ -12,14 +12,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e185b-4fe8-4aaa-8a77-bdf4b8f20305" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/buscar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/homemenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovacaoreserva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovarreserva.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/searchedit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Estoque.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Estoque.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Senha.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Senha.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Estoque.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Estoque.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Hotel" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Hotel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Senhas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Senhas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/arquivosrecurso.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/arquivosrecurso.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.ui" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/checkout.png" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/checkout.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/vcs.xml" beforeDir="false" />
@@ -37,7 +44,7 @@
     <session id="199038662">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.18" value="3" />
@@ -77,14 +84,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="545" />
-          <entry key="hpp" value="10426" />
+          <entry key="cpp" value="546" />
+          <entry key="hpp" value="10428" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="10969" />
+          <entry key="ObjectiveC" value="10972" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -108,25 +115,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Estoque.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="285">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
                 <element signature="e#304#446#0" />
                 <element signature="e#304#2597#0" />
+                <element signature="e#2607#2636#0" />
                 <element signature="e#2603#3927#0" />
                 <element signature="e#3942#4387#1" />
                 <element signature="e#4423#5154#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="3580" selection-start-line="3580" selection-end-line="3580" />
             </state>
           </provider>
         </entry>
@@ -256,11 +255,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997175" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="10" />
@@ -272,17 +271,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Estoque.hpp</url>
-          <line>88</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -438,6 +426,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="3580" selection-start-line="3580" selection-end-line="3580" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -448,21 +443,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="3580" selection-start-line="3580" selection-end-line="3580" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Estoque.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="285">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding>
             <element signature="e#101#120#0" expanded="true" />
             <element signature="e#304#446#0" />
             <element signature="e#304#2597#0" />
+            <element signature="e#2607#2636#0" />
             <element signature="e#2603#3927#0" />
             <element signature="e#3942#4387#1" />
             <element signature="e#4423#5154#0" />

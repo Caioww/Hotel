@@ -28,6 +28,14 @@ private slots:
 
     void on_btnMenu_clicked();
 
+    void on_btnConsulta_clicked();
+
+    void on_btnReserva_clicked();
+
+    void on_btnRenovar_clicked();
+
+    void on_btnCheckout_clicked();
+
 private:
     Ui::menupainel *ui;
 };
