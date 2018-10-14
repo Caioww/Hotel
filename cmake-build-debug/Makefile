@@ -123,33 +123,6 @@ Hotel/fast:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/build
 .PHONY : Hotel/fast
 
-LDDE.o: LDDE.cpp.o
-
-.PHONY : LDDE.o
-
-# target to build an object file
-LDDE.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.o
-.PHONY : LDDE.cpp.o
-
-LDDE.i: LDDE.cpp.i
-
-.PHONY : LDDE.i
-
-# target to preprocess a source file
-LDDE.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.i
-.PHONY : LDDE.cpp.i
-
-LDDE.s: LDDE.cpp.s
-
-.PHONY : LDDE.s
-
-# target to generate assembly for a file
-LDDE.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.s
-.PHONY : LDDE.cpp.s
-
 LDE.o: LDE.cpp.o
 
 .PHONY : LDE.o
@@ -321,9 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Hotel"
-	@echo "... LDDE.o"
-	@echo "... LDDE.i"
-	@echo "... LDDE.s"
 	@echo "... LDE.o"
 	@echo "... LDE.i"
 	@echo "... LDE.s"
