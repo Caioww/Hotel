@@ -36,6 +36,8 @@ private slots:
 
     void on_btnCheckout_clicked();
 
+    void on_btnAdicionarItem_clicked();
+
 private:
     Ui::menupainel *ui;
 };

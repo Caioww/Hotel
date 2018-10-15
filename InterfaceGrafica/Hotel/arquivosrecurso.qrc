@@ -29,5 +29,7 @@
         <file>imagens/homemenu.png</file>
         <file>imagens/renovacaoreserva.png</file>
         <file>imagens/renovarreserva.png</file>
+        <file>imagens/adicionaritem.jpg</file>
+        <file>imagens/addproduct.jpg</file>
     </qresource>
 </RCC>
