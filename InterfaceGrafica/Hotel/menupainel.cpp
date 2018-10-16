@@ -66,5 +66,5 @@ void menupainel::on_btnCheckout_clicked()
 
 void menupainel::on_btnAdicionarItem_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(7);
 }
