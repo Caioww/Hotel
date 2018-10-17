@@ -26,36 +26,18 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-    cadastroquarto.cpp \
-    cadastroclientes.cpp \
-    busca.cpp \
     login.cpp \
-    menu.cpp \
     cadastrar.cpp \
-    agendarreserva.cpp \
-    dialog.cpp \
     menupainel.cpp
 
 HEADERS += \
-    cadastroquarto.h \
-    cadastroclientes.h \
-    busca.h \
     login.h \
-    menu.h \
     cadastrar.h \
-    agendarreserva.h \
-    dialog.h \
     menupainel.h
 
 FORMS += \
-    cadastroquarto.ui \
-    cadastroclientes.ui \
-    busca.ui \
     login.ui \
-    menu.ui \
     cadastrar.ui \
-    agendarreserva.ui \
-    dialog.ui \
     menupainel.ui
 
 # Default rules for deployment.
