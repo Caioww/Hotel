@@ -1,7 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
 #include <QMessageBox>
-#include "menu.h"
 #include <fstream>
 #include "cadastrar.h"
 #include "menupainel.h"

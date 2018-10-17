@@ -12,8 +12,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e185b-4fe8-4aaa-8a77-bdf4b8f20305" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quarto.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Quarto.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/agendarreserva.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/agendarreserva.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/agendarreserva.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroclientes.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroclientes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroclientes.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroquarto.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroquarto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/cadastroquarto.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/dialog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/dialog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/dialog.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/login.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/login.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menu.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menu.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pessoa.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Pessoa.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/vcs.xml" beforeDir="false" />
@@ -87,7 +110,7 @@
     <session id="-1984829946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.opened" value="2" />
@@ -96,12 +119,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cpp" value="136" />
-          <entry key="hpp" value="2948" />
+          <entry key="hpp" value="3079" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="3084" />
+          <entry key="ObjectiveC" value="3215" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -162,12 +185,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Quarto.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="163" column="8" lean-forward="true" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="16" column="13" selection-end-line="238" />
               <folding>
                 <element signature="e#99#118#0" expanded="true" />
                 <element signature="e#399#4151#0" />
                 <element signature="e#2039#3144#0" />
+                <element signature="e#4957#5283#0" />
               </folding>
             </state>
           </provider>
@@ -299,7 +323,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="23" width="1205" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2170608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -323,6 +346,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Quarto.hpp</url>
+          <line>184</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -487,12 +521,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Quarto.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="163" column="8" lean-forward="true" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="16" column="13" selection-end-line="238" />
           <folding>
             <element signature="e#99#118#0" expanded="true" />
             <element signature="e#399#4151#0" />
             <element signature="e#2039#3144#0" />
+            <element signature="e#4957#5283#0" />
           </folding>
         </state>
       </provider>
