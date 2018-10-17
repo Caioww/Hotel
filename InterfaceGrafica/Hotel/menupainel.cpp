@@ -2,7 +2,7 @@
 #include "ui_menupainel.h"
 #include <QMessageBox>
 #include <fstream>
-#include "Pessoa.hpp"
+
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
