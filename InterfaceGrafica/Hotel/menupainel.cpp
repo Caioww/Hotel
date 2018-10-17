@@ -46,7 +46,7 @@ void menupainel::on_btnConfirmar_clicked()
 
 
     using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\testeCadastro.txt", ios::app);
+    ofstream fout("C:\\Users\\Caio\\Documents\\testessssss.txt", ios::app);
 
     fout <<nome.toStdString()<<endl;
     fout <<idade.toStdString()<<endl;
@@ -65,6 +65,26 @@ void menupainel::on_btnConfirmar_clicked()
 
 void menupainel::on_btnConfirmar_2_clicked()
 {
+
+    QDate IniDate =ui->dateInicial->date();
+
+
+    QDate FimDate =ui->dateFim->date();
+
+
+    QString numero = ui->txtNumero->text();
+    QString andar = ui->comboAndar->currentText();
+    QString descricao = ui->txtDescricao->toPlainText();
+    QString caracteristicas = ui->txtCaracteristicas->toPlainText();
+    QString tipoQuarto = ui->comboQuarto->currentText();
+    QString estado = ui->comboEstado->currentText();
+    QString valor = ui->txtDiaria->text();
+    QString dateIni = IniDate.toString();
+    QString dateFim = FimDate.toString();
+    QString pessoas = ui->comboPessoas->currentText();
+
+
+
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -113,4 +133,30 @@ void menupainel::updateClients(bool){
         buffer.push_back(QChar(temp));
 
     }
+}
+
+void menupainel::on_btnBuscar_clicked()
+{
+    QString NomeCliente = ui->txtNCliente->text();
+    QString NumeroQuarto =ui->txtNQuarto->text();
+    QString TipoQuarto =ui->txtTQuarto->text();
+}
+
+void menupainel::on_btnConfirmar3_clicked()
+{
+    QString CNomeCliente = ui->txtCCliente->text();
+    QString C=ui->txtCQuarto->text();
+}
+
+void menupainel::on_btnConfirmar4_clicked()
+{
+    QString RNomeCliente = ui->txtRCliente->text();
+    QString RRG = ui->txtRRG->text();
+    QString RNumero = ui->txtRNumero->text();
+
+    QDate dateIn = ui->dateRInicial->date();
+    QString dataInicio = dateIn.toString();
+
+    QDate dateFi = ui->dateRFim->date();
+    QString FimDate = dateFi.toString();
 }

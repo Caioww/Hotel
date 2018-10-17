@@ -41,6 +41,12 @@ private slots:
 
     void updateClients(bool);
 
+    void on_btnBuscar_clicked();
+
+    void on_btnConfirmar3_clicked();
+
+    void on_btnConfirmar4_clicked();
+
 private:
     Ui::menupainel *ui;
     QFile *file;

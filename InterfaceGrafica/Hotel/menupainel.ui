@@ -110,7 +110,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>7</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -634,7 +634,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </property>
      </item>
     </widget>
-    <widget class="QDateEdit" name="dateEdit">
+    <widget class="QDateEdit" name="dateInicial">
      <property name="geometry">
       <rect>
        <x>640</x>
@@ -741,7 +741,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>até</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_2">
+    <widget class="QDateEdit" name="dateFim">
      <property name="geometry">
       <rect>
        <x>890</x>
@@ -840,7 +840,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     </widget>
    </widget>
    <widget class="QWidget" name="page_4">
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="txtNQuarto">
      <property name="geometry">
       <rect>
        <x>560</x>
@@ -921,7 +921,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Cancelar</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="txtNCliente">
      <property name="geometry">
       <rect>
        <x>560</x>
@@ -970,7 +970,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Nome Cliente</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="txtTQuarto">
      <property name="geometry">
       <rect>
        <x>560</x>
@@ -1177,7 +1177,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Nome Cliente</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_8">
+    <widget class="QLineEdit" name="txtRCliente">
      <property name="geometry">
       <rect>
        <x>670</x>
@@ -1200,7 +1200,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>RG</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_9">
+    <widget class="QLineEdit" name="txtRRG">
      <property name="geometry">
       <rect>
        <x>670</x>
@@ -1223,7 +1223,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Número</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_10">
+    <widget class="QLineEdit" name="txtRNumero">
      <property name="geometry">
       <rect>
        <x>670</x>
@@ -1246,7 +1246,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Dia</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_4">
+    <widget class="QDateEdit" name="dateRInicial">
      <property name="geometry">
       <rect>
        <x>670</x>
@@ -1269,7 +1269,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>até</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_5">
+    <widget class="QDateEdit" name="dateRFim">
      <property name="geometry">
       <rect>
        <x>860</x>
@@ -1279,7 +1279,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnConfirmar4">
      <property name="geometry">
       <rect>
        <x>690</x>
@@ -1373,7 +1373,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Número Quarto</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_11">
+    <widget class="QLineEdit" name="txtCCliente">
      <property name="geometry">
       <rect>
        <x>530</x>
@@ -1383,7 +1383,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_12">
+    <widget class="QLineEdit" name="txtCQuarto">
      <property name="geometry">
       <rect>
        <x>830</x>
@@ -1451,7 +1451,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="btnConfirmar3">
      <property name="geometry">
       <rect>
        <x>860</x>
