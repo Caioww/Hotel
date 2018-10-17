@@ -12,21 +12,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e185b-4fe8-4aaa-8a77-bdf4b8f20305" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/buscar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/homemenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovacaoreserva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/renovarreserva.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/searchedit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/Hotel.pro.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/arquivosrecurso.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/arquivosrecurso.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.ui" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/busca.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/checkout.png" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/imagens/checkout.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" beforeDir="false" afterPath="$PROJECT_DIR$/InterfaceGrafica/Hotel/menupainel.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoque.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Estoque.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estoque.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logica.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Logica.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quarto.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Quarto.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SalvaEstoque.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SalvaEstoque.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Senha.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Senha.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.12.2/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/LDE.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/LDE.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Pilha.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Pilha.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Recepcao.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Recepcao.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Senha.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/Senha.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Hotel.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Estoque.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Hotel" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Hotel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Hotel.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Hotel.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hotel2/.idea/vcs.xml" beforeDir="false" />
@@ -44,9 +73,9 @@
     <session id="199038662">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
@@ -64,21 +93,21 @@
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="19" />
           <entry key="h" value="1" />
-          <entry key="hpp" value="33" />
+          <entry key="hpp" value="34" />
           <entry key="string" value="7" />
           <entry key="ui" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="60" />
+          <entry key="ObjectiveC" value="61" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -97,14 +126,64 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.cidr.testingFrameworks.usages" />
     </session>
+    <session id="-1984829946">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cpp" value="136" />
+          <entry key="hpp" value="1737" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="ObjectiveC" value="1873" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="hpp" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.cidr.testingFrameworks.usages" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Senha.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="93" selection-start-line="93" selection-end-line="156" selection-end-column="9" />
+              <folding>
+                <element signature="e#95#114#0" expanded="true" />
+                <element signature="e#389#498#1" />
+                <element signature="e#550#1915#0" />
+                <element signature="e#1928#2297#0" />
+                <element signature="e#5374#7286#0" />
+                <element signature="e#7292#7392#0" />
+                <element signature="e#7292#7823#0" />
+                <element signature="e#7829#8560#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -112,20 +191,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Estoque.hpp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cliente.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+            <state relative-caret-position="127">
+              <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
-                <element signature="e#304#446#0" />
-                <element signature="e#304#2597#0" />
-                <element signature="e#2607#2636#0" />
-                <element signature="e#2603#3927#0" />
-                <element signature="e#3942#4387#1" />
-                <element signature="e#4423#5154#0" />
+                <element signature="e#276#294#0" />
+                <element signature="e#281#5187#0" />
+                <element signature="e#5576#7572#0" />
+                <element signature="e#7262#7289#0" />
+                <element signature="e#7341#7406#0" />
+                <element signature="e#7587#7882#1" />
+                <element signature="e#7926#9469#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Quarto.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -140,6 +229,7 @@
       <find>vet[i].</find>
       <find>max</find>
       <find>todos</find>
+      <find>dois</find>
     </findStrings>
     <replaceStrings>
       <replace>string</replace>
@@ -165,21 +255,22 @@
         <option value="$PROJECT_DIR$/Pilha.hpp" />
         <option value="$PROJECT_DIR$/Recepcao.hpp" />
         <option value="$PROJECT_DIR$/LDS.hpp" />
-        <option value="$PROJECT_DIR$/Quarto.hpp" />
         <option value="$PROJECT_DIR$/Configuracoes.hpp" />
         <option value="$PROJECT_DIR$/No.hpp" />
         <option value="$PROJECT_DIR$/LDDE.hpp" />
         <option value="$PROJECT_DIR$/LDE.hpp" />
         <option value="$PROJECT_DIR$/Funcionario.hpp" />
-        <option value="$PROJECT_DIR$/Senha.hpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Estoque.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Senha.hpp" />
+        <option value="$PROJECT_DIR$/Cliente.hpp" />
+        <option value="$PROJECT_DIR$/Quarto.hpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="187" />
-    <option name="y" value="23" />
+    <option name="x" value="44" />
+    <option name="y" value="79" />
     <option name="width" value="1205" />
     <option name="height" value="800" />
   </component>
@@ -247,19 +338,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="187" y="23" width="1205" height="800" extended-state="0" />
+    <frame x="44" y="79" width="1205" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2170608" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2170608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="10" />
@@ -324,13 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
           <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quarto.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -409,23 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Senha.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="236" column="4" selection-start-line="236" selection-start-column="4" selection-end-line="257" selection-end-column="5" />
-          <folding>
-            <element signature="e#95#114#0" expanded="true" />
-            <element signature="e#554#960#0" />
-            <element signature="e#558#888#0" />
-            <element signature="e#558#5572#0" />
-            <element signature="e#5732#7641#0" />
-            <element signature="e#8059#8159#0" />
-            <element signature="e#8012#8438#1" />
-            <element signature="e#8596#9327#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/string">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -433,29 +501,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Cliente.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+          <folding>
+            <element signature="e#101#120#0" expanded="true" />
+            <element signature="e#276#294#0" />
+            <element signature="e#281#5187#0" />
+            <element signature="e#5576#7572#0" />
+            <element signature="e#7262#7289#0" />
+            <element signature="e#7341#7406#0" />
+            <element signature="e#7587#7882#1" />
+            <element signature="e#7926#9469#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Estoque.hpp">
+    <entry file="file://$PROJECT_DIR$/Senha.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+        <state relative-caret-position="131">
+          <caret line="93" selection-start-line="93" selection-end-line="156" selection-end-column="9" />
           <folding>
-            <element signature="e#101#120#0" expanded="true" />
-            <element signature="e#304#446#0" />
-            <element signature="e#304#2597#0" />
-            <element signature="e#2607#2636#0" />
-            <element signature="e#2603#3927#0" />
-            <element signature="e#3942#4387#1" />
-            <element signature="e#4423#5154#0" />
+            <element signature="e#95#114#0" expanded="true" />
+            <element signature="e#389#498#1" />
+            <element signature="e#550#1915#0" />
+            <element signature="e#1928#2297#0" />
+            <element signature="e#5374#7286#0" />
+            <element signature="e#7292#7392#0" />
+            <element signature="e#7292#7823#0" />
+            <element signature="e#7829#8560#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quarto.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
         </state>
       </provider>
     </entry>

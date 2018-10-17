@@ -134,7 +134,7 @@ public:
                     break;
                 }
             }
-            if (libera == true) {
+            if (libera) {
                 arquivo = fopen("Senhas.txt", "w");
                 /*
                  * primeiro a ser impresso é a senha depois,cargo,nome,nivel
@@ -217,21 +217,27 @@ public:
     /*
      * mudei para ler de um arquivo para buscar a senha e retornar o nivel do funcionario
      */
-    int confereSenha() {
-        LDE segredo;
-        cin >> senha;
-        string aux;
-        FILE *arquivo = fopen("Senhas.txt", "r");
-        while ((fscanf(arquivo, "%i", &aux) != EOF) && (senha != aux)) {
+    bool confereSenha(string code) {
+        FILE* arquivo;
+        arquivo = fopen("Senhas.txt", "r");
+        char txt[5];
+        fscanf(arquivo, "%s", txt);
+        int tamanho = stod(txt);
+        bool ok = false;
+        fclose(arquivo);
+        int tam = stod(txt);
+        funcionario vet[tam];
+        fazVetor(vet);
+        code = code + "\n";
+        //no momento em que a senha inserida for de nivel 1 ja sai do for
+        for (int j = 0; j < sizeof(vet); j++) {
+            string ver = vet[j].senha;
+            if ((vet[j].senha == code) && (vet[j].nivel) == 1) {
+                ok = true;
+                break;
+            }
         }
-        if (senha == aux) {
-            fclose(arquivo);
-            return nivel;
-        } else {
-            fclose(arquivo);
-            puts("senha nao confere");
-            return 10000;
-        }
+        return ok;
     }
 
     void fazVetor(funcionario* vetor){

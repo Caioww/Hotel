@@ -5,7 +5,7 @@
 #ifndef HOTEL_LOGICA_HPP
 #define HOTEL_LOGICA_HPP
 #include "FilaDinamica.hpp"
-#include "Estoque.hpp"
+#include "Cliente.hpp"
 #include "Configuracoes.hpp"
 #include "Pessoa.hpp"
 #include "Quarto.hpp"
