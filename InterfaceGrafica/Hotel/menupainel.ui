@@ -110,7 +110,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>6</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -246,7 +246,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Data Nascimento</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_5">
+    <widget class="QLineEdit" name="txtEstado">
      <property name="geometry">
       <rect>
        <x>830</x>
@@ -256,7 +256,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="txtCity">
      <property name="geometry">
       <rect>
        <x>590</x>
@@ -266,7 +266,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_6">
+    <widget class="QLineEdit" name="txtEmail">
      <property name="geometry">
       <rect>
        <x>590</x>
@@ -276,7 +276,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dateEdit_3">
+    <widget class="QDateEdit" name="dateNasc">
      <property name="geometry">
       <rect>
        <x>860</x>
@@ -299,7 +299,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Celular</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_7">
+    <widget class="QLineEdit" name="txtCel">
      <property name="geometry">
       <rect>
        <x>830</x>

@@ -1,5 +1,7 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
+#include <QMessageBox>
+#include <fstream>
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -26,6 +28,34 @@ void menupainel::on_btnCadastroCliente_clicked()
 
 void menupainel::on_btnConfirmar_clicked()
 {
+    QDate Mydate =ui->dateNasc->date();
+    QString date = Mydate.toString();
+
+    QString nome = ui->txtNome->text();
+    QString idade = ui->txtIdade->text();
+    QString sexo = ui->comboSexo->currentText();
+    QString rg = ui->txtRG->text();
+    QString cidade = ui->txtCity->text();
+    QString estado = ui->txtEstado->text();
+    QString telefone = ui->txtTelefone->text();
+    QString celular = ui->txtCel->text();
+
+
+    using namespace std;
+    ofstream fout("C:\\Users\\Caio\\Documents\\testeCadastro.txt", ios::app);
+
+    fout <<nome.toStdString()<<endl;
+    fout <<idade.toStdString()<<endl;
+    fout <<date.toStdString()<<endl;
+    fout <<sexo.toStdString()<<endl;
+    fout <<rg.toStdString()<<endl;
+    fout <<cidade.toStdString()<<endl;
+    fout <<estado.toStdString()<<endl;
+    fout <<telefone.toStdString()<<endl;
+    fout <<celular.toStdString()<<endl;
+
+    updateClients(true);
+
     ui->stackedWidget->setCurrentIndex(2);
 }
 
@@ -67,4 +97,16 @@ void menupainel::on_btnCheckout_clicked()
 void menupainel::on_btnAdicionarItem_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
+}
+
+void menupainel::updateClients(bool){
+
+    using namespace std;
+    ifstream fin("C:\\Users\\Caio\\Documents\\teste.txt");
+    char temp;
+    QString buffer;
+    while (fin.get(temp)) {
+        buffer.push_back(QChar(temp));
+
+    }
 }

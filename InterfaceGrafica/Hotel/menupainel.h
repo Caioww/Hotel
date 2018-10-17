@@ -2,6 +2,7 @@
 #define MENUPAINEL_H
 
 #include <QDialog>
+#include <QtCore>
 
 namespace Ui {
 class menupainel;
@@ -38,8 +39,12 @@ private slots:
 
     void on_btnAdicionarItem_clicked();
 
+    void updateClients(bool);
+
 private:
     Ui::menupainel *ui;
+    QFile *file;
+    QTextStream stream;
 };
 
 #endif // MENUPAINEL_H
