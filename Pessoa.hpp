@@ -22,6 +22,23 @@ public:
         adulto = false;
 
     }
+    
+    Pessoa(){
+        nome = "-1";
+        sexo = "-1";
+        idade = "-1";
+        RG = "-1";
+        tipoQuarto = "-1";
+        email = "-1";
+        cidade = null;
+        estado = null;
+        telefone = "-1";
+        celular = "-1";
+        modeloCarro = "-1";
+        placa = "-1";
+        adulto = false;
+
+    }
 
     void setCarro(string model){
         modeloCarro = model;

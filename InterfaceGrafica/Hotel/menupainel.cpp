@@ -2,6 +2,7 @@
 #include "ui_menupainel.h"
 #include <QMessageBox>
 #include <fstream>
+#include "Pessoa.hpp"
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -28,6 +29,9 @@ void menupainel::on_btnCadastroCliente_clicked()
 
 void menupainel::on_btnConfirmar_clicked()
 {
+
+
+
     QDate Mydate =ui->dateNasc->date();
     QString date = Mydate.toString();
 
