@@ -92,6 +92,12 @@
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDS.hpp">
 			<Option target="Hotel"/>
 		</Unit>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/No.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/No.hpp">
+			<Option target="Hotel"/>
+		</Unit>
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.cpp">
 			<Option target="Hotel"/>
 		</Unit>

@@ -177,6 +177,33 @@ LDS.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.s
 .PHONY : LDS.cpp.s
 
+No.o: No.cpp.o
+
+.PHONY : No.o
+
+# target to build an object file
+No.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/No.cpp.o
+.PHONY : No.cpp.o
+
+No.i: No.cpp.i
+
+.PHONY : No.i
+
+# target to preprocess a source file
+No.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/No.cpp.i
+.PHONY : No.cpp.i
+
+No.s: No.cpp.s
+
+.PHONY : No.s
+
+# target to generate assembly for a file
+No.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/No.cpp.s
+.PHONY : No.cpp.s
+
 Pilha.o: Pilha.cpp.o
 
 .PHONY : Pilha.o
@@ -300,6 +327,9 @@ help:
 	@echo "... LDS.o"
 	@echo "... LDS.i"
 	@echo "... LDS.s"
+	@echo "... No.o"
+	@echo "... No.i"
+	@echo "... No.s"
 	@echo "... Pilha.o"
 	@echo "... Pilha.i"
 	@echo "... Pilha.s"

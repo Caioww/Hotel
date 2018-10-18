@@ -8,10 +8,9 @@
 #include "Configuracoes.hpp"
 #include "Senha.hpp"
 using namespace std;
-/*
-
-* Edit Caio:Classe para cadastrar os quartos assim depois que cadastrar ,
- dependendo do tipo de quarto que a pessoa quiser só precisaremos chamar a classe.
+/**
+ * melhor colocar o criar quartos nas configuracoes ou seja num arquivo a parte
+ * por isso esta bugando
  */
 class Quarto{
 public:
@@ -124,42 +123,24 @@ public:
             aux[i].inicial = (aux[(i - 1)].faixa_de_numeros) + 1;
             fgets(txt, 100, arquivo);
             aux[i].faixa_de_numeros = aux[i].inicial + aux[i].existentes;
+            aux[i].disponiveis = aux[i].existentes;
         }
             caracteristica vet[tamanho];
         for (int j = 0; j < tamanho; j++) {
-            string a,b;
-            double aa,bb;
-            int aaa,bbb;
-            aaa = aux[j].inicial;
-            bbb = aux[j].faixa_de_numeros;
             for (int i = aux[j].inicial; i < aux[j].faixa_de_numeros; i++) {
                 vet[i].numero = i;
-                aaa = vet[i].numero;
                 vet[i].estado = true;
-                aaa = vet[i].estado;
                 vet[i].valor_diaria = aux[j].valor_diaria;
-                aa = vet[i].valor_diaria;
-                bb = aux[j].valor_diaria;
-                //nao esta pegando o 2º tipo de quarto
                 vet[i].tipoQuarto = aux[j].tipoQuarto;
-                a = vet[i].tipoQuarto;
-                b = aux[j].tipoQuarto;
                 vet[i].descricao = aux[j].descricao;
-                a = vet[i].descricao;
-                b = aux[j].descricao;
                 vet[i].nPessoas = 0;
-                aaa = vet[i].nPessoas;
                 vet[i].andar = aux[j].andar;
-                aaa = vet[i].andar;
-                bbb = aux[j].andar;
                 vet[i].existentes = aux[j].existentes;
-                aaa = vet[i].existentes;
-                bbb = aux[j].existentes;
                 vet[i].disponiveis = aux[j].disponiveis;
-                aaa = vet[i].disponiveis;
-                bbb = aux[j].disponiveis;
                 vet[i].nPessoas = NULL;
-                aaa = vet[i].nPessoas;
+                fprintf(arquivo,"%s\n%s\n%.2f\n%i\n%i\n%i\n%i\n%i\n",vet[i].tipoQuarto.c_str(),
+                        vet[i].descricao.c_str(),vet[i].valor_diaria,vet[i].estado,vet[i].existentes,
+                        vet[i].numero,vet[i].andar,vet[i].nPessoas);
             }
         }
 
@@ -168,6 +149,16 @@ public:
 
     }
 
+    
+    void imprime(){
+        caracteristica* aux;
+        caracteristica* vet;
+        fazVetor(aux,vet);
+        for (int i = 0; i < 2; i++) {
+            cout<<"vetor: "<<aux[i].faixa_de_numeros<<endl;
+            cout<<"auxiliar: "<<vet[i].faixa_de_numeros<<endl;
+        }
+    }
     //para ocupar um quarto
     void populaQuarto(int num){
 

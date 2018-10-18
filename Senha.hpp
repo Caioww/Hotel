@@ -242,6 +242,7 @@ public:
 
     void fazVetor(funcionario* vetor){
         FILE* arquivo;
+        LDE aux(std::string(), std::string(), std::string(), 0);
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);

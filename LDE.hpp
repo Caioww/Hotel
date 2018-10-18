@@ -1,84 +1,87 @@
 #include <iostream>
-#include "Funcionario.hpp"
+#include "No.hpp"
 
 #ifndef LDE_HPP
 #define LDE_HPP
 
 using namespace std;
 
-class LDE{
-    private:
-        int n;
-        Funcionario* primeiro;
+class LDE: public No{
+private:
+    int n;
+    No* primeiro;
 
-    public:
-        LDE(): n(0), primeiro(nullptr){
+public:
+    LDE(string senha, string cargo, string nome, int nivel);
 
+    bool insere(string senha, string cargo, string nome, int nivel){
+        No* novo = new No(senha,cargo,nome,nivel);
+        if(novo == nullptr)
+            return false;
+
+        No* anterior = nullptr;
+        No* atual = primeiro;
+
+        while(atual){
+            anterior = atual;
+            atual = atual->proximo;
         }
 
-        bool insere(string nome,string cargo,string senha,int nivel){
-            Funcionario* novo = new Funcionario;
-            if(novo == nullptr)
-                return false;
+        novo->proximo = atual;
+        if(anterior!=nullptr){
+            anterior->proximo = novo;
+        }else{
+            primeiro = novo;
+        }
+        n++;
+        return true;
+    }
 
-            Funcionario* anterior = nullptr;
-            Funcionario* atual = primeiro;
-
-            while(atual){
-                anterior = atual;
+    bool confereNivel(string senha){
+        No* atual = primeiro;
+        bool ok = false;
+        while(atual){
+            if((atual->senha == (senha+"\n")) && (atual->nivel == 1)) {
+                ok = true;
+                atual = atual->proximo;
+                break;
+            }
+            else{
                 atual = atual->proximo;
             }
+        }
+        return ok;
+    }
 
-            novo->proximo = atual;
-            if(anterior!=nullptr){
-                anterior->proximo = novo;
-            }else{
-                primeiro = novo;
-            }
-            n++;
-            return true;
+    void remove(string senha){
+        No* atual = primeiro;
+        No* fututo = primeiro->proximo;
+        while(atual){
+            atual = atual->proximo;
+            fututo = atual->proximo;
+        }
+        if(fututo->senha == senha){
+            No* aux = fututo;
+            atual->proximo = fututo->proximo;
+            delete fututo;
+        } else{
+            puts("valor nao encontrado");
         }
 
-        Funcionario* busca(string senha){
-            Funcionario* atual = primeiro;
-            while(atual && atual->senha != senha){
-                atual = atual->proximo;
-            }
-            return atual;
-        }
-
-        bool remove(string nome,string cargo){
-            Funcionario* atual = primeiro;
-            Funcionario* fututo = primeiro->proximo;
-            while(atual && atual->nome != nome){
-                atual = atual->proximo;
-                fututo = atual->proximo;
-            }
-            if(fututo->nome == nome){
-                Funcionario* aux = fututo;
-                atual->proximo = fututo->proximo;
-                delete fututo;
-            } else{
-                puts("valor nao encontrado");
-            }
-
-        }
+    }
 
     void imprime(){
-        Funcionario* atual = primeiro;
+        No* atual = primeiro;
         while(atual){
-            cout << atual->senha << endl;
-            cout << atual->nome << endl;
-            cout << atual->cargo << endl;
-            cout << atual->nivel << endl;
+            cout << atual->nome << " ";
             atual = atual->proximo;
         }
         cout << endl;
     }
 
     virtual ~LDE(){
-        Funcionario* atual = primeiro;
-        Funcionario* prox;
+        No* atual = primeiro;
+        No* prox;
         while(atual){
             prox = atual->proximo;
             delete atual;

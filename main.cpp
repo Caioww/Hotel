@@ -4,7 +4,8 @@
 #include "Quarto.hpp"
 int main() {
     Quarto oi;
-    oi.criarQuarto("pobre","para mendigo dormir",2,5,0);
+    //oi.criarQuarto("pobre","para mendigo dormir",2,5,0);
+    oi.imprime();
     cout<<"\nacabou por aqui"<<endl;
     return 0;
 }
