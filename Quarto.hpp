@@ -5,14 +5,12 @@
 #ifndef HOTEL_QUARTO_HPP
 #define HOTEL_QUARTO_HPP
 #include <iostream>
-#include "Pessoa.hpp"
 #include "Configuracoes.hpp"
 #include "Senha.hpp"
 using namespace std;
-/*
-
-* Edit Caio:Classe para cadastrar os quartos assim depois que cadastrar ,
- dependendo do tipo de quarto que a pessoa quiser só precisaremos chamar a classe.
+/**
+ * melhor colocar o criar quartos nas configuracoes ou seja num arquivo a parte
+ * por isso esta bugando
  */
 class Quarto{
 public:
@@ -20,7 +18,9 @@ public:
     //para adcionar quartos, porem os unicos que pode fazer isso é o gerente e o dono
     void criarQuarto(string tipo,string descricao,double valor,int quantidade,int andar){
         string code;
-        cin>>code;
+        puts("Insira sua senha");
+        //cin>>code;
+        code = "zseqsc";
         Senha oi;
         if(oi.confereSenha(code)){
             FILE* arquivo;
@@ -38,12 +38,13 @@ public:
             fclose(arquivo);
             if (quant == 0) {
                 fclose(arquivo);
+                quant++;
                 arquivo = fopen("Caracteristicas_Quartos.txt", "w");
                 fprintf(arquivo, "%i\n", quant);
                 fprintf(arquivo, "%s\n%s\n%f\n%i\n%i\n%i\n%i\n", tipo.c_str(), descricao.c_str(), valor,
                         quantidade,andar,1,(1+quantidade));
                 fclose(arquivo);
-                puts("contato salvo");
+                puts("quarto salvo");
             } else {
                 fclose(arquivo);
                 arquivo = fopen("Caracteristicas_Quartos.txt", "r");
@@ -52,7 +53,6 @@ public:
                 //esse primeiro fgets serve simplismente para não salvar o numero inicial
                 fgets(sem, 50, arquivo);
                 for (int i = 0; i < quant; i++) {
-                    /*
                     fgets(sem, 50, arquivo);
                     vet[i].tipoQuarto = sem;
                     fgets(sem, 50, arquivo);
@@ -67,32 +67,8 @@ public:
                     dois = stod(sem);
                     vet[i].andar = dois;
                     fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].nPessoas = dois;
-                    fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].estado = dois;
-                    fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].numero = dois;
-                    fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].disponiveis = dois;
-                     */
-                    fgets(sem, 50, arquivo);
-                    vet[i].tipoQuarto = sem;
-                    fgets(sem, 50, arquivo);
-                    vet[i].descricao = sem;
-                    fgets(sem, 50, arquivo);
-                    double ola = stod(sem);
-                    vet[i].valor_diaria = ola;
-                    fgets(sem, 50, arquivo);
-                    int dois = stod(sem);
-                    vet[i].existentes = dois;
-                    fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].andar = dois;
                     vet[i].inicial = (vet[(i - 1)].faixa_de_numeros) + 1;
+                    fgets(sem, 50, arquivo);
                     vet[i].faixa_de_numeros = vet[i].inicial + vet[i].existentes;
                 }
                 arquivo = fopen("Caracteristicas_Quartos.txt", "w");
@@ -143,12 +119,15 @@ public:
             fgets(txt, 100, arquivo);
             dois = stod(txt);
             aux[i].andar = dois;
+            fgets(txt, 100, arquivo);
             aux[i].inicial = (aux[(i - 1)].faixa_de_numeros) + 1;
+            fgets(txt, 100, arquivo);
             aux[i].faixa_de_numeros = aux[i].inicial + aux[i].existentes;
+            aux[i].disponiveis = aux[i].existentes;
         }
             caracteristica vet[tamanho];
-        for (int j = 0; j < tamanho; ++j) {
-            for (int i = vet[j].inicial; i <=vet[j].faixa_de_numeros; i++) {
+        for (int j = 0; j < tamanho; j++) {
+            for (int i = aux[j].inicial; i < aux[j].faixa_de_numeros; i++) {
                 vet[i].numero = i;
                 vet[i].estado = true;
                 vet[i].valor_diaria = aux[j].valor_diaria;
@@ -159,6 +138,9 @@ public:
                 vet[i].existentes = aux[j].existentes;
                 vet[i].disponiveis = aux[j].disponiveis;
                 vet[i].nPessoas = NULL;
+                fprintf(arquivo,"%s\n%s\n%.2f\n%i\n%i\n%i\n%i\n%i\n",vet[i].tipoQuarto.c_str(),
+                        vet[i].descricao.c_str(),vet[i].valor_diaria,vet[i].estado,vet[i].existentes,
+                        vet[i].numero,vet[i].andar,vet[i].nPessoas);
             }
         }
 
@@ -167,6 +149,16 @@ public:
 
     }
 
+    
+    void imprime(){
+        caracteristica* aux;
+        caracteristica* vet;
+        fazVetor(aux,vet);
+        for (int i = 0; i < 2; i++) {
+            cout<<"vetor: "<<aux[i].faixa_de_numeros<<endl;
+            cout<<"auxiliar: "<<vet[i].faixa_de_numeros<<endl;
+        }
+    }
     //para ocupar um quarto
     void populaQuarto(int num){
 
@@ -189,7 +181,6 @@ private:
     };
     typedef struct caracteristica caracteristica;
 
-    caracteristica** matriz;
     void fazVetor(caracteristica* aux, caracteristica* vet){
         FILE* arquivo;
         arquivo = fopen("Caracteristicas_Quartos.txt", "r");
