@@ -878,35 +878,6 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
      <property name="sortingEnabled">
       <bool>false</bool>
      </property>
-     <column>
-      <property name="text">
-       <string>Número</string>
-      </property>
-      <property name="foreground">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </brush>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tipo Quarto</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Cliente</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Fim Reserva</string>
-      </property>
-     </column>
     </widget>
     <widget class="QPushButton" name="btnCancel">
      <property name="geometry">
@@ -1044,6 +1015,19 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
      </property>
      <property name="text">
       <string>Editar</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAtualizar">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>160</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Atualizar</string>
      </property>
     </widget>
    </widget>
@@ -1571,7 +1555,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Total</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_14">
+    <widget class="QLineEdit" name="txtItem">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1581,7 +1565,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_15">
+    <widget class="QLineEdit" name="txtADescricao">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1591,7 +1575,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_16">
+    <widget class="QLineEdit" name="txtATotal">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1601,7 +1585,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_17">
+    <widget class="QLineEdit" name="txtAQntd">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1611,7 +1595,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_18">
+    <widget class="QLineEdit" name="txtAPreco">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1647,7 +1631,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Descrição</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="btnAdicionarItem2">
      <property name="geometry">
       <rect>
        <x>720</x>

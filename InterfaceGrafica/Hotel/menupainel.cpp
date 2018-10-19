@@ -1,7 +1,10 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
 #include <QMessageBox>
-#include <fstream>
+#include "Pessoa.hpp"
+#include <QFile>
+#include <QTextStream>
+#include <memory>
 
 
 menupainel::menupainel(QWidget *parent) :
@@ -10,7 +13,12 @@ menupainel::menupainel(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    ui->tableWidget->setColumnCount(4);
+    QStringList titu;
+    titu<<"Cliente"<<"Tipo Quarto"<<"Número"<<"Fim Reserva";
+    ui->tableWidget->setHorizontalHeaderLabels(titu);
 }
+
 
 menupainel::~menupainel()
 {
@@ -29,7 +37,7 @@ void menupainel::on_btnCadastroCliente_clicked()
 
 void menupainel::on_btnConfirmar_clicked()
 {
-
+    Pessoa *p=new Pessoa();
 
 
     QDate Mydate =ui->dateNasc->date();
@@ -39,26 +47,44 @@ void menupainel::on_btnConfirmar_clicked()
     QString idade = ui->txtIdade->text();
     QString sexo = ui->comboSexo->currentText();
     QString rg = ui->txtRG->text();
+    QString email = ui->txtEmail->text();
     QString cidade = ui->txtCity->text();
     QString estado = ui->txtEstado->text();
     QString telefone = ui->txtTelefone->text();
     QString celular = ui->txtCel->text();
 
 
-    using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\testessssss.txt", ios::app);
+    p->setNome(nome.toStdString());
+    p->setIdade(idade.toStdString());
+    p->setSexo(sexo.toStdString());
+    p->setRG(rg.toStdString());
+    p->setData(date.toStdString());
+    p->setEstado(estado.toStdString());
+    p->setCidade(cidade.toStdString());
+    p->setTelefone(telefone.toStdString());
+    p->setCelular(celular.toStdString());
+    p->setEmail(email.toStdString());
 
-    fout <<nome.toStdString()<<endl;
-    fout <<idade.toStdString()<<endl;
-    fout <<date.toStdString()<<endl;
-    fout <<sexo.toStdString()<<endl;
-    fout <<rg.toStdString()<<endl;
-    fout <<cidade.toStdString()<<endl;
-    fout <<estado.toStdString()<<endl;
-    fout <<telefone.toStdString()<<endl;
-    fout <<celular.toStdString()<<endl;
 
-    updateClients(true);
+    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+
+        if(!file.open(QIODevice::Append|QIODevice::Text))
+            return;
+
+        QTextStream out(&file);
+            out<<
+                 QString::fromStdString(p->getNome())<<"-"<<
+                 QString::fromStdString(p->getIdade())<<"-"<<
+                 QString::fromStdString(p->getSexo())<<"-"<<
+                 QString::fromStdString(p->getRG())<<"-"<<
+                 QString::fromStdString(p->getData())<<"-"<<
+                 QString::fromStdString(p->getEstado())<<"-"<<
+                 QString::fromStdString(p->getCidade())<<"-"<<
+                 QString::fromStdString(p->getTelefone())<<"-"<<
+                 QString::fromStdString(p->getCelular())<<"-"<<
+                 QString::fromStdString(p->getEmail())<<"\n";
+       file.close();
+
 
     ui->stackedWidget->setCurrentIndex(2);
 }
@@ -123,23 +149,61 @@ void menupainel::on_btnAdicionarItem_clicked()
     ui->stackedWidget->setCurrentIndex(7);
 }
 
-void menupainel::updateClients(bool){
-
-    using namespace std;
-    ifstream fin("C:\\Users\\Caio\\Documents\\teste.txt");
-    char temp;
-    QString buffer;
-    while (fin.get(temp)) {
-        buffer.push_back(QChar(temp));
-
+void menupainel::borrar(){
+    while(ui->tableWidget->rowCount()>0){
+        ui->tableWidget->removeRow(0);
     }
 }
 
+
+
 void menupainel::on_btnBuscar_clicked()
 {
-    QString NomeCliente = ui->txtNCliente->text();
-    QString NumeroQuarto =ui->txtNQuarto->text();
-    QString TipoQuarto =ui->txtTQuarto->text();
+    borrar();
+    QString nomeBusca = ui->txtNCliente->text();
+    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream in(&sr);
+     while(!in.atEnd()){
+         QString line = in.readLine();
+         QStringList A = line.split("-");
+         QString pro=A[0];
+         if(pro.contains(nomeBusca)==true){
+             lis(line);
+         }
+     }
+     sr.close();
+
+}
+
+void menupainel::lis(QString linea){
+
+
+    QStringList A =linea.split("-");
+    QString Nome=A[0];
+    QString Id=A[1];
+    QString Quarto=A[2];
+    QString Numero=A[3];
+    ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(Nome));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(Id));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2,new QTableWidgetItem(Quarto));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(Numero));
+
+
+    /*if(ui->tableWidget->rowCount() < row + 1)
+        ui->tableWidget->setRowCount(row + 1);
+    if(ui->tableWidget->columnCount() < A.size())
+        ui->tableWidget->setColumnCount( A.size() );
+
+    for( int column = 0; column < A.size(); column++)
+    {
+        QTableWidgetItem *newItem = new QTableWidgetItem( A.at(column) );
+        ui->tableWidget->setItem(row, column, newItem);
+    }
+
+    row++;*/
 }
 
 void menupainel::on_btnConfirmar3_clicked()
@@ -159,4 +223,83 @@ void menupainel::on_btnConfirmar4_clicked()
 
     QDate dateFi = ui->dateRFim->date();
     QString FimDate = dateFi.toString();
+}
+
+void menupainel::on_btnAdicionarItem_2_clicked()
+{
+    QString item =ui->txtItem->text();
+    QString Idescricao=ui->txtADescricao->text();
+    QString Aqntd = ui->txtAQntd->text();
+    QString precoItem = ui->txtAPreco->text();
+    QString TotalIt = ui->txtATotal->text();
+}
+
+void menupainel::on_btnAtualizar_clicked()
+{
+    borrar();
+
+    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+
+        if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+            return;
+
+        QTextStream in(&file);
+        while(!in.atEnd()){
+            QString line =in.readLine();
+            lis(line);
+        }
+       file.close();
+}
+
+void menupainel::on_btnRemover_clicked()
+{
+    QString txt = ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text();
+    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+     QFile sw("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!sw.open(QIODevice::Append | QIODevice::Text))
+            return;
+
+     QTextStream in(&sr);
+     QTextStream out(&sw);
+        while(!in.atEnd()){
+            QString line = in.readLine();
+            QStringList A = line.split("-");
+            QString id = A[0];
+            if(id.compare(txt)!=0){
+                out<<line<<"\n";
+            }
+        }
+
+        sr.close();
+        sw.close();
+
+
+        QFile sw2("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+            if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            sw2.close();
+
+        QFile sw3("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+                if(!sw3.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile sr3("C:\\Users\\Caio\\Documents\\temp1.txt");
+                if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+    QTextStream in3(&sr3);
+    QTextStream out3(&sw3);
+    while(!in3.atEnd()){
+        QString line = in3.readLine();
+        out3<<line<<"\n";
+      }
+    QFile sw4("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        sw4.close();
+        sr3.close();
+        sw3.close();
+
 }
