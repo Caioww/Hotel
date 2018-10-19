@@ -110,7 +110,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>7</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -1571,7 +1571,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Total</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_14">
+    <widget class="QLineEdit" name="txtItem">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1581,7 +1581,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_15">
+    <widget class="QLineEdit" name="txtADescricao">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1591,7 +1591,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_16">
+    <widget class="QLineEdit" name="txtATotal">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1601,7 +1601,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_17">
+    <widget class="QLineEdit" name="txtAQntd">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1611,7 +1611,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_18">
+    <widget class="QLineEdit" name="txtAPreco">
      <property name="geometry">
       <rect>
        <x>810</x>
@@ -1647,7 +1647,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Descrição</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="btnAdicionarItem_2">
      <property name="geometry">
       <rect>
        <x>720</x>

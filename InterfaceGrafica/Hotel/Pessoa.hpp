@@ -156,7 +156,7 @@ public:
     }
 
     void setData(string txt){
-        data= txt;
+        data = txt;
     }
 
     string getData(){
@@ -167,8 +167,8 @@ private:
         string nome;
         string idade;
         string RG;
-	string data;
         string sexo;
+        string data;
         string email;
         string cidade;
         string estado;

@@ -47,6 +47,8 @@ private slots:
 
     void on_btnConfirmar4_clicked();
 
+    void on_btnAdicionarItem_2_clicked();
+
 private:
     Ui::menupainel *ui;
     QFile *file;

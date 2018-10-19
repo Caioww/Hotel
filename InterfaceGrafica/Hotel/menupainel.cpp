@@ -2,7 +2,7 @@
 #include "ui_menupainel.h"
 #include <QMessageBox>
 #include <fstream>
-
+#include "Pessoa.hpp"
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -29,7 +29,7 @@ void menupainel::on_btnCadastroCliente_clicked()
 
 void menupainel::on_btnConfirmar_clicked()
 {
-
+    Pessoa *p=new Pessoa();
 
 
     QDate Mydate =ui->dateNasc->date();
@@ -39,24 +39,35 @@ void menupainel::on_btnConfirmar_clicked()
     QString idade = ui->txtIdade->text();
     QString sexo = ui->comboSexo->currentText();
     QString rg = ui->txtRG->text();
+    QString email = ui->txtEmail->text();
     QString cidade = ui->txtCity->text();
     QString estado = ui->txtEstado->text();
     QString telefone = ui->txtTelefone->text();
     QString celular = ui->txtCel->text();
 
+    p->setNome(nome.toStdString());
+    p->setIdade(idade.toStdString());
+    p->setSexo(sexo.toStdString());
+    p->setRG(rg.toStdString());
+    p->setData(date.toStdString());
+    p->setEstado(estado.toStdString());
+    p->setTelefone(telefone.toStdString());
+    p->setCelular(celular.toStdString());
+    p->setEmail(email.toStdString());
 
     using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\testessssss.txt", ios::app);
+    ofstream fout("C:\\Users\\Caio\\Documents\\testeObjetoBolado.txt", ios::app);
 
-    fout <<nome.toStdString()<<endl;
-    fout <<idade.toStdString()<<endl;
-    fout <<date.toStdString()<<endl;
-    fout <<sexo.toStdString()<<endl;
-    fout <<rg.toStdString()<<endl;
-    fout <<cidade.toStdString()<<endl;
-    fout <<estado.toStdString()<<endl;
-    fout <<telefone.toStdString()<<endl;
-    fout <<celular.toStdString()<<endl;
+    fout <<p->getNome()<<endl;
+    fout <<p->getIdade()<<endl;
+    fout <<p->getSexo()<<endl;
+    fout <<p->getRG()<<endl;
+    fout <<p->getData()<<endl;
+    fout <<p->getCidade()<<endl;
+    fout <<p->getEstado()<<endl;
+    fout <<p->getTelefone()<<endl;
+    fout <<p->getCelular()<<endl;
+    fout <<p->getEmail()<<endl;
 
     updateClients(true);
 
@@ -67,7 +78,6 @@ void menupainel::on_btnConfirmar_2_clicked()
 {
 
     QDate IniDate =ui->dateInicial->date();
-
 
     QDate FimDate =ui->dateFim->date();
 
@@ -159,4 +169,13 @@ void menupainel::on_btnConfirmar4_clicked()
 
     QDate dateFi = ui->dateRFim->date();
     QString FimDate = dateFi.toString();
+}
+
+void menupainel::on_btnAdicionarItem_2_clicked()
+{
+    QString item =ui->txtItem->text();
+    QString Idescricao=ui->txtADescricao->text();
+    QString Aqntd = ui->txtAQntd->text();
+    QString precoItem = ui->txtAPreco->text();
+    QString TotalIt = ui->txtATotal->text();
 }
