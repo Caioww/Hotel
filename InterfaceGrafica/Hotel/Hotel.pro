@@ -33,7 +33,8 @@ SOURCES += \
 HEADERS += \
     login.h \
     cadastrar.h \
-    menupainel.h
+    menupainel.h \
+    Pessoa.hpp
 
 FORMS += \
     login.ui \

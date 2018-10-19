@@ -39,8 +39,6 @@ private slots:
 
     void on_btnAdicionarItem_clicked();
 
-    void updateClients(bool);
-
     void on_btnBuscar_clicked();
 
     void on_btnConfirmar3_clicked();
@@ -48,6 +46,15 @@ private slots:
     void on_btnConfirmar4_clicked();
 
     void on_btnAdicionarItem_2_clicked();
+
+    void lis(QString linea);
+
+    void borrar();
+
+    void on_btnAtualizar_clicked();
+
+    void on_btnRemover_clicked();
+
 
 private:
     Ui::menupainel *ui;
