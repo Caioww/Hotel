@@ -1,16 +1,12 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
 #include <QMessageBox>
-<<<<<<< HEAD
-#include <fstream>
-#include "Pessoa.hpp"
-=======
 #include "Pessoa.hpp"
 #include <QFile>
 #include <QTextStream>
 #include <memory>
 
->>>>>>> InterfaceCaio
+
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -58,31 +54,7 @@ void menupainel::on_btnConfirmar_clicked()
     QString telefone = ui->txtTelefone->text();
     QString celular = ui->txtCel->text();
 
-    p->setNome(nome.toStdString());
-    p->setIdade(idade.toStdString());
-    p->setSexo(sexo.toStdString());
-    p->setRG(rg.toStdString());
-    p->setData(date.toStdString());
-    p->setEstado(estado.toStdString());
-    p->setTelefone(telefone.toStdString());
-    p->setCelular(celular.toStdString());
-    p->setEmail(email.toStdString());
 
-<<<<<<< HEAD
-    using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\testeObjetoBolado.txt", ios::app);
-
-    fout <<p->getNome()<<endl;
-    fout <<p->getIdade()<<endl;
-    fout <<p->getSexo()<<endl;
-    fout <<p->getRG()<<endl;
-    fout <<p->getData()<<endl;
-    fout <<p->getCidade()<<endl;
-    fout <<p->getEstado()<<endl;
-    fout <<p->getTelefone()<<endl;
-    fout <<p->getCelular()<<endl;
-    fout <<p->getEmail()<<endl;
-=======
     p->setNome(nome.toStdString());
     p->setIdade(idade.toStdString());
     p->setSexo(sexo.toStdString());
@@ -113,7 +85,7 @@ void menupainel::on_btnConfirmar_clicked()
                  QString::fromStdString(p->getCelular())<<"-"<<
                  QString::fromStdString(p->getEmail())<<"\n";
        file.close();
->>>>>>> InterfaceCaio
+
 
 
     ui->stackedWidget->setCurrentIndex(2);
@@ -262,8 +234,7 @@ void menupainel::on_btnAdicionarItem_2_clicked()
     QString precoItem = ui->txtAPreco->text();
     QString TotalIt = ui->txtATotal->text();
 }
-<<<<<<< HEAD
-=======
+
 
 void menupainel::on_btnAtualizar_clicked()
 {
@@ -334,4 +305,4 @@ void menupainel::on_btnRemover_clicked()
         sw3.close();
 
 }
->>>>>>> InterfaceCaio
+
