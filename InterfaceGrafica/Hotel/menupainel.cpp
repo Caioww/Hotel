@@ -1,12 +1,19 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
 #include <QMessageBox>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30266a4f8d7056ea41242133b293ef18a33a58eb
 #include "Pessoa.hpp"
 #include <QFile>
 #include <QTextStream>
 #include <memory>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 30266a4f8d7056ea41242133b293ef18a33a58eb
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -54,15 +61,6 @@ void menupainel::on_btnConfirmar_clicked()
     QString telefone = ui->txtTelefone->text();
     QString celular = ui->txtCel->text();
 
-    p->setNome(nome.toStdString());
-    p->setIdade(idade.toStdString());
-    p->setSexo(sexo.toStdString());
-    p->setRG(rg.toStdString());
-    p->setData(date.toStdString());
-    p->setEstado(estado.toStdString());
-    p->setTelefone(telefone.toStdString());
-    p->setCelular(celular.toStdString());
-    p->setEmail(email.toStdString());
 
     p->setNome(nome.toStdString());
     p->setIdade(idade.toStdString());
