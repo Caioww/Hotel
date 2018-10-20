@@ -12,7 +12,9 @@ private:
     No* primeiro;
 
 public:
-    LDE(string senha, string cargo, string nome, int nivel);
+    LDE() : n(0), primeiro(nullptr){
+
+    }
 
     bool insere(string senha, string cargo, string nome, int nivel){
         No* novo = new No(senha,cargo,nome,nivel);
@@ -38,19 +40,58 @@ public:
     }
 
     bool confereNivel(string senha){
-        No* atual = primeiro;
+        FILE* arquivo;
+        arquivo = fopen("Senhas.txt", "r");
+        char txt[5];
+        fscanf(arquivo, "%s", txt);
+        int tamanho = stod(txt);
+        char sem[50];
+        char Senha[50];
+        char* Cargo, Nome;
+        int Nivel;
         bool ok = false;
-        while(atual){
-            if((atual->senha == (senha+"\n")) && (atual->nivel == 1)) {
-                ok = true;
-                atual = atual->proximo;
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        fgets(sem, 50, arquivo);
+        for (int i = 0; i < tamanho; i++) {
+            fgets(Senha, 50, arquivo);
+            fgets(sem, 50, arquivo);
+            //Cargo = sem;
+            fgets(sem, 50, arquivo);
+            //Nome = sem;
+            fgets(sem, 50, arquivo);
+            int dois = stod(sem);
+            //Nivel = dois;
+            if((dois == 1) && (Senha == senha)){
+            ok = true;
                 break;
             }
-            else{
-                atual = atual->proximo;
-            }
+
         }
         return ok;
+    }
+
+    string getNome(No* num){
+        return num->nome;
+    }
+
+    string getCargo(No* num){
+        return num->cargo;
+    }
+
+    string getSenha(No* num){
+        return num->senha;
+    }
+
+    int getNivel(No* num){
+        return num->nivel;
+    }
+
+    No* getPrimeiro(){
+        return primeiro;
+    }
+
+    void anda(No* num){
+        num = num->proximo;
     }
 
     void remove(string senha){

@@ -17,6 +17,10 @@ public:
 
     }
 
+    No() {
+
+    }
+
     ~No(){
         cout << "deletando no" << endl;
     }

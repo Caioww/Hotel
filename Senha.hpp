@@ -11,7 +11,7 @@ using namespace std;
  * temos que colocar os vetores como LDE, por enquanto esta como vetor para facilitar
  * na logica mas temos que resolver isso!!!
  */
-class Senha {
+class Senha{
 private:
     string nome;
     string cargo;
@@ -40,7 +40,7 @@ private:
         int tam = stod(txt);
         fclose(arquivo);
         funcionario vet[tam];
-        fazVetor(vet);
+        //fazVetor(vet);
         for (int i = 0; i < tam; i++) {
             if((vet[i].nome == nome) && (vet[i].cargo == cargo) && (vet[i].senha == senha)){
                 vet[i].nome = nNome;
@@ -107,29 +107,40 @@ public:
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "r");
             funcionario vet[quant];
+            funcionario eu;
             char sem[50];
+            LDE jo;
             //esse primeiro fgets serve simplismente para não salvar o numero inicial
             fgets(sem, 50, arquivo);
             for (int i = 0; i < quant; i++) {
                 fgets(sem, 50, arquivo);
-                vet[i].senha = sem;
+                eu.senha = sem;
                 fgets(sem, 50, arquivo);
-                vet[i].cargo = sem;
+                eu.cargo = sem;
                 fgets(sem, 50, arquivo);
-                vet[i].nome = sem;
+                eu.nome = sem;
                 fgets(sem, 50, arquivo);
                 int dois = stod(sem);
-                vet[i].nivel = dois;
+                eu.nivel = dois;
+                jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
             }
             fclose(arquivo);
             puts("insira a sua senha");
             string code;
-            cin >> code;
+            //cin >> code;
+            code = "abc";
             code = code + "\n";
+            //fazVetor(&jo);
             //no momento em que a senha inserida for de nivel 1 ja sai do for
             for (int j = 0; j < quant; j++) {
+                /*
                 string ver = vet[j].senha;
                 if ((vet[j].senha == code) && (vet[j].nivel) == 1) {
+                    libera = true;
+                    break;
+                }
+                 */
+                if(jo.confereNivel(code)){
                     libera = true;
                     break;
                 }
@@ -141,10 +152,16 @@ public:
                  */
                 quant++;
                 fprintf(arquivo, "%i\n", quant);
+                No* primeiro = jo.getPrimeiro();
                 for (int i = 0; i < (quant-1); i++) {
+                    /*
                     fprintf(arquivo, "%s%s%s%i\n", vet[i].senha.c_str(),
                             vet[i].cargo.c_str(), vet[i].nome.c_str(),
                             vet[i].nivel);
+                            */
+                    fprintf(arquivo, "%s%s%s%i\n", jo.senha.c_str(),
+                            jo.cargo.c_str(), jo.nome.c_str(),
+                            jo.nivel);
                 }
                 fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                         nivel);
@@ -167,7 +184,7 @@ public:
         fscanf(arquivo, "%s", txt);
         int tam = stod(txt);
         funcionario vet[tam];
-        fazVetor(vet);
+        //fazVetor(vet);
         bool libera = false;
         senha = senha + "\n";
         //no momento em que a senha inserida for de nivel 1 ja sai do for
@@ -227,7 +244,7 @@ public:
         fclose(arquivo);
         int tam = stod(txt);
         funcionario vet[tam];
-        fazVetor(vet);
+        //fazVetor(vet);
         code = code + "\n";
         //no momento em que a senha inserida for de nivel 1 ja sai do for
         for (int j = 0; j < sizeof(vet); j++) {
@@ -240,9 +257,10 @@ public:
         return ok;
     }
 
-    void fazVetor(funcionario* vetor){
+    void fazVetor(LDE* jo){
+        funcionario vetor;
         FILE* arquivo;
-        LDE aux(std::string(), std::string(), std::string(), 0);
+        LDE aux;
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
@@ -252,14 +270,16 @@ public:
         fgets(sem, 50, arquivo);
         for (int i = 0; i < tamanho; i++) {
             fgets(sem, 50, arquivo);
-            vetor[i].senha = sem;
+            vetor.senha = sem;
             fgets(sem, 50, arquivo);
-            vetor[i].cargo = sem;
+            vetor.cargo = sem;
             fgets(sem, 50, arquivo);
-            vetor[i].nome = sem;
+            vetor.nome = sem;
             fgets(sem, 50, arquivo);
             int dois = stod(sem);
-            vetor[i].nivel = dois;
+            vetor.nivel = dois;
+            jo->insere(vetor.senha,vetor.cargo,vetor.nome,vetor.nivel);
+
         }
         fclose(arquivo);
     }
