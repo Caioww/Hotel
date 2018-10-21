@@ -8,56 +8,56 @@ using namespace std;
  */
 class Item {
 
-	public:
-		
-	    Item(){
-	        
-	    }
+public:
 
-	    void setItem(string txt){
-	        item = txt;
-	    }
-	    string getItem(){
-	        return item;
-	    }
-		
-		 void setDescricao(string txt){
-	        descricao = txt;
-	    }
-	    string getDescricao(){
-	        return descricao;
-	    }
-		
-		 void setQntd(int txt){
-	        qntd = txt;
-	    }
-	    int getQntd(){
-	        return qntd;
-	    }
-		
-		 void setPreco(string txt){
-	        preco = txt;
-	    }
-	    string getPreco(){
-	        return preco;
-	    } 
-		
-		 void setTotal(string txt){
-	        total = txt;
-	    }
-	    string getTotal(){
-	        return total;
-	    }    
-	   
-   
-	private:
-        string item;
-        string descricao;
-        int qntd;
-        string preco;
-        string total;
-        
-        
+	Item(){
+
+	}
+
+	void setItem(string txt){
+		item = txt;
+	}
+	string getItem(){
+		return item;
+	}
+
+	void setDescricao(string txt){
+		descricao = txt;
+	}
+	string getDescricao(){
+		return descricao;
+	}
+
+	void setQntd(float txt){
+		qntd = txt;
+	}
+	float getQntd(){
+		return qntd;
+	}
+
+	void setPreco(float txt){
+		preco = txt;
+	}
+	float getPreco(){
+		return preco;
+	}
+
+	void setTotal(float txt,float xtx){
+		total = (txt*xtx);
+	}
+	float getTotal(){
+		return total;
+	}
+
+
+private:
+	string item;
+	string descricao;
+	float qntd;
+	float preco;
+	float total;
+
+
 };
 
 
