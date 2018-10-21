@@ -4,7 +4,7 @@
 #include "Quarto.hpp"
 int main() {
     Senha oi;
-    oi.novaPessoa("caio","dono","abc",1);
+    oi.novaPessoa("Maria","dono","abc",1);
     cout<<"\nacabou por aqui"<<endl;
     return 0;
 }

@@ -162,9 +162,8 @@ public:
                 }
                 fclose(arquivo);
                 arquivo = fopen("Senhas.txt", "a");
-                jo.salva();
+                jo.salva((quant-1));
                 jo.imprime();
-                puts("=======================");
                 fprintf(arquivo,"%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                         nivel);
 

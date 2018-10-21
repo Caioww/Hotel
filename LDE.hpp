@@ -120,14 +120,16 @@ public:
         cout << endl;
     }
 
-    void salva(){
+    void salva(int num){
         FILE *arquivo;
         No* atual = primeiro;
-        arquivo = fopen("Senhas.txt", "w");
-        while(atual != NULL){
+        arquivo = fopen("Senhas.txt", "a");
+        int C = 0;
+        while((atual->proximo != NULL) && (C != num)){
             fprintf(arquivo, "%s%s%s%i\n", atual->senha.c_str(), atual->cargo.c_str(),
                     atual->nome.c_str(), atual->nivel);
             atual = atual->proximo;
+            C++;
         }
         puts("");
         fclose(arquivo);
