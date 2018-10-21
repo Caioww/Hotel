@@ -55,6 +55,12 @@ private slots:
 
     void on_btnRemover_clicked();
 
+    void listar(QString linea);
+
+    void on_btnAdicionarItem2_clicked();
+
+    void on_btnAttItem_clicked();
+
 
 private:
     Ui::menupainel *ui;

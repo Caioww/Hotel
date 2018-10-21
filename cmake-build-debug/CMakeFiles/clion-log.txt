@@ -1,5 +1,1 @@
-/Volumes/HD_EXTERNO/computador/web/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel
--- Configuring done
--- Generating done
--- Build files have been written to: /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug
-
+Environment (MinGW/Cygwin/Visual Studio/WSL) is not selected Configure

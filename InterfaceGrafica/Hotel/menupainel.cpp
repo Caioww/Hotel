@@ -1,19 +1,14 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
 #include <QMessageBox>
-<<<<<<< HEAD
-
-=======
->>>>>>> 30266a4f8d7056ea41242133b293ef18a33a58eb
 #include "Pessoa.hpp"
 #include <QFile>
 #include <QTextStream>
 #include <memory>
+#include "Quarto.hpp"
+#include "Item.hpp"
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 30266a4f8d7056ea41242133b293ef18a33a58eb
 
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
@@ -100,22 +95,48 @@ void menupainel::on_btnConfirmar_clicked()
 
 void menupainel::on_btnConfirmar_2_clicked()
 {
+    Quarto *q = new Quarto();
 
     QDate IniDate =ui->dateInicial->date();
-
     QDate FimDate =ui->dateFim->date();
 
 
     QString numero = ui->txtNumero->text();
     QString andar = ui->comboAndar->currentText();
-    QString descricao = ui->txtDescricao->toPlainText();
-    QString caracteristicas = ui->txtCaracteristicas->toPlainText();
     QString tipoQuarto = ui->comboQuarto->currentText();
     QString estado = ui->comboEstado->currentText();
     QString valor = ui->txtDiaria->text();
     QString dateIni = IniDate.toString();
     QString dateFim = FimDate.toString();
     QString pessoas = ui->comboPessoas->currentText();
+
+    q->setNumero(numero.toStdString());
+    q->setAndar(andar.toStdString());
+    q->setTipoQuarto(tipoQuarto.toStdString());
+    q->setEstado(estado.toStdString());
+    q->setValor(valor.toStdString());
+    q->setDateInicial(dateIni.toStdString());
+    q->setDateFim(dateFim.toStdString());
+    q->setPessoas(pessoas.toStdString());
+
+    QFile file("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+
+        if(!file.open(QIODevice::Append|QIODevice::Text))
+            return;
+
+        QTextStream out(&file);
+            out<<
+                 QString::fromStdString(q->getNumero())<<"-"<<
+                 QString::fromStdString(q->getAndar())<<"-"<<
+                 QString::fromStdString(q->getTipoQuarto())<<"-"<<
+                 QString::fromStdString(q->getEstado())<<"-"<<
+                 QString::fromStdString(q->getValor())<<"-"<<
+                 QString::fromStdString(q->getDateInicial())<<"-"<<
+                 QString::fromStdString(q->getDateFim())<<"-"<<
+                 QString::fromStdString(q->getPessoas())<<"-";
+       file.close();
+
+
 
 
 
@@ -200,18 +221,7 @@ void menupainel::lis(QString linea){
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(Numero));
 
 
-    /*if(ui->tableWidget->rowCount() < row + 1)
-        ui->tableWidget->setRowCount(row + 1);
-    if(ui->tableWidget->columnCount() < A.size())
-        ui->tableWidget->setColumnCount( A.size() );
 
-    for( int column = 0; column < A.size(); column++)
-    {
-        QTableWidgetItem *newItem = new QTableWidgetItem( A.at(column) );
-        ui->tableWidget->setItem(row, column, newItem);
-    }
-
-    row++;*/
 }
 
 void menupainel::on_btnConfirmar3_clicked()
@@ -233,14 +243,7 @@ void menupainel::on_btnConfirmar4_clicked()
     QString FimDate = dateFi.toString();
 }
 
-void menupainel::on_btnAdicionarItem_2_clicked()
-{
-    QString item =ui->txtItem->text();
-    QString Idescricao=ui->txtADescricao->text();
-    QString Aqntd = ui->txtAQntd->text();
-    QString precoItem = ui->txtAPreco->text();
-    QString TotalIt = ui->txtATotal->text();
-}
+
 
 
 void menupainel::on_btnAtualizar_clicked()
@@ -313,3 +316,80 @@ void menupainel::on_btnRemover_clicked()
 
 }
 
+
+void menupainel::on_btnAdicionarItem2_clicked()
+{
+
+    Item *it = new Item();
+
+
+    QString descricaoI = ui->txtADescricao->text();
+    QString qntd=ui->txtAQntd->text();
+    QString precoUnit = ui->txtAPreco->text();
+
+
+
+
+    it->setDescricao(descricaoI.toStdString());
+    it->setPreco(precoUnit.toFloat());
+    it->setQntd(qntd.toFloat());
+    it->setTotal(it->getQntd(),it->getPreco());
+
+
+
+
+    QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+
+        if(!file.open(QIODevice::Append|QIODevice::Text))
+            return;
+
+        QTextStream out(&file);
+            out<<
+                 QString::fromStdString(it->getDescricao())<<"-"<<
+                 QString::number(it->getQntd())<<"-"<<
+                 QString::number(it->getPreco())<<"-"<<
+                 QString::number(it->getTotal())<<"\n";
+       file.close();
+
+
+
+
+
+}
+
+void menupainel::on_btnAttItem_clicked()
+{
+    borrar();
+
+    QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+
+        if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+            return;
+
+        QTextStream in(&file);
+        while(!in.atEnd()){
+            QString line =in.readLine();
+            listar(line);
+        }
+       file.close();
+
+
+}
+
+void menupainel::listar(QString linea){
+
+
+    QStringList A =linea.split("-");
+    QString Descricao=A[0];
+    QString Qntd=A[1];
+    QString Preco=A[2];
+    QString Total=A[3];
+    ui->txtTotalValor->setText(Total);
+    ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,0,new QTableWidgetItem(Descricao));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,1,new QTableWidgetItem(Qntd));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem(Preco));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
+
+
+}
