@@ -120,6 +120,19 @@ public:
         cout << endl;
     }
 
+    void salva(){
+        FILE *arquivo;
+        No* atual = primeiro;
+        arquivo = fopen("Senhas.txt", "w");
+        while(atual != NULL){
+            fprintf(arquivo, "%s%s%s%i\n", atual->senha.c_str(), atual->cargo.c_str(),
+                    atual->nome.c_str(), atual->nivel);
+            atual = atual->proximo;
+        }
+        puts("");
+        fclose(arquivo);
+    }
+
     virtual ~LDE(){
         No* atual = primeiro;
         No* prox;

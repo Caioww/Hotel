@@ -130,16 +130,8 @@ public:
             //cin >> code;
             code = "abc";
             code = code + "\n";
-            //fazVetor(&jo);
             //no momento em que a senha inserida for de nivel 1 ja sai do for
             for (int j = 0; j < quant; j++) {
-                /*
-                string ver = vet[j].senha;
-                if ((vet[j].senha == code) && (vet[j].nivel) == 1) {
-                    libera = true;
-                    break;
-                }
-                 */
                 if(jo.confereNivel(code)){
                     libera = true;
                     break;
@@ -152,19 +144,30 @@ public:
                  */
                 quant++;
                 fprintf(arquivo, "%i\n", quant);
+                fclose(arquivo);
+                arquivo = fopen("Senhas.txt", "r");
+                fgets(sem, 50, arquivo);
                 No* primeiro = jo.getPrimeiro();
                 for (int i = 0; i < (quant-1); i++) {
-                    /*
-                    fprintf(arquivo, "%s%s%s%i\n", vet[i].senha.c_str(),
-                            vet[i].cargo.c_str(), vet[i].nome.c_str(),
-                            vet[i].nivel);
-                            */
-                    fprintf(arquivo, "%s%s%s%i\n", jo.senha.c_str(),
-                            jo.cargo.c_str(), jo.nome.c_str(),
-                            jo.nivel);
+                    fgets(sem, 50, arquivo);
+                    eu.senha = sem;
+                    fgets(sem, 50, arquivo);
+                    eu.cargo = sem;
+                    fgets(sem, 50, arquivo);
+                    eu.nome = sem;
+                    fgets(sem, 50, arquivo);
+                    int dois = stod(sem);
+                    eu.nivel = dois;
+                    jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
                 }
-                fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
+                fclose(arquivo);
+                arquivo = fopen("Senhas.txt", "a");
+                jo.salva();
+                jo.imprime();
+                puts("=======================");
+                fprintf(arquivo,"%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                         nivel);
+
                 fclose(arquivo);
                 puts("contato salvo");
             }

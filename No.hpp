@@ -13,7 +13,8 @@ public:
     int nivel;
     string cargo;
     string senha;
-    No(string senha,string cargo,string nome,int nivel): proximo(nullptr){
+    No(string senha,string cargo,string nome,int nivel): proximo(nullptr), senha(senha), cargo(cargo),
+    nome(nome), nivel(nivel){
 
     }
 
