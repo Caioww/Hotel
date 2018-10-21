@@ -94,14 +94,14 @@ public:
         num = num->proximo;
     }
 
-    void remove(string senha){
+    void remove(string nome,string cargo){
         No* atual = primeiro;
         No* fututo = primeiro->proximo;
         while(atual){
             atual = atual->proximo;
             fututo = atual->proximo;
         }
-        if(fututo->senha == senha){
+        if((fututo->nome == nome) && (fututo->cargo == cargo)){
             No* aux = fututo;
             atual->proximo = fututo->proximo;
             delete fututo;

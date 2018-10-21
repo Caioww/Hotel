@@ -74,8 +74,6 @@ public:
      * depois muda a propria senha
      *
      * quanto menor o nivel maior é o controle, 1 é o dono 3 é um atendente
-     *
-     * Ele ja recebe parametros
      */
     void novaPessoa(string nome,string cargo,string senha,int nivel) {
         FILE *arquivo;
@@ -127,8 +125,7 @@ public:
             fclose(arquivo);
             puts("insira a sua senha");
             string code;
-            //cin >> code;
-            code = "abc";
+            cin >> code;
             code = code + "\n";
             //no momento em que a senha inserida for de nivel 1 ja sai do for
             for (int j = 0; j < quant; j++) {
@@ -184,48 +181,21 @@ public:
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
-        int tam = stod(txt);
-        funcionario vet[tam];
+        int tam = static_cast<int>(stod(txt));
+        //funcionario vet[tam];
         //fazVetor(vet);
         bool libera = false;
         senha = senha + "\n";
+        LDE jo;
         //no momento em que a senha inserida for de nivel 1 ja sai do for
-        for (int j = 0; j < tam; j++) {
-            if ((vet[j].senha == senha) && (vet[j].nivel) == 1) {
-                libera = true;
-                break;
-            }
-        }
-        if(libera == true) {
+        libera = jo.confereNivel(senha);
+        if(libera) {
             bool ok = false;
             nome = nome + "\n";
             cargo = cargo + "\n";
-            for (int i = 0; i < tam; i++) {
-                if ((vet[i].nome == nome) && (vet[i].cargo) == cargo) {
-                    funcionario temporario = vet[i];
-                    vet[i] = vet[tam-1];
-                    vet[tam-1] = temporario;
-                    tam = tam - 1;
-                    ok = true;
-                    break;
-                }
-            }
-            if(ok == true){
-                fclose(arquivo);
-                arquivo = fopen("Senhas.txt", "w");
-                fprintf(arquivo, "%i\n", tam);
-                for (int i = 0; i < tam; i++) {
-                    fprintf(arquivo,"%s%s%s%i\n", vet[i].senha.c_str(),
-                            vet[i].cargo.c_str(), vet[i].nome.c_str(),
-                            vet[i].nivel);
-                }
-                fclose(arquivo);
-                puts("contato apagado com sucesso");
-
-            }
-            else{
-                puts("não foi encontrado o funcionario");
-            }
+            fclose(arquivo);
+            jo.remove(nome,cargo);
+            puts("contato apagado com sucesso");
         }
         else{
             puts("voce não tem autorizacão para remover");
