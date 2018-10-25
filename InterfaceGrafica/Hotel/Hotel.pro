@@ -35,7 +35,8 @@ HEADERS += \
     cadastrar.h \
     menupainel.h \
     Pessoa.hpp \
-    ../../Quarto.hpp
+    ../../Quarto.hpp \
+    cadastro.hpp
 
 FORMS += \
     login.ui \

@@ -7,6 +7,7 @@
 #include <memory>
 #include "Quarto.hpp"
 #include "Item.hpp"
+#include "Senha.hpp"
 
 
 
