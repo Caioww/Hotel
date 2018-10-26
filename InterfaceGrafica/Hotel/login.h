@@ -18,8 +18,7 @@ public:
 
 private slots:
     void on_btnEntrar_clicked();
-    bool validacaoLogin();
-    void validacaoFuncionarios();
+
 
 
     void on_btnCadastrar_clicked();

@@ -47,7 +47,7 @@ private slots:
 
     void on_btnAdicionarItem_2_clicked();
 
-    void lis(QString linea);
+    void lis(QString linea,QString linha);
 
     void borrar();
 

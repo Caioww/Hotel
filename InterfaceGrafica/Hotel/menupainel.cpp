@@ -70,24 +70,7 @@ void menupainel::on_btnConfirmar_clicked()
     p->setEmail(email.toStdString());
 
 
-    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
 
-        if(!file.open(QIODevice::Append|QIODevice::Text))
-            return;
-
-        QTextStream out(&file);
-            out<<
-                 QString::fromStdString(p->getNome())<<"-"<<
-                 QString::fromStdString(p->getIdade())<<"-"<<
-                 QString::fromStdString(p->getSexo())<<"-"<<
-                 QString::fromStdString(p->getRG())<<"-"<<
-                 QString::fromStdString(p->getData())<<"-"<<
-                 QString::fromStdString(p->getEstado())<<"-"<<
-                 QString::fromStdString(p->getCidade())<<"-"<<
-                 QString::fromStdString(p->getTelefone())<<"-"<<
-                 QString::fromStdString(p->getCelular())<<"-"<<
-                 QString::fromStdString(p->getEmail())<<"\n";
-       file.close();
 
 
 
@@ -190,37 +173,54 @@ void menupainel::borrar(){
 void menupainel::on_btnBuscar_clicked()
 {
     borrar();
+
     QString nomeBusca = ui->txtNCliente->text();
     QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
      QTextStream in(&sr);
-     while(!in.atEnd()){
+
+
+     QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+         if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
+                 return;
+      QTextStream file(&arch);
+
+     while(!in.atEnd() && !file.atEnd()){
          QString line = in.readLine();
          QStringList A = line.split("-");
+
+         QString linha = file.readLine();
+         QStringList B = linha.split("-");
+
          QString pro=A[0];
          if(pro.contains(nomeBusca)==true){
-             lis(line);
+             lis(line,linha);
          }
      }
      sr.close();
+     arch.close();
 
 }
 
-void menupainel::lis(QString linea){
+void menupainel::lis(QString linea,QString line){
 
 
     QStringList A =linea.split("-");
     QString Nome=A[0];
     QString Id=A[1];
-    QString Quarto=A[2];
-    QString Numero=A[3];
+
+    QStringList B = line.split("-");
+    QString numero = B[0];
+    QString quarto = B[6];
+
+   // QString Quarto=A[2];
+    //QString Numero=A[3];
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(Nome));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(Id));
-    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2,new QTableWidgetItem(Quarto));
-    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(Numero));
-
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2,new QTableWidgetItem(numero));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(quarto));
 
 
 }
@@ -251,15 +251,24 @@ void menupainel::on_btnAtualizar_clicked()
 {
     borrar();
 
+    QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream files(&arch);
+
     QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
 
         if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
 
+
         QTextStream in(&file);
-        while(!in.atEnd()){
+
+        while(!in.atEnd()&&!arch.atEnd()){
             QString line =in.readLine();
-            lis(line);
+            QString linha =files.readLine();
+
+            lis(line,linha);
         }
        file.close();
 }

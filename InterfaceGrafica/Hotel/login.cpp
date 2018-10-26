@@ -20,56 +20,38 @@ Login::~Login()
 }
 
 
-bool Login::validacaoLogin(){
-    QString usuario = ui->txtNome->text();
-    QString senha = ui->txtSenha->text();
-
-    using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\login.txt", ios::app);
-
-    fout <<usuario.toStdString()<<endl;
-    fout <<senha.toStdString()<<endl;
-
-    if(usuario == "Caio Sousa" && senha =="12345"){
-        return true;
-
-    }else{
-        return false;
-    }
-}
-
-void Login::validacaoFuncionarios(){
-    using namespace std;
-    ifstream fin("C:\\Users\\Caio\\Documents\\login.txt");
-    char temp;
-    QString buffer;
-    while (fin.get(temp)) {
-        buffer.push_back(QChar(temp));
-
-    }
-}
 
 
 void Login::on_btnEntrar_clicked()
 
 {
-
-     validacaoFuncionarios();
-
-    if(validacaoLogin()==true){
-
-        close();
-        menupainel menu;
-        menu.exec();
+    QString usuario = ui->txtNome->text();
+    QString senha = ui->txtSenha->text();
 
 
-    }else{
-        QMessageBox::warning(this,"Login","Usuario ou senha incorretos");
+    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream in(&sr);
+     while(!in.atEnd()){
+         QString line = in.readLine();
+         QStringList A = line.split("\n");
+         QString pro=A[0];
+         if(pro.contains(usuario)==true){
+             close();
+             menupainel menu;
+             menu.exec();
+         }
+         else{
+             QMessageBox::warning(this,"Login","Usuario ou senha incorretos");
+         }
+
+
+
+
     }
-
-
-
-
+     sr.close();
 }
 
 void Login::on_btnCadastrar_clicked()

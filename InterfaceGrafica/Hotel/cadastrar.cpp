@@ -23,17 +23,24 @@ void cadastrar::on_btnConfirmar_clicked()
     QString nome=ui->txtNome->text();
     QString senha=ui->txtSenha->text();
     QString confirmarSenha=ui->txtCsenha->text();
+    QString cargo = ui->comboCargo->currentText();
 
     using namespace std;
-    ofstream fout("C:\\Users\\Caio\\Documents\\cadastrar.txt", ios::app);
 
-    fout <<nome.toStdString()<<endl;
+    QFile file("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+
+        if(!file.open(QIODevice::Append|QIODevice::Text))
+            return;
+
+        QTextStream out(&file);
+            out<<
+                 QString::fromStdString(nome.toStdString())<<"-"<<
+                 QString::fromStdString(senha.toStdString())<<"-"<<
+                 QString::fromStdString(cargo.toStdString())<<"\n";
+       file.close();
 
     if(senha == confirmarSenha){
-      fout <<senha.toStdString()<<endl;
       QMessageBox::information(this,"Cadastro","Cadastrado com sucesso");
-
-
 
     }else{
         QMessageBox::warning(this,"Senha","As senhas não conferem");
