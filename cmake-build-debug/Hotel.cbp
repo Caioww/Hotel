@@ -80,7 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Cola.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Cola.hpp">
+			<Option target="Hotel"/>
+		</Unit>
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/InterfaceGrafica/Hotel/Quarto.hpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp">
+			<Option target="Hotel"/>
+		</Unit>
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.hpp">
 			<Option target="Hotel"/>
 		</Unit>
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.cpp">
@@ -89,10 +101,10 @@
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.hpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDS.cpp">
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LES.cpp">
 			<Option target="Hotel"/>
 		</Unit>
-		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDS.hpp">
+		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LES.hpp">
 			<Option target="Hotel"/>
 		</Unit>
 		<Unit filename="/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/No.cpp">

@@ -3,9 +3,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotel.dir/LDE.cpp.o"
   "CMakeFiles/Hotel.dir/Recepcao.cpp.o"
   "CMakeFiles/Hotel.dir/Pilha.cpp.o"
-  "CMakeFiles/Hotel.dir/LDS.cpp.o"
   "CMakeFiles/Hotel.dir/Senha.cpp.o"
   "CMakeFiles/Hotel.dir/No.cpp.o"
+  "CMakeFiles/Hotel.dir/LES.cpp.o"
+  "CMakeFiles/Hotel.dir/LDDE.cpp.o"
+  "CMakeFiles/Hotel.dir/Cola.cpp.o"
   "Hotel.pdb"
   "Hotel"
 )

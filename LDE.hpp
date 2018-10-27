@@ -18,7 +18,6 @@ public:
 
     bool insere(string senha, string cargo, string nome, int nivel){
         No* novo = (No*)malloc(sizeof(No));
-
         novo->escravo.nome = nome;
         novo->escravo.senha = senha;
         novo->escravo.cargo = cargo;

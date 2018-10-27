@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by djalma cunha on 16/09/2018.
 //
@@ -6,6 +8,7 @@
 #define HOTEL_ESTOQUE_HPP
 #include <iostream>
 #include <stdio.h>
+#include "LDDE.hpp"
 using namespace std;
 /*
  * essa classe é para administar o estoque, toalhas, papel, comida por exemplo
@@ -47,7 +50,7 @@ public:
             fclose(arquivo);
         }
         else {
-            produto todos[quant];
+            money todos[quant];
             char sem[1000];
             //esse primeiro fgets serve simplismente para não salvar o numero inicial
             arquivo = fopen("Cliente.txt", "r");
@@ -122,6 +125,59 @@ public:
         puts("Cliente cadastrado com sucesso");
         fclose(arquivo);
     }
+    
+    void addLDDE(string nome, int dia, int mes, int ano,int idade,
+                 string doc,string city,string estado,string tel, string cel,string email,bool sexo){
+        FILE* arquivo;
+        arquivo = fopen("Cliente.txt", "r");
+        char txt[10];
+        fscanf(arquivo, "%s", txt);
+        int quant = static_cast<int>(stod(txt));
+        money todos;
+        char sem[1000];
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        arquivo = fopen("Cliente.txt", "r");
+        fgets(sem, 100, arquivo);
+        for (int i = 0; i < quant; i++) {
+            fgets(sem, 100, arquivo);
+            todos.nome = sem;
+            fgets(sem, 100, arquivo);
+            int dois = static_cast<int>(stod(sem));
+            todos.dia = dois;
+            fgets(sem, 100, arquivo);
+            dois = static_cast<int>(stod(sem));
+            todos.mes = dois;
+            fgets(sem, 100, arquivo);
+            dois = static_cast<int>(stod(sem));
+            todos.ano = dois;
+            fgets(sem, 100, arquivo);
+            dois = static_cast<int>(stod(sem));
+            todos.idade = dois;
+            fgets(sem, 100, arquivo);
+            todos.RG = sem;
+            fgets(sem, 100, arquivo);
+            todos.cidade = sem;
+            fgets(sem, 100, arquivo);
+            todos.estado = sem;
+            fgets(sem, 100, arquivo);
+            todos.telefone = sem;
+            fgets(sem, 100, arquivo);
+            todos.celular = sem;
+            fgets(sem, 100, arquivo);
+            todos.email = sem;
+            fgets(sem, 100, arquivo);
+            if(sem == "M\n"){
+                todos.sexo = true;
+            } else{
+                todos.sexo = false;
+            }
+            ldde->insere(todos.nome,todos.dia, todos.mes, todos.ano,todos.idade,
+                    todos.RG,todos.cidade,todos.estado,todos.telefone, todos.celular,todos.email,todos.sexo);
+        }
+        ldde->insere(nome,dia, mes, ano,idade,doc,city,estado,tel, cel,email,sexo);
+        fclose(arquivo);
+        imprimeLDDE();
+    }
 
     //essa funcao como o proprio nome sugere apenas imprime o estoque ja cadastrado
     void imprimeClientes(){
@@ -171,19 +227,18 @@ public:
         }
     }
 
-    string getRG(){
-        produto aux;
-        return aux.RG;
+    void imprimeLDDE(){
+        ldde->imprime();
     }
 
-    string getRG(int po){
-        produto* aux;
-        return aux[po].RG;
-    }
+    void removeCliente(string nome,string doc){
+        ldde->remove(nome,doc);
 
+    }
+    
 private:
 
-    struct produto {
+    struct money {
         string nome;
         int dia;
         int mes;
@@ -198,50 +253,9 @@ private:
         bool sexo = false;
     };
 
-    typedef struct produto produto;
+    typedef struct money money;
 
-    void fazVetor(produto* vetor){
-        FILE* arquivo;
-        arquivo = fopen("Cliente.txt", "r");
-        char txt[5];
-        fscanf(arquivo, "%s", txt);
-        int tamanho = stod(txt);
-        char sem[50];
-        //esse primeiro fgets serve simplismente para não salvar o numero inicial
-        fgets(sem, 50, arquivo);
-        for (int i = 0; i < tamanho; i++) {
-            fgets(sem, 50, arquivo);
-            vetor[i].nome = sem;
-            fgets(sem, 50, arquivo);
-            vetor[i].dia = stod(sem);
-            fgets(sem, 50, arquivo);
-            vetor[i].mes = stod(sem);
-            fgets(sem, 50, arquivo);
-            vetor[i].ano = stod(sem);
-            fgets(sem, 100, arquivo);
-            int dois = static_cast<int>(stod(sem));
-            vetor[i].idade = dois;
-            fgets(sem, 100, arquivo);
-            vetor[i].RG = sem;
-            fgets(sem, 100, arquivo);
-            vetor[i].cidade = sem;
-            fgets(sem, 100, arquivo);
-            vetor[i].estado = sem;
-            fgets(sem, 100, arquivo);
-            vetor[i].telefone = sem;
-            fgets(sem, 100, arquivo);
-            vetor[i].celular = sem;
-            fgets(sem, 100, arquivo);
-            vetor[i].email = sem;
-            fgets(sem, 100, arquivo);
-            if(sem == "M\n"){
-                vetor[i].sexo = true;
-            } else{
-                vetor[i].sexo = false;
-            }
-        }
-        fclose(arquivo);
-    }
+    LDDE* ldde;
 
 };
 

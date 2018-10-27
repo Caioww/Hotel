@@ -123,6 +123,60 @@ Hotel/fast:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/build
 .PHONY : Hotel/fast
 
+Cola.o: Cola.cpp.o
+
+.PHONY : Cola.o
+
+# target to build an object file
+Cola.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.o
+.PHONY : Cola.cpp.o
+
+Cola.i: Cola.cpp.i
+
+.PHONY : Cola.i
+
+# target to preprocess a source file
+Cola.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.i
+.PHONY : Cola.cpp.i
+
+Cola.s: Cola.cpp.s
+
+.PHONY : Cola.s
+
+# target to generate assembly for a file
+Cola.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.s
+.PHONY : Cola.cpp.s
+
+LDDE.o: LDDE.cpp.o
+
+.PHONY : LDDE.o
+
+# target to build an object file
+LDDE.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.o
+.PHONY : LDDE.cpp.o
+
+LDDE.i: LDDE.cpp.i
+
+.PHONY : LDDE.i
+
+# target to preprocess a source file
+LDDE.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.i
+.PHONY : LDDE.cpp.i
+
+LDDE.s: LDDE.cpp.s
+
+.PHONY : LDDE.s
+
+# target to generate assembly for a file
+LDDE.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.s
+.PHONY : LDDE.cpp.s
+
 LDE.o: LDE.cpp.o
 
 .PHONY : LDE.o
@@ -150,32 +204,32 @@ LDE.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDE.cpp.s
 .PHONY : LDE.cpp.s
 
-LDS.o: LDS.cpp.o
+LES.o: LES.cpp.o
 
-.PHONY : LDS.o
+.PHONY : LES.o
 
 # target to build an object file
-LDS.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.o
-.PHONY : LDS.cpp.o
+LES.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LES.cpp.o
+.PHONY : LES.cpp.o
 
-LDS.i: LDS.cpp.i
+LES.i: LES.cpp.i
 
-.PHONY : LDS.i
+.PHONY : LES.i
 
 # target to preprocess a source file
-LDS.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.i
-.PHONY : LDS.cpp.i
+LES.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LES.cpp.i
+.PHONY : LES.cpp.i
 
-LDS.s: LDS.cpp.s
+LES.s: LES.cpp.s
 
-.PHONY : LDS.s
+.PHONY : LES.s
 
 # target to generate assembly for a file
-LDS.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDS.cpp.s
-.PHONY : LDS.cpp.s
+LES.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LES.cpp.s
+.PHONY : LES.cpp.s
 
 No.o: No.cpp.o
 
@@ -321,12 +375,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Hotel"
+	@echo "... Cola.o"
+	@echo "... Cola.i"
+	@echo "... Cola.s"
+	@echo "... LDDE.o"
+	@echo "... LDDE.i"
+	@echo "... LDDE.s"
 	@echo "... LDE.o"
 	@echo "... LDE.i"
 	@echo "... LDE.s"
-	@echo "... LDS.o"
-	@echo "... LDS.i"
-	@echo "... LDS.s"
+	@echo "... LES.o"
+	@echo "... LES.i"
+	@echo "... LES.s"
 	@echo "... No.o"
 	@echo "... No.i"
 	@echo "... No.s"
