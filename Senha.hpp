@@ -144,7 +144,6 @@ public:
                 fclose(arquivo);
                 arquivo = fopen("Senhas.txt", "r");
                 fgets(sem, 50, arquivo);
-                No* primeiro = jo.getPrimeiro();
                 for (int i = 0; i < (quant-1); i++) {
                     fgets(sem, 50, arquivo);
                     eu.senha = sem;
@@ -180,24 +179,30 @@ public:
         FILE* arquivo;
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
-        fscanf(arquivo, "%s", txt);
-        int tam = static_cast<int>(stod(txt));
-        //funcionario vet[tam];
-        //fazVetor(vet);
         bool libera = false;
-        senha = senha + "\n";
+        fscanf(arquivo, "%s", txt);
+        int quant = stod(txt);
+        funcionario vet[quant];
+        funcionario eu;
+        char sem[50];
         LDE jo;
-        //no momento em que a senha inserida for de nivel 1 ja sai do for
-        libera = jo.confereNivel(senha);
-        if(libera) {
-            bool ok = false;
-            nome = nome + "\n";
-            cargo = cargo + "\n";
-            fclose(arquivo);
-            jo.remove(nome,cargo);
-            puts("contato apagado com sucesso");
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        fgets(sem, 50, arquivo);
+        for (int i = 0; i < quant; i++) {
+            fgets(sem, 50, arquivo);
+            eu.senha = sem;
+            fgets(sem, 50, arquivo);
+            eu.cargo = sem;
+            fgets(sem, 50, arquivo);
+            eu.nome = sem;
+            fgets(sem, 50, arquivo);
+            int dois = stod(sem);
+            eu.nivel = dois;
+            jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
         }
-        else{
+        fclose(arquivo);
+        jo.remove(nome,cargo);
+        if(true){
             puts("voce não tem autorizacão para remover");
         }
         fclose(arquivo);
