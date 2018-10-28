@@ -64,6 +64,8 @@ private slots:
 
     void on_btnConfig_clicked();
 
+    void on_btnEntrarV_clicked();
+
 private:
     Ui::menupainel *ui;
     QFile *file;

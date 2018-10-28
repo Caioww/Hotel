@@ -69,6 +69,23 @@ void menupainel::on_btnConfirmar_clicked()
     p->setCelular(celular.toStdString());
     p->setEmail(email.toStdString());
 
+    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+             if(!file.open(QIODevice::Append|QIODevice::Text))
+                return;
+             QTextStream out(&file);
+                out<<
+                     QString::fromStdString(p->getNome())<<"-"<<
+                     QString::fromStdString(p->getIdade())<<"-"<<
+                     QString::fromStdString(p->getSexo())<<"-"<<
+                     QString::fromStdString(p->getRG())<<"-"<<
+                     QString::fromStdString(p->getData())<<"-"<<
+                     QString::fromStdString(p->getEstado())<<"-"<<
+                     QString::fromStdString(p->getCidade())<<"-"<<
+                     QString::fromStdString(p->getTelefone())<<"-"<<
+                     QString::fromStdString(p->getCelular())<<"-"<<
+                     QString::fromStdString(p->getEmail())<<"\n";
+           file.close();
+
 
 
 
@@ -212,7 +229,7 @@ void menupainel::lis(QString linea,QString line){
 
     QStringList B = line.split("-");
     QString numero = B[0];
-    QString tipoQ = B[1];
+    QString tipoQ = B[2];
     QString quarto = B[6];
 
    // QString Quarto=A[2];
@@ -459,9 +476,11 @@ void menupainel::listar(QString linea){
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem(Preco));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
 
-    float myInt = 0;
-     myInt = myInt + Total.toFloat();
-    ui->txtTotalValor->setText(QString::number(myInt));
+
+
+
+
+
 
 
 
@@ -469,7 +488,50 @@ void menupainel::listar(QString linea){
 
 void menupainel::on_btnConfig_clicked()
 {
-    Login log;
-    log.show();
+    ui->stackedWidget->setCurrentIndex(8);
+
+}
+
+void menupainel::on_btnEntrarV_clicked()
+{
+    QString edtNome = ui->edtNome->text();
+    QString edtSenha = ui->edtSenha->text();
+
+    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+
+        if(!sr.open(QIODevice::ReadOnly|QIODevice::Text))
+            return;
+
+        QTextStream in(&sr);
+        while(!in.atEnd()){
+            QString line = in.readLine();
+            QStringList A = line.split("-");
+            QString pro=A[0];
+            QString cargo =A[2];
+            if(pro.contains(edtNome)==true&&cargo.contains("Gerente")==true){
+                ui->stackedWidget->setCurrentIndex(1);
+                break;
+            }
+
+
+            break;
+
+
+       }
+
+        QString line = in.readLine();
+        QStringList A = line.split("-");
+        QString pro=A[0];
+        QString cargo =A[2];
+        if(pro.contains(edtNome)==false&&cargo.contains("Gerente")==false){
+            QMessageBox::warning(this,"Login","Você não tem autorização para acessar essa funcionalidade");
+
+        }
+
+
+
+
+
+
 
 }
