@@ -66,6 +66,16 @@ private slots:
 
     void on_btnEntrarV_clicked();
 
+    void on_btnFAtualizar_clicked();
+
+    void listarFuncionario(QString linea);
+
+    void on_btnFBuscar_clicked();
+
+    void on_btnFRemover_clicked();
+
+    void on_btnCalcularValor_clicked();
+
 private:
     Ui::menupainel *ui;
     QFile *file;

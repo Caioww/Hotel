@@ -45,6 +45,8 @@ void cadastrar::on_btnConfirmar_clicked()
 
     if(senha == confirmarSenha){
       QMessageBox::information(this,"Cadastro","Cadastrado com sucesso");
+      close();
+
 
     }else{
         QMessageBox::warning(this,"Senha","As senhas não conferem");

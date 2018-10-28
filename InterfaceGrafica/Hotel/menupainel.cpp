@@ -111,14 +111,16 @@ void menupainel::on_btnConfirmar_2_clicked()
     QString dateFim = FimDate.toString();
     QString pessoas = ui->comboPessoas->currentText();
 
-    q->setNumero(numero.toStdString());
+   /* q->setNumero(numero.toStdString());
     q->setAndar(andar.toStdString());
     q->setTipoQuarto(tipoQuarto.toStdString());
     q->setEstado(estado.toStdString());
     q->setValor(valor.toStdString());
     q->setDateInicial(dateIni.toStdString());
     q->setDateFim(dateFim.toStdString());
-    q->setPessoas(pessoas.toStdString());
+    q->setPessoas(pessoas.toStdString());*/
+
+    QString valorTotal = QString::number(FimDate.daysTo(IniDate) * valor.toFloat()) ;
 
     QFile file("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
 
@@ -127,14 +129,18 @@ void menupainel::on_btnConfirmar_2_clicked()
 
         QTextStream out(&file);
             out<<
-                 QString::fromStdString(q->getNumero())<<"-"<<
-                 QString::fromStdString(q->getAndar())<<"-"<<
-                 QString::fromStdString(q->getTipoQuarto())<<"-"<<
-                 QString::fromStdString(q->getEstado())<<"-"<<
-                 QString::fromStdString(q->getValor())<<"-"<<
-                 QString::fromStdString(q->getDateInicial())<<"-"<<
-                 QString::fromStdString(q->getDateFim())<<"-"<<
-                 QString::fromStdString(q->getPessoas())<<"-";
+                 QString::fromStdString(numero.toStdString())<<"-"<<
+                  QString::fromStdString(andar.toStdString())<<"-"<<
+                  QString::fromStdString(tipoQuarto.toStdString())<<"-"<<
+                  QString::fromStdString(estado.toStdString())<<"-"<<
+                  QString::fromStdString(valor.toStdString())<<"-"<<
+                  QString::fromStdString(dateIni.toStdString())<<"-"<<
+                  QString::fromStdString(dateFim.toStdString())<<"-"<<
+                  QString::fromStdString(valorTotal.toStdString())<<"-"<<
+                  QString::fromStdString(pessoas.toStdString())<<"\n";
+
+
+
        file.close();
 
 
@@ -477,11 +483,17 @@ void menupainel::listar(QString linea){
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
 
 
+    int sum=0;
+        for (int i=0;i< ui->tableWidget_2->rowCount();i++) {
+                    QTableWidgetItem *item =  ui->tableWidget_2->item(i,3);
+                    int value = item->text().toFloat(); // get its value
+                   sum+=value;
+                   qDebug() << " values is " << value << " from text " << item->text();
+                }
 
 
 
-
-
+        ui->txtTotalValor->setText(QString::number(sum));
 
 
 }
@@ -509,7 +521,7 @@ void menupainel::on_btnEntrarV_clicked()
             QString pro=A[0];
             QString cargo =A[2];
             if(pro.contains(edtNome)==true&&cargo.contains("Gerente")==true){
-                ui->stackedWidget->setCurrentIndex(1);
+                ui->stackedWidget->setCurrentIndex(9);
                 break;
             }
 
@@ -528,10 +540,137 @@ void menupainel::on_btnEntrarV_clicked()
 
         }
 
+}
+
+void menupainel::on_btnFAtualizar_clicked()
+{
+    borrar();
+
+    QFile func("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+
+        if(!func.open(QIODevice::ReadOnly|QIODevice::Text))
+            return;
+
+        QTextStream list(&func);
+        while(!list.atEnd()){
+            QString line =list.readLine();
+            listarFuncionario(line);
+        }
+       func.close();
+}
+
+void menupainel::listarFuncionario(QString linea){
+
+
+    QStringList A =linea.split("-");
+    QString Nome=A[0];
+    QString Cargo=A[1];
+
+
+    ui->tableWidget_3->insertRow(ui->tableWidget_3->rowCount());
+    ui->tableWidget_3->setItem(ui->tableWidget_3->rowCount()-1,0,new QTableWidgetItem(Nome));
+    ui->tableWidget_3->setItem(ui->tableWidget_3->rowCount()-1,1,new QTableWidgetItem(Cargo));
+}
+
+void menupainel::on_btnFBuscar_clicked()
+{
+    borrar();
+
+    QString nomeBusca = ui->txtNCliente->text();
+    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream in(&sr);
 
 
 
+     while(!in.atEnd()){
+         QString line = in.readLine();
+         QStringList A = line.split("-");
+
+         QString pro=A[0];
+         if(pro.contains(nomeBusca)==true){
+             listarFuncionario(line);
+         }
+     }
+     sr.close();
+
+}
+
+void menupainel::on_btnFRemover_clicked()
+{
+    QString txt = ui->tableWidget_3->item(ui->tableWidget_3->currentRow(),0)->text();
+
+    //CLIENTE
+    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+     QFile sw("C:\\Users\\Caio\\Documents\\temp30.txt");
+        if(!sw.open(QIODevice::Append | QIODevice::Text))
+            return;
 
 
 
+     //CLIENTE
+     QTextStream in(&sr);
+     QTextStream out(&sw);
+
+
+
+        while(!in.atEnd()){
+            QString line = in.readLine();
+            QStringList A = line.split("-");
+            QString id = A[0];
+            if(id.compare(txt)!=0){
+                out<<line<<"\n";
+
+            }
+        }
+
+        sr.close();
+        sw.close();
+
+
+        QFile sw2("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+            if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            sw2.close();
+
+        QFile sw3("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+                if(!sw3.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile sr3("C:\\Users\\Caio\\Documents\\temp30.txt");
+                if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+
+    QTextStream in3(&sr3);
+    QTextStream out3(&sw3);
+
+    while(!in3.atEnd()){
+        QString line = in3.readLine();
+        out3<<line<<"\n";
+
+      }
+
+    QFile sw4("C:\\Users\\Caio\\Documents\\temp30.txt");
+        if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        sw4.close();
+        sr3.close();
+        sw3.close();
+
+}
+
+void menupainel::on_btnCalcularValor_clicked()
+{
+    QDate IniDate =ui->dateInicial->date();
+    QDate FimDate =ui->dateFim->date();
+
+    QString valor = ui->txtDiaria->text();
+
+    QString valorTotal = QString::number(IniDate.daysTo(FimDate) * valor.toFloat()) ;
+
+    ui->txtvalorTotal->setText("R$"+valorTotal);
 }
