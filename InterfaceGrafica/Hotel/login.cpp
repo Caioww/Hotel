@@ -42,17 +42,19 @@ void Login::on_btnEntrar_clicked()
              close();
              menupainel menu;
              menu.exec();
+
          }
-         else{
-             QMessageBox::warning(this,"Login","Usuario ou senha incorretos");
-         }
+     }
 
-
-
-
-    }
+     QString line = in.readLine();
+     QStringList A = line.split("\n");
+     QString pro=A[0];
+     if(pro.contains(usuario)==false){
+        QMessageBox::warning(this,"Login","Usuario ou senha incorretos");
+     }
      sr.close();
 }
+
 
 void Login::on_btnCadastrar_clicked()
 {

@@ -26,8 +26,7 @@ void cadastrar::on_btnConfirmar_clicked()
     QString confirmarSenha=ui->txtCsenha->text();
     QString cargo = ui->comboCargo->currentText();
 
-    LDE l;
-    l.insere(nome.toStdString(),senha.toStdString(),cargo.toStdString());
+
 
 
     using namespace std;
