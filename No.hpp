@@ -23,7 +23,7 @@ public:
     }
 
     ~No(){
-        cout << "deletando no" << endl;
+        delete(proximo);
     }
 
 };

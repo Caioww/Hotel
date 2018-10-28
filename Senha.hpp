@@ -179,7 +179,6 @@ public:
         FILE* arquivo;
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
-        bool libera = false;
         fscanf(arquivo, "%s", txt);
         int quant = stod(txt);
         funcionario vet[quant];
@@ -201,8 +200,7 @@ public:
             jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
         }
         fclose(arquivo);
-        jo.remove(nome,cargo);
-        if(true){
+        if(jo.remove(nome,cargo) == false){
             puts("voce não tem autorizacão para remover");
         }
         fclose(arquivo);

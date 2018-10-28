@@ -75,22 +75,24 @@ public:
         return ok;
     }
 
-    void remove(string nome,string cargo) {
+    bool remove(string nome,string cargo) {
         No *atual = primeiro;
         No *fututo = primeiro->proximo;
+        bool ok = false;
         while (atual) {
             if ((fututo->escravo.nome == nome+"\n") && (fututo->escravo.cargo == cargo+"\n")) {
-                printf("APENAS UM TESTE: %s\n", atual->escravo.nome.c_str());
                 No *aux = fututo;
                 atual->proximo = fututo->proximo;
                 delete fututo;
                 puts("contato apagado");
+                ok = true;
                 break;
             }
             atual = atual->proximo;
             fututo = atual->proximo;
         }
         imprime();
+        return ok;
     }
 
     void imprime(){
