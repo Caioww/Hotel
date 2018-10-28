@@ -8,7 +8,7 @@
 #define HOTEL_ESTOQUE_HPP
 #include <iostream>
 #include <stdio.h>
-#include "LDDE.hpp"
+#include "Fila.hpp"
 using namespace std;
 /*
  * essa classe é para administar o estoque, toalhas, papel, comida por exemplo
@@ -16,7 +16,7 @@ using namespace std;
 class Cliente {
 public:
 
-    /*
+/*
      * essa funcao adiciona novos clientes
      */
     void adciona(string nome, int dia, int mes, int ano,int idade,
@@ -126,7 +126,7 @@ public:
         fclose(arquivo);
     }
     
-    void addLDDE(string nome, int dia, int mes, int ano,int idade,
+    void addFILA(string nome, int dia, int mes, int ano,int idade,
                  string doc,string city,string estado,string tel, string cel,string email,bool sexo){
         FILE* arquivo;
         arquivo = fopen("Cliente.txt", "r");
@@ -176,7 +176,6 @@ public:
         }
         ldde->insere(nome,dia, mes, ano,idade,doc,city,estado,tel, cel,email,sexo);
         fclose(arquivo);
-        imprimeLDDE();
     }
 
     //essa funcao como o proprio nome sugere apenas imprime o estoque ja cadastrado
@@ -227,12 +226,8 @@ public:
         }
     }
 
-    void imprimeLDDE(){
-        ldde->imprime();
-    }
-
     void removeCliente(string nome,string doc){
-        ldde->remove(nome,doc);
+        ldde->remove1(nome,doc);
 
     }
     
@@ -255,7 +250,7 @@ private:
 
     typedef struct money money;
 
-    LDDE* ldde;
+    Fila* ldde;
 
 };
 

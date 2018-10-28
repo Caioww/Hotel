@@ -7,7 +7,6 @@
 #include <iostream>
 using namespace std;
 #define max sizeof(long int)
-template <typename T>
 class Fila {
 private:
     int i,n,f;
@@ -32,7 +31,36 @@ public:
     Fila() : i(0), f(0),n(max+1){
 
     }
-    bool enfileira(T valor) {
+    
+    bool insere(money valor) {
+        f++;
+        if (((f) % n) == i) {
+            return false;
+        }
+        else{
+            f--;
+        }
+
+        v[f] = valor;
+        f = (f + 1) % n;
+        return true;
+    }
+
+    bool insere(string nome, int dia, int mes, int ano,int idade,
+    string RG,string cidade,string estado,string telefone, string celular,string email,bool sexo) {
+        money valor;
+        valor.nome = nome;
+        valor.dia = dia;
+        valor.mes = mes;
+        valor.ano = ano;
+        valor.idade = idade;
+        valor.RG = RG;
+        valor.cidade = cidade;
+        valor.estado = estado;
+        valor.telefone = telefone;
+        valor.celular = celular;
+        valor.email = email;
+        valor.sexo = sexo;
         f++;
         if (((f) % n) == i) {
             return false;
@@ -52,7 +80,7 @@ public:
         int i = 0;
         while(desinfileira(&temp)){
             v2[i] = v[i];
-            cout<<temp<<endl;
+            cout<<temp.nome<<endl;
         }
         *v = *v2;
     }
@@ -62,12 +90,12 @@ public:
         int i = 0;
         while (desinfileira(&temp)){
             if(temp.nome == nome && temp.RG == RG){
-                cout<<"nome: "<<v.nome<<"\naniversario: "<<v.dia<<
-                "/"<<v.mes<<"/"<<v.ano<<"\nidede: "<<
-                v.idade<<"\nRG: "<<v.RG<<"\ncidade: "<<v.cidade<<
-                "\nestado: "<<v.estado<<"\ntelefone: "<<v.telefone<<
-                "\ncelular: "<<v.celular<<"\nemail: "<<v.email<<
-                "\nsexo: "<<v.sexo<<endl;
+                cout<<"nome: "<<v->nome<<"\naniversario: "<<v->dia<<
+                "/"<<v->mes<<"/"<<v->ano<<"\nidede: "<<
+                v->idade<<"\nRG: "<<v->RG<<"\ncidade: "<<v->cidade<<
+                "\nestado: "<<v->estado<<"\ntelefone: "<<v->telefone<<
+                "\ncelular: "<<v->celular<<"\nemail: "<<v->email<<
+                "\nsexo: "<<v->sexo<<endl;
             }
             i++;
         }
@@ -89,7 +117,7 @@ public:
         imprime();
     }
 
-    bool desinfileira(T *err=NULL){
+    bool desinfileira(money *err=NULL){
         if(i == f){
             return false;
         }
