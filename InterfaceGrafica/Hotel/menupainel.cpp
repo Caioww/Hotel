@@ -7,7 +7,7 @@
 #include <memory>
 #include "Quarto.hpp"
 #include "Item.hpp"
-#include "Senha.hpp"
+#include "login.h"
 
 
 
@@ -212,16 +212,16 @@ void menupainel::lis(QString linea,QString line){
 
     QStringList B = line.split("-");
     QString numero = B[0];
+    QString tipoQ = B[1];
     QString quarto = B[6];
 
    // QString Quarto=A[2];
     //QString Numero=A[3];
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(Nome));
-    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(Id));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(tipoQ));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2,new QTableWidgetItem(numero));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(quarto));
-
 
 }
 
@@ -276,6 +276,8 @@ void menupainel::on_btnAtualizar_clicked()
 void menupainel::on_btnRemover_clicked()
 {
     QString txt = ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text();
+
+    //CLIENTE
     QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
@@ -283,21 +285,61 @@ void menupainel::on_btnRemover_clicked()
         if(!sw.open(QIODevice::Append | QIODevice::Text))
             return;
 
+     //QUARTO
+        QFile qr("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+            if(!qr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+         QFile qrto("C:\\Users\\Caio\\Documents\\temp10.txt");
+            if(!qrto.open(QIODevice::Append | QIODevice::Text))
+                return;
+
+
+     //CLIENTE
      QTextStream in(&sr);
      QTextStream out(&sw);
-        while(!in.atEnd()){
+
+     //QUARTO
+     QTextStream cd(&qr);
+     QTextStream cd1(&qrto);
+
+        while(!in.atEnd()&&!qr.atEnd()){
             QString line = in.readLine();
             QStringList A = line.split("-");
             QString id = A[0];
-            if(id.compare(txt)!=0){
+
+            QString linea = in.readLine();
+            QStringList B = linea.split("-");
+            QString idd = B[0];
+
+            if(id.compare(txt)!=0&&idd.compare(txt)!=0){
                 out<<line<<"\n";
+                cd1<<linea<<"\n";
             }
         }
 
         sr.close();
         sw.close();
 
+        qr.close();
+        qrto.close();
 
+        //QUARTO
+        QFile qrto1("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+            if(!qrto1.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            qrto1.close();
+
+        QFile qrto2("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+                if(!qrto2.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile qr1("C:\\Users\\Caio\\Documents\\temp10.txt");
+                if(!qr1.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+
+
+        //CLIENTE
         QFile sw2("C:\\Users\\Caio\\Documents\\testeRemover.txt");
             if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
@@ -311,12 +353,28 @@ void menupainel::on_btnRemover_clicked()
                 if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
+
+     QTextStream cdd1(&qr1);
+    QTextStream cdd2(&qrto2);
     QTextStream in3(&sr3);
     QTextStream out3(&sw3);
-    while(!in3.atEnd()){
+
+    while(!in3.atEnd()&&!cdd1.atEnd()){
         QString line = in3.readLine();
+        QString linea = cdd1.readLine();
+
         out3<<line<<"\n";
+        cdd2<<linea<<"\n";
       }
+
+
+    QFile qrto3("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!qrto3.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        qrto3.close();
+        qrto2.close();
+        qr1.close();
+
     QFile sw4("C:\\Users\\Caio\\Documents\\temp1.txt");
         if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
@@ -394,12 +452,24 @@ void menupainel::listar(QString linea){
     QString Qntd=A[1];
     QString Preco=A[2];
     QString Total=A[3];
-    ui->txtTotalValor->setText(Total);
+
     ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,0,new QTableWidgetItem(Descricao));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,1,new QTableWidgetItem(Qntd));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem(Preco));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
 
+    float myInt = 0;
+     myInt = myInt + Total.toFloat();
+    ui->txtTotalValor->setText(QString::number(myInt));
+
+
+
+}
+
+void menupainel::on_btnConfig_clicked()
+{
+    Login log;
+    log.show();
 
 }

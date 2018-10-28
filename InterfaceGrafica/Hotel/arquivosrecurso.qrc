@@ -31,5 +31,7 @@
         <file>imagens/renovarreserva.png</file>
         <file>imagens/adicionaritem.jpg</file>
         <file>imagens/addproduct.jpg</file>
+        <file>imagens/cadeado.jpg</file>
+        <file>imagens/iconcadeado.png</file>
     </qresource>
 </RCC>

@@ -16,8 +16,12 @@ public:
 
     }
 
-    bool insere(string senha, string cargo, string nome, int nivel){
-        No* novo = new No(senha,cargo,nome,nivel);
+    bool insere(string senha, string cargo, string nome){
+        No* novo = (No*)malloc(sizeof(No));
+        novo->escravo.nome = nome;
+        novo->escravo.senha = senha;
+        novo->escravo.cargo = cargo;
+
         if(novo == nullptr)
             return false;
 
@@ -28,7 +32,6 @@ public:
             anterior = atual;
             atual = atual->proximo;
         }
-
         novo->proximo = atual;
         if(anterior!=nullptr){
             anterior->proximo = novo;
@@ -62,7 +65,7 @@ public:
             int dois = stod(sem);
             //Nivel = dois;
             if((dois == 1) && (Senha == senha)){
-            ok = true;
+                ok = true;
                 break;
             }
 
@@ -70,51 +73,28 @@ public:
         return ok;
     }
 
-    string getNome(No* num){
-        return num->nome;
-    }
-
-    string getCargo(No* num){
-        return num->cargo;
-    }
-
-    string getSenha(No* num){
-        return num->senha;
-    }
-
-    int getNivel(No* num){
-        return num->nivel;
-    }
-
-    No* getPrimeiro(){
-        return primeiro;
-    }
-
-    void anda(No* num){
-        num = num->proximo;
-    }
-
-    void remove(string senha){
-        No* atual = primeiro;
-        No* fututo = primeiro->proximo;
-        while(atual){
+    void remove(string nome,string cargo) {
+        No *atual = primeiro;
+        No *fututo = primeiro->proximo;
+        while (atual) {
+            if ((fututo->escravo.nome == nome+"\n") && (fututo->escravo.cargo == cargo+"\n")) {
+                printf("APENAS UM TESTE: %s\n", atual->escravo.nome.c_str());
+                No *aux = fututo;
+                atual->proximo = fututo->proximo;
+                delete fututo;
+                puts("contato apagado");
+                break;
+            }
             atual = atual->proximo;
             fututo = atual->proximo;
         }
-        if(fututo->senha == senha){
-            No* aux = fututo;
-            atual->proximo = fututo->proximo;
-            delete fututo;
-        } else{
-            puts("valor nao encontrado");
-        }
-
+        imprime();
     }
 
     void imprime(){
         No* atual = primeiro;
         while(atual){
-            cout << atual->nome << " ";
+            cout << atual->escravo.nome << " ";
             atual = atual->proximo;
         }
         cout << endl;
@@ -126,8 +106,8 @@ public:
         arquivo = fopen("Senhas.txt", "a");
         int C = 0;
         while((atual->proximo != NULL) && (C != num)){
-            fprintf(arquivo, "%s%s%s%i\n", atual->senha.c_str(), atual->cargo.c_str(),
-                    atual->nome.c_str(), atual->nivel);
+            fprintf(arquivo, "%s%s%s%i\n", atual->escravo.senha.c_str(), atual->escravo.cargo.c_str(),
+                    atual->escravo.nome.c_str(), atual->escravo.nivel);
             atual = atual->proximo;
             C++;
         }

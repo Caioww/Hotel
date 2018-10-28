@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by djalma cunha on 26/09/18.
 //
 
@@ -33,7 +33,7 @@ private:
         cargo = cargo + "\n";
         senha = senha + "\n";
         FILE* arquivo;
-        arquivo = fopen("Senhas2.txt", "r");
+        arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         bool ok = false;
         fscanf(arquivo, "%s", txt);
@@ -51,7 +51,7 @@ private:
         }
         if(ok == true){
             FILE* arquivo;
-            arquivo = fopen("Senhas2.txt", "w");
+            arquivo = fopen("Senhas.txt", "w");
             fprintf(arquivo,"%i\n",tam);
             for (int i = 0; i < tam; i++) {
                 fprintf(arquivo, "%s\n%s\n%s\n%i\n", vet[i].senha.c_str(),
@@ -74,26 +74,24 @@ public:
      * depois muda a propria senha
      *
      * quanto menor o nivel maior é o controle, 1 é o dono 3 é um atendente
-     *
-     * Ele ja recebe parametros
      */
     void novaPessoa(string nome,string cargo,string senha,int nivel) {
         FILE *arquivo;
         //caso nao exista um arquivo na maquina esse if cria um e salva um 0 inicialmente
-        if ((arquivo = fopen("Senhas2.txt", "r")) == NULL) {
+        if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
             fprintf(arquivo, "0\n");
             fclose(arquivo);
         }
-        arquivo = fopen("Senhas2.txt", "r");
+        arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         bool libera = false;
         fscanf(arquivo, "%s", txt);
         int quant = stod(txt);
         if (quant == 0) {
             fclose(arquivo);
-            arquivo = fopen("Senhas2.txt", "w");
+            arquivo = fopen("Senhas.txt", "w");
             /*
              * primeiro a ser impresso é a senha depois,cargo,nome,nivel
              */
@@ -105,7 +103,7 @@ public:
             puts("contato salvo");
         } else {
             fclose(arquivo);
-            arquivo = fopen("Senhas2.txt", "r");
+            arquivo = fopen("Senhas.txt", "r");
             funcionario vet[quant];
             funcionario eu;
             char sem[50];
@@ -127,8 +125,7 @@ public:
             fclose(arquivo);
             puts("insira a sua senha");
             string code;
-            //cin >> code;
-            code = "abc";
+            cin >> code;
             code = code + "\n";
             //no momento em que a senha inserida for de nivel 1 ja sai do for
             for (int j = 0; j < quant; j++) {
@@ -138,7 +135,7 @@ public:
                 }
             }
             if (libera) {
-                arquivo = fopen("Senhas2.txt", "w");
+                arquivo = fopen("Senhas.txt", "w");
                 /*
                  * primeiro a ser impresso é a senha depois,cargo,nome,nivel
                  */
@@ -147,7 +144,6 @@ public:
                 fclose(arquivo);
                 arquivo = fopen("Senhas.txt", "r");
                 fgets(sem, 50, arquivo);
-                No* primeiro = jo.getPrimeiro();
                 for (int i = 0; i < (quant-1); i++) {
                     fgets(sem, 50, arquivo);
                     eu.senha = sem;
@@ -181,53 +177,32 @@ public:
     //o unico que pode remover um funcionario é o patrao ou o gerente(basicamente nivel 1 ou 2)
     void removeFuncionario(string nome,string cargo,string senha){
         FILE* arquivo;
-        arquivo = fopen("Senhas2.txt", "r");
+        arquivo = fopen("Senhas.txt", "r");
         char txt[5];
-        fscanf(arquivo, "%s", txt);
-        int tam = stod(txt);
-        funcionario vet[tam];
-        //fazVetor(vet);
         bool libera = false;
-        senha = senha + "\n";
-        //no momento em que a senha inserida for de nivel 1 ja sai do for
-        for (int j = 0; j < tam; j++) {
-            if ((vet[j].senha == senha) && (vet[j].nivel) == 1) {
-                libera = true;
-                break;
-            }
+        fscanf(arquivo, "%s", txt);
+        int quant = stod(txt);
+        funcionario vet[quant];
+        funcionario eu;
+        char sem[50];
+        LDE jo;
+        //esse primeiro fgets serve simplismente para não salvar o numero inicial
+        fgets(sem, 50, arquivo);
+        for (int i = 0; i < quant; i++) {
+            fgets(sem, 50, arquivo);
+            eu.senha = sem;
+            fgets(sem, 50, arquivo);
+            eu.cargo = sem;
+            fgets(sem, 50, arquivo);
+            eu.nome = sem;
+            fgets(sem, 50, arquivo);
+            int dois = stod(sem);
+            eu.nivel = dois;
+            jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
         }
-        if(libera == true) {
-            bool ok = false;
-            nome = nome + "\n";
-            cargo = cargo + "\n";
-            for (int i = 0; i < tam; i++) {
-                if ((vet[i].nome == nome) && (vet[i].cargo) == cargo) {
-                    funcionario temporario = vet[i];
-                    vet[i] = vet[tam-1];
-                    vet[tam-1] = temporario;
-                    tam = tam - 1;
-                    ok = true;
-                    break;
-                }
-            }
-            if(ok == true){
-                fclose(arquivo);
-                arquivo = fopen("Senhas2.txt", "w");
-                fprintf(arquivo, "%i\n", tam);
-                for (int i = 0; i < tam; i++) {
-                    fprintf(arquivo,"%s%s%s%i\n", vet[i].senha.c_str(),
-                            vet[i].cargo.c_str(), vet[i].nome.c_str(),
-                            vet[i].nivel);
-                }
-                fclose(arquivo);
-                puts("contato apagado com sucesso");
-
-            }
-            else{
-                puts("não foi encontrado o funcionario");
-            }
-        }
-        else{
+        fclose(arquivo);
+        jo.remove(nome,cargo);
+        if(true){
             puts("voce não tem autorizacão para remover");
         }
         fclose(arquivo);
@@ -238,7 +213,7 @@ public:
      */
     bool confereSenha(string code) {
         FILE* arquivo;
-        arquivo = fopen("Senhas2.txt", "r");
+        arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
         int tamanho = stod(txt);
@@ -263,7 +238,7 @@ public:
         funcionario vetor;
         FILE* arquivo;
         LDE aux;
-        arquivo = fopen("Senhas2.txt", "r");
+        arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
         int tamanho = stod(txt);

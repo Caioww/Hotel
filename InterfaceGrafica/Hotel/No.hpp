@@ -8,17 +8,17 @@ class LDE;
 
 class No{
 public:
+    struct funcionario{
+        string nome;
+        int nivel;
+        string cargo;
+        string senha;
+    };
+    typedef struct funcionario funcionario;
     No* proximo;
-    string nome;
-    int nivel;
-    string cargo;
-    string senha;
-    No(string senha,string cargo,string nome,int nivel): proximo(nullptr), senha(senha), cargo(cargo),
-    nome(nome), nivel(nivel){
+    funcionario escravo;
 
-    }
-
-    No() {
+    No(): proximo(nullptr), escravo(escravo){
 
     }
 
