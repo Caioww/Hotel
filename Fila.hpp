@@ -6,10 +6,9 @@
 #define FILA_FILA_HPP
 #include <iostream>
 using namespace std;
-#define max sizeof(long int)
+#define max 999999
 class Fila {
 private:
-    int i,n,f;
     struct money {
         string nome;
         int dia;
@@ -25,13 +24,18 @@ private:
         bool sexo = false;
     };
     typedef struct money money;
-
     money v[max+1];
 public:
-    Fila() : i(0), f(0),n(max+1){
-
+    int i,n,f;
+    Fila(){
+        inicia();
     }
-    
+
+    void inicia(){
+        i = 0;
+        f = 0;
+        n = max + 1;
+    }
     bool insere(money valor) {
         f++;
         if (((f) % n) == i) {
@@ -48,6 +52,7 @@ public:
 
     bool insere(string nome, int dia, int mes, int ano,int idade,
     string RG,string cidade,string estado,string telefone, string celular,string email,bool sexo) {
+        inicia();
         money valor;
         valor.nome = nome;
         valor.dia = dia;
