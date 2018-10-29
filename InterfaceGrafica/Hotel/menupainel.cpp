@@ -11,6 +11,7 @@
 
 
 
+
 menupainel::menupainel(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::menupainel)
@@ -56,6 +57,9 @@ void menupainel::on_btnConfirmar_clicked()
     QString estado = ui->txtEstado->text();
     QString telefone = ui->txtTelefone->text();
     QString celular = ui->txtCel->text();
+
+    //LDE l;
+    //l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
 
 
     p->setNome(nome.toStdString());

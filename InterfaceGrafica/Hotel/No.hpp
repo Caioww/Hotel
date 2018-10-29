@@ -1,32 +1,47 @@
-#ifndef NO_HPP
-#define NO_HPP
+#ifndef NO_H
+#define NO_H
 
 #include <iostream>
+#include <stdlib.h>
+#include <string>
+
 using namespace std;
 
-class LDE;
-
 class No{
+private:
 public:
-    struct funcionario{
-        string nome;
-        int nivel;
-        string cargo;
-        string senha;
-    };
-    typedef struct funcionario funcionario;
-    No* proximo;
-    funcionario escravo;
+  typedef struct Cliente{
+        string nome,
+	string idade,
+	string sexo,
+	string rg,
+	string data,
+	string email,
+	string cidade,
+	string estado,
+	string telefone,
+	string celular,
+ 	
 
-    No(): proximo(nullptr), escravo(escravo){
+    }Cliente;
 
-    }
+  Cliente c;
 
-    ~No(){
-        cout << "deletando no" << endl;
-    }
+  No *prox;
 
+  No(string nome,string idade,string sexo,string rg,string data,string email,string cidade,string estado,string telefone,string celular) {
+    this->c.nome = nome;
+    this->c.idade = idade;
+    this->c.sexo = sexo;
+    this->c.rg = rg;
+    this->c.data = data;	
+    this->c.email = email;
+    this->c.cidade = cidade;
+    this->c.estado = estado;
+    this->c.telefone= telefone;
+    this->c.celular= celular;
+    this->prox = NULL;
+  }
 };
 
-
-#endif
+#endif // NO_H

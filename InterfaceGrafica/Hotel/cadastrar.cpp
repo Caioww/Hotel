@@ -3,7 +3,6 @@
 #include <QMessageBox>
 #include <fstream>
 #include "login.h"
-#include "LDE.hpp"
 
 
 cadastrar::cadastrar(QWidget *parent) :
