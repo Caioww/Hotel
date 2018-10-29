@@ -84,6 +84,8 @@ private slots:
 
     void listCheck(QString linea,QString line);
 
+    void borrarCheck();
+
 private:
     Ui::menupainel *ui;
     QFile *file;

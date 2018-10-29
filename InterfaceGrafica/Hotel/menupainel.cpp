@@ -207,6 +207,12 @@ void menupainel::borrarFunc(){
     }
 }
 
+void menupainel::borrarCheck(){
+    while(ui->tableWidget_4->rowCount()>0){
+        ui->tableWidget_4->removeRow(0);
+    }
+}
+
 
 
 void menupainel::on_btnBuscar_clicked()
@@ -648,9 +654,17 @@ void menupainel::listar(QString linea){
     int sum=0;
         for (int i=0;i< ui->tableWidget_2->rowCount();i++) {
                     QTableWidgetItem *item =  ui->tableWidget_2->item(i,3);
+
                     int value = item->text().toFloat();
+
                    sum+=value;
                 }
+
+
+            QTableWidgetItem *item2 =  ui->tableWidget_4->item(0,1);
+            int value2 = item2->text().toFloat();
+
+            sum +=value2;
 
 
 
@@ -732,7 +746,7 @@ void menupainel::listarFuncionario(QString linea){
 
 void menupainel::on_btnFBuscar_clicked()
 {
-    borrar();
+    borrarFunc();
 
     QString nomeBusca = ui->txtNCliente->text();
     QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
@@ -835,11 +849,13 @@ void menupainel::on_btnCalcularValor_clicked()
 
 void menupainel::on_pushButton_4_clicked()
 {
+
+
+    borrarCheck();
+
     QString cliente = ui->txtCCliente->text();
 
-    borrar();
 
-    QString nomeBusca = ui->txtNCliente->text();
     QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
@@ -859,7 +875,7 @@ void menupainel::on_pushButton_4_clicked()
          QStringList B = linha.split("-");
 
          QString pro=A[0];
-         if(pro.contains(nomeBusca)==true){
+         if(pro.contains(cliente)==true){
              listCheck(line,linha);
          }
      }
