@@ -989,3 +989,23 @@ void menupainel::on_btnRemoveIt_clicked()
         sw3.close();
 
 }
+
+void menupainel::on_btnVoltarM_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void menupainel::on_btnItCancel_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void menupainel::on_btnVoltarV_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void menupainel::on_btnFuncVolt_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}

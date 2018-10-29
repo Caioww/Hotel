@@ -89,6 +89,14 @@ private slots:
 
     void on_btnRemoveIt_clicked();
 
+    void on_btnVoltarM_clicked();
+
+    void on_btnItCancel_clicked();
+
+    void on_btnVoltarV_clicked();
+
+    void on_btnFuncVolt_clicked();
+
 private:
     Ui::menupainel *ui;
     QFile *file;
