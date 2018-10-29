@@ -10,32 +10,63 @@
 #define num 2
 using namespace std;
 
-template <typename  T>
+
 class Pilha {
 private:
-    T* v;
-
     int topo;
     int max;
 
+    struct caracteristica {
+        float valor_diaria;
+        int nPessoas;
+        bool estado; //Disponivel ou Ocupado;
+        string tipoQuarto;
+        string descricao;//Exemplo:Quarto de frente pro mar
+        int numero;
+        int andar;
+        //Fazer um List que armazena os quartos cadastrados,
+        int disponiveis;
+        int existentes;
+        int inicial;
+        int faixa_de_numeros;
+    };
+    
+    typedef struct caracteristica caracteristica;
+
+    caracteristica* v;
+
     bool realoca(){
         puts("dobrou");
-        T* vTemp = new T[max*2];
+        caracteristica* vTemp = new caracteristica[max*2];
         if(vTemp == NULL){
             return true;
         }
-        memcpy(vTemp,v, sizeof(T)*max);
+        memcpy(vTemp,v, sizeof(caracteristica)*max);
         max *=2;
         delete [] v;
         v = vTemp;
         return true;
     }
 public:
-    Pilha() : v(new T[num]), topo(0),max(num) {
+    Pilha() : v(new caracteristica[num]), topo(0),max(num) {
 
     }
 
-    bool empilha(T valor) {
+    bool empilha(float valor_diaria, int nPessoas, bool estado, string tipoQuarto, string descricao,
+    int numero, int andar, int disponiveis, int existentes, int inicial, int faixa_de_numeros){
+
+        caracteristica valor;
+        valor.valor_diaria = valor_diaria;
+        valor.nPessoas = nPessoas;
+        valor.estado = estado;
+        valor.tipoQuarto = tipoQuarto;
+        valor.descricao = descricao;
+        valor.numero = numero;
+        valor.andar = andar;
+        valor.disponiveis = disponiveis;
+        valor.existentes = existentes;
+        valor.inicial = inicial;
+        valor.faixa_de_numeros = faixa_de_numeros;
         if (topo == max)
             if(!realoca()){
                 return false;
@@ -50,7 +81,9 @@ public:
         delete [] v;
     }
 
-    bool desemplilha(T *des = NULL) {
+    bool desemplilha(float *valor_diaria, int *nPessoas, bool *estado, string *tipoQuarto, string *descricao,
+                     int *numero, int *andar, int *disponiveis, int *existentes, int *inicial, int *faixa_de_numeros) {
+        caracteristica *des;
         if (topo == 0) {
             return false;
         }
@@ -60,26 +93,6 @@ public:
         return true;
     }
 
-
-
-    void operator=(const Pilha <T> &outra){
-        if(this->v){
-            delete[] this->v;
-        }
-        memcpy(this,&outra,sizeof(Pilha<T>));
-        this->v = new T[this->max];
-        memcpy(this->v,outra.v,sizeof(T)*this->max);
-    }
-
-    void operator<<(T valor){
-        empilha(valor);
-    }
-    Pilha<T>& operator >> (T& des){
-        desemplilha(&des);
-    }
-    bool empty(){
-        return topo ==0;
-    }
 };
 
 

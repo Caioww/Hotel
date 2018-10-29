@@ -6,6 +6,7 @@
 #define HOTEL_QUARTO_HPP
 #include <iostream>
 #include "Configuracoes.hpp"
+#include "Pilha.hpp"
 #include "Senha.hpp"
 using namespace std;
 /**
@@ -70,6 +71,10 @@ public:
                     vet[i].inicial = (vet[(i - 1)].faixa_de_numeros) + 1;
                     fgets(sem, 50, arquivo);
                     vet[i].faixa_de_numeros = vet[i].inicial + vet[i].existentes;
+                    prato->empilha(vet[i].valor_diaria,vet[i].nPessoas,vet[i].estado,vet[i].tipoQuarto,
+                            vet[i].descricao,vet[i].numero,vet[i].andar,vet[i].disponiveis,vet[i].existentes,
+                            vet[i].inicial,vet[i].faixa_de_numeros);
+                    auxiliar = vet[i];
                 }
                 arquivo = fopen("Caracteristicas_Quartos.txt", "w");
                 /*
@@ -151,18 +156,14 @@ public:
 
     
     void imprime(){
-        caracteristica* aux;
-        caracteristica* vet;
-        fazVetor(aux,vet);
-        for (int i = 0; i < 2; i++) {
-            cout<<"vetor: "<<aux[i].faixa_de_numeros<<endl;
-            cout<<"auxiliar: "<<vet[i].faixa_de_numeros<<endl;
+        while(prato->desemplilha(&auxiliar.valor_diaria,&auxiliar.nPessoas,&auxiliar.estado,
+                &auxiliar.tipoQuarto,&auxiliar.descricao,&auxiliar.numero,&auxiliar.andar,
+                &auxiliar.disponiveis,&auxiliar.existentes,&auxiliar.inicial,&auxiliar.faixa_de_numeros)){
+            printf("%s%s%f\n%i\n%i\n%i\n%i\n", auxiliar.tipoQuarto.c_str(),
+                    auxiliar.descricao.c_str(), auxiliar.valor_diaria,
+                    auxiliar.existentes, auxiliar.andar, auxiliar.inicial, auxiliar.faixa_de_numeros);
         }
     }
-    //para ocupar um quarto
-    void populaQuarto(int num){
-
-}
 
 private:
     struct caracteristica {
@@ -180,6 +181,9 @@ private:
         int faixa_de_numeros;
     };
     typedef struct caracteristica caracteristica;
+
+    Pilha *prato;
+    caracteristica auxiliar;
 
     void fazVetor(caracteristica* aux, caracteristica* vet){
         FILE* arquivo;
@@ -222,7 +226,6 @@ private:
         }
         fclose(arquivo);
     }
-
 };
 
 
