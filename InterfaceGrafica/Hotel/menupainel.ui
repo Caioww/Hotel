@@ -110,7 +110,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -877,7 +877,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <rect>
        <x>450</x>
        <y>210</y>
-       <width>511</width>
+       <width>521</width>
        <height>241</height>
       </rect>
      </property>
@@ -1356,7 +1356,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QLabel" name="label_43">
      <property name="geometry">
       <rect>
-       <x>770</x>
+       <x>780</x>
        <y>150</y>
        <width>101</width>
        <height>16</height>
@@ -1379,7 +1379,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QLineEdit" name="txtCQuarto">
      <property name="geometry">
       <rect>
-       <x>890</x>
+       <x>910</x>
        <y>150</y>
        <width>113</width>
        <height>22</height>
@@ -1391,7 +1391,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <rect>
        <x>500</x>
        <y>190</y>
-       <width>511</width>
+       <width>521</width>
        <height>201</height>
       </rect>
      </property>
@@ -1407,7 +1407,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
      </column>
      <column>
       <property name="text">
-       <string>Unitário</string>
+       <string>Preço Unitário</string>
       </property>
      </column>
      <column>

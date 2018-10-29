@@ -191,6 +191,18 @@ void menupainel::borrar(){
     }
 }
 
+void menupainel::borrarItem(){
+    while(ui->tableWidget_2->rowCount()>0){
+        ui->tableWidget_2->removeRow(0);
+    }
+}
+
+void menupainel::borrarFunc(){
+    while(ui->tableWidget_3->rowCount()>0){
+        ui->tableWidget_3->removeRow(0);
+    }
+}
+
 
 
 void menupainel::on_btnBuscar_clicked()
@@ -450,7 +462,7 @@ void menupainel::on_btnAdicionarItem2_clicked()
 
 void menupainel::on_btnAttItem_clicked()
 {
-    borrar();
+    borrarItem();
 
     QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
 
@@ -463,6 +475,8 @@ void menupainel::on_btnAttItem_clicked()
             listar(line);
         }
        file.close();
+
+
 
 
 }
@@ -479,8 +493,8 @@ void menupainel::listar(QString linea){
     ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,0,new QTableWidgetItem(Descricao));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,1,new QTableWidgetItem(Qntd));
-    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem(Preco));
-    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem("R$"+Preco));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem("R$"+Total));
 
 
     int sum=0;
@@ -488,12 +502,11 @@ void menupainel::listar(QString linea){
                     QTableWidgetItem *item =  ui->tableWidget_2->item(i,3);
                     int value = item->text().toFloat(); // get its value
                    sum+=value;
-                   qDebug() << " values is " << value << " from text " << item->text();
                 }
 
 
 
-        ui->txtTotalValor->setText(QString::number(sum));
+        ui->txtTotalValor->setText("R$"+QString::number(sum));
 
 
 }
@@ -522,29 +535,26 @@ void menupainel::on_btnEntrarV_clicked()
             QString cargo =A[2];
             if(pro.contains(edtNome)==true&&cargo.contains("Gerente")==true){
                 ui->stackedWidget->setCurrentIndex(9);
-                break;
+
             }
-
-
-            break;
 
 
        }
 
-        QString line = in.readLine();
+        /*QString line = in.readLine();
         QStringList A = line.split("-");
         QString pro=A[0];
         QString cargo =A[2];
         if(pro.contains(edtNome)==false&&cargo.contains("Gerente")==false){
             QMessageBox::warning(this,"Login","Você não tem autorização para acessar essa funcionalidade");
 
-        }
+        }*/
 
 }
 
 void menupainel::on_btnFAtualizar_clicked()
 {
-    borrar();
+    borrarFunc();
 
     QFile func("C:\\Users\\Caio\\Documents\\cadastrar.txt");
 
@@ -615,8 +625,6 @@ void menupainel::on_btnFRemover_clicked()
      QTextStream in(&sr);
      QTextStream out(&sw);
 
-
-
         while(!in.atEnd()){
             QString line = in.readLine();
             QStringList A = line.split("-");
@@ -674,3 +682,5 @@ void menupainel::on_btnCalcularValor_clicked()
 
     ui->txtvalorTotal->setText("R$"+valorTotal);
 }
+
+

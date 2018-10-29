@@ -76,6 +76,10 @@ private slots:
 
     void on_btnCalcularValor_clicked();
 
+    void borrarItem();
+
+    void borrarFunc();
+
 private:
     Ui::menupainel *ui;
     QFile *file;
