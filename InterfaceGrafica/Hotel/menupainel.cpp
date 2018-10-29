@@ -662,13 +662,20 @@ void menupainel::listar(QString linea){
 
 
             QTableWidgetItem *item2 =  ui->tableWidget_4->item(0,1);
-            int value2 = item2->text().toFloat();
+            if(!item2){
 
-            sum +=value2;
+              ui->txtTotalValor->setText("R$"+QString::number(sum));
+
+            }else{
+
+                    int value2 = item2->text().toFloat();
+
+                    sum +=value2;
+                    ui->txtTotalValor->setText("R$"+QString::number(sum));
+            }
 
 
 
-        ui->txtTotalValor->setText("R$"+QString::number(sum));
 
 
 }
