@@ -243,15 +243,13 @@ void menupainel::lis(QString linea,QString line){
 
     QStringList A =linea.split("-");
     QString Nome=A[0];
-    QString Id=A[1];
+
 
     QStringList B = line.split("-");
     QString numero = B[0];
     QString tipoQ = B[2];
     QString quarto = B[6];
 
-   // QString Quarto=A[2];
-    //QString Numero=A[3];
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(Nome));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(tipoQ));
@@ -289,6 +287,7 @@ void menupainel::on_btnAtualizar_clicked()
     QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
         if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
+
      QTextStream files(&arch);
 
     QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
@@ -296,16 +295,17 @@ void menupainel::on_btnAtualizar_clicked()
         if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
 
-
         QTextStream in(&file);
 
-        while(!in.atEnd()&&!arch.atEnd()){
+        while(!in.atEnd()){
             QString line =in.readLine();
             QString linha =files.readLine();
 
             lis(line,linha);
         }
+
        file.close();
+       arch.close();
 }
 
 void menupainel::on_btnRemover_clicked()
@@ -455,6 +455,8 @@ void menupainel::on_btnAdicionarItem2_clicked()
        file.close();
 
 
+       ui->stackedWidget->setCurrentIndex(7);
+
 
 
 
@@ -476,9 +478,6 @@ void menupainel::on_btnAttItem_clicked()
         }
        file.close();
 
-
-
-
 }
 
 void menupainel::listar(QString linea){
@@ -493,14 +492,14 @@ void menupainel::listar(QString linea){
     ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,0,new QTableWidgetItem(Descricao));
     ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,1,new QTableWidgetItem(Qntd));
-    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem("R$"+Preco));
-    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem("R$"+Total));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,2,new QTableWidgetItem(Preco));
+    ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1,3,new QTableWidgetItem(Total));
 
 
     int sum=0;
         for (int i=0;i< ui->tableWidget_2->rowCount();i++) {
                     QTableWidgetItem *item =  ui->tableWidget_2->item(i,3);
-                    int value = item->text().toFloat(); // get its value
+                    int value = item->text().toFloat();
                    sum+=value;
                 }
 

@@ -1019,7 +1019,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
        <x>650</x>
        <y>480</y>
        <width>93</width>
-       <height>28</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -1412,7 +1412,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
      </column>
      <column>
       <property name="text">
-       <string>Total</string>
+       <string>Total (R$)</string>
       </property>
      </column>
     </widget>
@@ -1438,10 +1438,10 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QPushButton" name="btnConfirmar3">
      <property name="geometry">
       <rect>
-       <x>860</x>
-       <y>490</y>
-       <width>93</width>
-       <height>28</height>
+       <x>800</x>
+       <y>470</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -1451,10 +1451,10 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
-       <x>960</x>
-       <y>490</y>
-       <width>93</width>
-       <height>28</height>
+       <x>920</x>
+       <y>470</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -1574,16 +1574,6 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
       <string>Preço Unitário</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="txtItem">
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>200</y>
-       <width>121</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="txtADescricao">
      <property name="geometry">
       <rect>
@@ -1612,19 +1602,6 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
        <width>121</width>
        <height>22</height>
       </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_47">
-     <property name="geometry">
-      <rect>
-       <x>710</x>
-       <y>200</y>
-       <width>55</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Item</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_48">
