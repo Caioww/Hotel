@@ -1422,20 +1422,23 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QPushButton" name="btnAdicionarItem">
      <property name="geometry">
       <rect>
-       <x>500</x>
-       <y>470</y>
-       <width>111</width>
-       <height>31</height>
+       <x>970</x>
+       <y>140</y>
+       <width>51</width>
+       <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/imgs/imagens/additem.jpg);</string>
+     </property>
      <property name="text">
-      <string>Adicionar Item</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="btnAttItem">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>640</x>
        <y>470</y>
        <width>101</width>
        <height>31</height>
@@ -1521,6 +1524,19 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
      </property>
      <property name="text">
       <string>CONSUMO</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnRemoveIt">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>470</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Remover Item</string>
      </property>
     </widget>
    </widget>

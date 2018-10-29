@@ -34,5 +34,7 @@
         <file>imagens/cadeado.jpg</file>
         <file>imagens/iconcadeado.png</file>
         <file>imagens/funcionarios.png</file>
+        <file>imagens/plusicon.png</file>
+        <file>imagens/additem.jpg</file>
     </qresource>
 </RCC>

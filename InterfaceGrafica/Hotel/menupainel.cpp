@@ -854,6 +854,7 @@ void menupainel::on_pushButton_4_clicked()
     borrarCheck();
 
     QString cliente = ui->txtCCliente->text();
+    QString quarto = ui->txtCQuarto->text();
 
 
     QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
@@ -875,6 +876,7 @@ void menupainel::on_pushButton_4_clicked()
          QStringList B = linha.split("-");
 
          QString pro=A[0];
+         QString quart = B[0];
          if(pro.contains(cliente)==true){
              listCheck(line,linha);
          }
@@ -901,5 +903,82 @@ void menupainel::listCheck(QString linea,QString line){
     ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,0,new QTableWidgetItem(Nome));
     ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,1,new QTableWidgetItem(valor));
     ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,2,new QTableWidgetItem(data));
+
+}
+
+void menupainel::on_btnCancel_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+
+void menupainel::on_btnRemoveIt_clicked()
+{
+
+    QString txt = ui->tableWidget_2->item(ui->tableWidget_2->currentRow(),0)->text();
+
+    //CLIENTE
+    QFile sr("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+     QFile sw("C:\\Users\\Caio\\Documents\\temp80.txt");
+        if(!sw.open(QIODevice::Append | QIODevice::Text))
+            return;
+
+
+     QTextStream in(&sr);
+     QTextStream out(&sw);
+
+
+
+        while(!in.atEnd()){
+            QString line = in.readLine();
+            QStringList A = line.split("-");
+            QString id = A[0];
+
+
+
+            if(id.compare(txt)!=0){
+                out<<line<<"\n";
+
+            }
+        }
+
+        sr.close();
+        sw.close();
+
+        QFile sw2("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+            if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            sw2.close();
+
+        QFile sw3("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+                if(!sw3.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile sr3("C:\\Users\\Caio\\Documents\\temp80.txt");
+                if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+
+
+    QTextStream in3(&sr3);
+    QTextStream out3(&sw3);
+
+    while(!in3.atEnd()){
+        QString line = in3.readLine();
+
+        out3<<line<<"\n";
+
+      }
+
+
+    QFile sw4("C:\\Users\\Caio\\Documents\\temp80.txt");
+        if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        sw4.close();
+        sr3.close();
+        sw3.close();
 
 }

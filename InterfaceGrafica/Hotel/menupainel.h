@@ -45,8 +45,6 @@ private slots:
 
     void on_btnConfirmar4_clicked();
 
-    void on_btnAdicionarItem_2_clicked();
-
     void lis(QString linea,QString linha);
 
     void borrar();
@@ -85,6 +83,11 @@ private slots:
     void listCheck(QString linea,QString line);
 
     void borrarCheck();
+
+    void on_btnCancel_clicked();
+
+
+    void on_btnRemoveIt_clicked();
 
 private:
     Ui::menupainel *ui;
