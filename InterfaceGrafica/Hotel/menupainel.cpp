@@ -252,13 +252,13 @@ void menupainel::lis(QString linea,QString line){
     QStringList B = line.split("-");
     QString numero = B[0];
     QString tipoQ = B[2];
-    QString quarto = B[6];
+    QString data = B[6];
 
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(Nome));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(tipoQ));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2,new QTableWidgetItem(numero));
-    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(quarto));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3,new QTableWidgetItem(data));
 
 }
 
@@ -266,19 +266,164 @@ void menupainel::on_btnConfirmar3_clicked()
 {
     QString CNomeCliente = ui->txtCCliente->text();
     QString C=ui->txtCQuarto->text();
+
+    QString txt = ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text();
+
+    //CLIENTE
+    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+     QFile sw("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!sw.open(QIODevice::Append | QIODevice::Text))
+            return;
+
+     //QUARTO
+        QFile qr("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+            if(!qr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+         QFile qrto("C:\\Users\\Caio\\Documents\\temp10.txt");
+            if(!qrto.open(QIODevice::Append | QIODevice::Text))
+                return;
+
+
+     //CLIENTE
+     QTextStream in(&sr);
+     QTextStream out(&sw);
+
+     //QUARTO
+     QTextStream cd(&qr);
+     QTextStream cd1(&qrto);
+
+        while(!in.atEnd()&&!qr.atEnd()){
+            QString line = in.readLine();
+            QStringList A = line.split("-");
+            QString id = A[0];
+
+            QString linea = in.readLine();
+            QStringList B = linea.split("-");
+            QString idd = B[0];
+
+            if(id.compare(txt)!=0&&idd.compare(txt)!=0){
+                out<<line<<"\n";
+                cd1<<linea<<"\n";
+            }
+        }
+
+        sr.close();
+        sw.close();
+
+        qr.close();
+        qrto.close();
+
+        //QUARTO
+        QFile qrto1("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+            if(!qrto1.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            qrto1.close();
+
+        QFile qrto2("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+                if(!qrto2.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile qr1("C:\\Users\\Caio\\Documents\\temp10.txt");
+                if(!qr1.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+
+
+        //CLIENTE
+        QFile sw2("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+            if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
+                   return;
+            sw2.close();
+
+        QFile sw3("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+                if(!sw3.open(QIODevice::Append | QIODevice::Text))
+                    return;
+
+        QFile sr3("C:\\Users\\Caio\\Documents\\temp1.txt");
+                if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+
+
+     QTextStream cdd1(&qr1);
+    QTextStream cdd2(&qrto2);
+    QTextStream in3(&sr3);
+    QTextStream out3(&sw3);
+
+    while(!in3.atEnd()&&!cdd1.atEnd()){
+        QString line = in3.readLine();
+        QString linea = cdd1.readLine();
+
+        out3<<line<<"\n";
+        cdd2<<linea<<"\n";
+      }
+
+
+    QFile qrto3("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!qrto3.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        qrto3.close();
+        qrto2.close();
+        qr1.close();
+
+    QFile sw4("C:\\Users\\Caio\\Documents\\temp1.txt");
+        if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
+                return;
+        sw4.close();
+        sr3.close();
+        sw3.close();
+
 }
+
+
+
 
 void menupainel::on_btnConfirmar4_clicked()
 {
     QString RNomeCliente = ui->txtRCliente->text();
-    QString RRG = ui->txtRRG->text();
-    QString RNumero = ui->txtRNumero->text();
 
+    QString valor = ui->edtRValor->text();
     QDate dateIn = ui->dateRInicial->date();
     QString dataInicio = dateIn.toString();
-
     QDate dateFi = ui->dateRFim->date();
     QString FimDate = dateFi.toString();
+    QString newValue = ui->edtRValor->text();
+
+    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream in(&sr);
+
+     QFile arch("C:\\Users\\Caio\\Documents\\cadastrarQuarto.txt");
+         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                 return;
+      QTextStream out(&arch);
+
+
+
+     /*while(!in.atEnd()){
+         QString line = in.readLine();
+         QStringList A = line.split("-");
+
+         QString linha = out.readLine();
+         QStringList B = linha.split("-");
+
+         QString pro=A[0];
+         if(pro.contains(RNomeCliente)==true){
+
+             B[6] = dateFi.toString();
+             B[5] = dateIn.toString();
+             A[0]=RNomeCliente;
+             B[8]= QString::number(dateIn.daysTo(dateFi)*newValue.toFloat());
+
+
+         }
+     }*/
+
+
+
+
 }
 
 
@@ -687,3 +832,58 @@ void menupainel::on_btnCalcularValor_clicked()
 }
 
 
+
+void menupainel::on_pushButton_4_clicked()
+{
+    QString cliente = ui->txtCCliente->text();
+
+    borrar();
+
+    QString nomeBusca = ui->txtNCliente->text();
+    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
+                return;
+     QTextStream in(&sr);
+
+
+     QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+         if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
+                 return;
+      QTextStream file(&arch);
+
+     while(!in.atEnd() && !file.atEnd()){
+         QString line = in.readLine();
+         QStringList A = line.split("-");
+
+         QString linha = file.readLine();
+         QStringList B = linha.split("-");
+
+         QString pro=A[0];
+         if(pro.contains(nomeBusca)==true){
+             listCheck(line,linha);
+         }
+     }
+     sr.close();
+     arch.close();
+
+
+}
+
+void menupainel::listCheck(QString linea,QString line){
+
+
+    QStringList A =linea.split("-");
+    QString Nome=A[0];
+
+
+    QStringList B = line.split("-");
+
+    QString valor = B[8];
+    QString data = B[6];
+
+    ui->tableWidget_4->insertRow(ui->tableWidget_4->rowCount());
+    ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,0,new QTableWidgetItem(Nome));
+    ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,1,new QTableWidgetItem(valor));
+    ui->tableWidget_4->setItem(ui->tableWidget_4->rowCount()-1,2,new QTableWidgetItem(data));
+
+}

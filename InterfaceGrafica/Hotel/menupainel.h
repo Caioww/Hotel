@@ -80,6 +80,10 @@ private slots:
 
     void borrarFunc();
 
+    void on_pushButton_4_clicked();
+
+    void listCheck(QString linea,QString line);
+
 private:
     Ui::menupainel *ui;
     QFile *file;
