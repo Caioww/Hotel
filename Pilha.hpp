@@ -7,55 +7,38 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "Caracteristicas.hpp"
 #define num 10
 using namespace std;
 
 
 class Pilha {
-private:
+public:
     int topo;
     int maximo;
-
-    struct caracteristica {
-        float valor_diaria;
-        int nPessoas;
-        bool estado; //Disponivel ou Ocupado;
-        string tipoQuarto;
-        string descricao;//Exemplo:Quarto de frente pro mar
-        int numero;
-        int andar;
-        //Fazer um List que armazena os quartos cadastrados,
-        int disponiveis;
-        int existentes;
-        int inicial;
-        int faixa_de_numeros;
-    };
-
-    typedef struct caracteristica caracteristica;
-
-    caracteristica* v;
+    Caracteristicas* v;
 
     bool realoca(){
         puts("dobrou");
-        caracteristica* vTemp = new caracteristica[maximo*2];
+        Caracteristicas* vTemp = new Caracteristicas[maximo*2];
         if(vTemp == NULL){
             return true;
         }
-        memcpy(vTemp,v, sizeof(caracteristica)*maximo);
+        memcpy(vTemp,v, sizeof(Caracteristicas)*maximo);
         maximo *=2;
         delete [] v;
         v = vTemp;
         return true;
     }
-public:
-    Pilha() : v(new caracteristica[num]),topo(0),maximo(num){
+
+    Pilha() : v(new Caracteristicas[num]),topo(0),maximo(num){
 
     }
 
     bool empilha(float valor_diaria, int nPessoas, bool estado, string tipoQuarto, string descricao,
                  int numero, int andar, int disponiveis, int existentes, int inicial, int faixa_de_numeros){
 
-        caracteristica valor;
+        Caracteristicas valor;
         valor.valor_diaria = valor_diaria;
         valor.nPessoas = nPessoas;
         valor.estado = estado;
@@ -76,19 +59,27 @@ public:
         v[topo++] = valor;
         return true;
     }
+    bool empilha(Caracteristicas valor){
+        if (topo == maximo)
+            if(!realoca()){
+                return false;
+            }
 
-    virtual ~Pilha(){
-        delete [] v;
+
+        v[topo++] = valor;
+        return true;
     }
 
+
     //bolar esquema
-    bool desemplilha(Pilha *des = NULL) {
+    bool desemplilha(Caracteristicas *des = NULL) {
         if (topo == 0) {
             return false;
         }
         topo--;
         if(des)
-            *des = &v[topo];
+
+            *des = v[topo];
         return true;
     }
 

@@ -4,5 +4,6 @@
 int main() {
     Quarto oi;
     oi.ocuparQuarto(200,3,"top","top",2,9,2);
+    oi.imprime();
     return 0;
 }

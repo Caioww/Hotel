@@ -8,7 +8,7 @@
 using namespace std;
 #define max 999
 class Fila {
-private:
+public:
     struct money {
         string nome;
         int dia;
@@ -27,7 +27,7 @@ private:
     money v[max+1];
     int i,n,f;
     
-public:
+
     Fila() : i(0), f(0),n(max+1){
 
     }

@@ -8,6 +8,7 @@
 #include "Configuracoes.hpp"
 #include "Pilha.hpp"
 #include "Senha.hpp"
+#include "Caracteristicas.hpp"
 using namespace std;
 /**
  * melhor colocar o criar quartos nas configuracoes ou seja num arquivo a parte
@@ -30,33 +31,17 @@ public:
     void imprime(){
         Pilha q;
         q = prato;
-        int x;
-        while (prato.desemplilha(&q)){
-            cout<< q << endl;
+        while (prato.desemplilha(&auxiliar)){
+            prato.empilha(auxiliar);
         }
     }
 
 private:
-    struct caracteristica {
-        float valor_diaria;
-        int nPessoas;
-        bool estado; //Disponivel ou Ocupado;
-        string tipoQuarto;
-        string descricao;//Exemplo:Quarto de frente pro mar
-        int numero;
-        int andar;
-        //Fazer um List que armazena os quartos cadastrados,
-        int disponiveis;
-        int existentes;
-        int inicial;
-        int faixa_de_numeros;
-    };
-    typedef struct caracteristica caracteristica;
-
+    
     Pilha prato;
-    caracteristica auxiliar;
+    Caracteristicas auxiliar;
 
-    void fazVetor(caracteristica* aux, caracteristica* vet){
+    void fazVetor(Caracteristicas* aux, Caracteristicas* vet){
         FILE* arquivo;
         arquivo = fopen("Caracteristicas_Quartos.txt", "r");
         char txt[100] = "oi\n";
