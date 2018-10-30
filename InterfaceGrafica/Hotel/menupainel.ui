@@ -110,7 +110,7 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="currentIndex">
-    <number>9</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label_3">
@@ -1495,8 +1495,8 @@ background-image: url(:/imgs/imagens/configuracoes.png);</string>
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>410</y>
+       <x>50</x>
+       <y>470</y>
        <width>101</width>
        <height>31</height>
       </rect>

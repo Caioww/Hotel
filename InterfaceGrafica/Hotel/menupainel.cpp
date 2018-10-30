@@ -1,11 +1,9 @@
 #include "menupainel.h"
 #include "ui_menupainel.h"
 #include <QMessageBox>
-#include "Pessoa.hpp"
 #include <QFile>
 #include <QTextStream>
 #include <memory>
-#include "Quarto.hpp"
 #include "Item.hpp"
 #include "login.h"
 
@@ -42,7 +40,7 @@ void menupainel::on_btnCadastroCliente_clicked()
 
 void menupainel::on_btnConfirmar_clicked()
 {
-    Pessoa *p=new Pessoa();
+
 
 
     QDate Mydate =ui->dateNasc->date();
@@ -62,32 +60,23 @@ void menupainel::on_btnConfirmar_clicked()
     //l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
 
 
-    p->setNome(nome.toStdString());
-    p->setIdade(idade.toStdString());
-    p->setSexo(sexo.toStdString());
-    p->setRG(rg.toStdString());
-    p->setData(date.toStdString());
-    p->setEstado(estado.toStdString());
-    p->setCidade(cidade.toStdString());
-    p->setTelefone(telefone.toStdString());
-    p->setCelular(celular.toStdString());
-    p->setEmail(email.toStdString());
+
 
     QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
              if(!file.open(QIODevice::Append|QIODevice::Text))
                 return;
              QTextStream out(&file);
                 out<<
-                     QString::fromStdString(p->getNome())<<"-"<<
-                     QString::fromStdString(p->getIdade())<<"-"<<
-                     QString::fromStdString(p->getSexo())<<"-"<<
-                     QString::fromStdString(p->getRG())<<"-"<<
-                     QString::fromStdString(p->getData())<<"-"<<
-                     QString::fromStdString(p->getEstado())<<"-"<<
-                     QString::fromStdString(p->getCidade())<<"-"<<
-                     QString::fromStdString(p->getTelefone())<<"-"<<
-                     QString::fromStdString(p->getCelular())<<"-"<<
-                     QString::fromStdString(p->getEmail())<<"\n";
+                     QString::fromStdString(nome.toStdString())<<"-"<<
+                     QString::fromStdString(idade.toStdString())<<"-"<<
+                     QString::fromStdString(sexo.toStdString())<<"-"<<
+                     QString::fromStdString(rg.toStdString())<<"-"<<
+                     QString::fromStdString(date.toStdString())<<"-"<<
+                     QString::fromStdString(estado.toStdString())<<"-"<<
+                     QString::fromStdString(cidade.toStdString())<<"-"<<
+                     QString::fromStdString(telefone.toStdString())<<"-"<<
+                     QString::fromStdString(celular.toStdString())<<"-"<<
+                     QString::fromStdString(email.toStdString())<<"\n";
            file.close();
 
 
@@ -270,10 +259,9 @@ void menupainel::lis(QString linea,QString line){
 
 void menupainel::on_btnConfirmar3_clicked()
 {
-    QString CNomeCliente = ui->txtCCliente->text();
-    QString C=ui->txtCQuarto->text();
 
-    QString txt = ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text();
+
+    QString txt = ui->tableWidget_4->item(0,0)->text();
 
     //CLIENTE
     QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
@@ -379,6 +367,10 @@ void menupainel::on_btnConfirmar3_clicked()
         sw4.close();
         sr3.close();
         sw3.close();
+
+        QFile::remove("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+
+
 
 }
 
@@ -610,7 +602,7 @@ void menupainel::on_btnAdicionarItem2_clicked()
        file.close();
 
 
-       ui->stackedWidget->setCurrentIndex(7);
+       ui->stackedWidget->setCurrentIndex(6);
 
 
 
@@ -1008,4 +1000,33 @@ void menupainel::on_btnVoltarV_clicked()
 void menupainel::on_btnFuncVolt_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
+}
+
+
+
+void menupainel::on_btnLimpar_clicked()
+{
+    QDate Mydate =ui->dateNasc->date();
+    QString date = Mydate.toString();
+
+    QString nome = ui->txtNome->text();
+    QString idade = ui->txtIdade->text();
+    QString sexo = ui->comboSexo->currentText();
+    QString rg = ui->txtRG->text();
+    QString email = ui->txtEmail->text();
+    QString cidade = ui->txtCity->text();
+    QString estado = ui->txtEstado->text();
+    QString telefone = ui->txtTelefone->text();
+    QString celular = ui->txtCel->text();
+
+    nome.clear();
+    idade.clear();
+    sexo.clear();
+    rg.clear();
+    date.clear();
+    estado.clear();
+    cidade.clear();
+    telefone.clear();
+    celular.clear();
+    email.clear();
 }
