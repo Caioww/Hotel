@@ -35,6 +35,7 @@ CMakeFiles/Hotel.dir/main.cpp.o: ../Configuracoes.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Fila.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../LDE.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../No.hpp
+CMakeFiles/Hotel.dir/main.cpp.o: ../Pilha.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Quarto.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../Senha.hpp
 CMakeFiles/Hotel.dir/main.cpp.o: ../main.cpp
