@@ -75,7 +75,6 @@ public:
 
     void imprime(){
         money temp;
-        money v2[max+1];
         int t = i;
         while(desinfileira(&temp)){
             cout<<temp.nome<<endl;
@@ -86,18 +85,19 @@ public:
     //problema para imprimir o 1º
     void busca(string nome, string RG){
         money temp;
-        int i = 0;
+        int cont = i;
         while (desinfileira(&temp)){
-            i++;
             if(temp.nome == nome && temp.RG == RG){
-                cout<<"nome: "<<v[i].nome<<"\naniversario: "<<v[i].dia<<
-                "/"<<v[i].mes<<"/"<<v[i].ano<<"\nidede: "<<
-                v[i].idade<<"\nRG: "<<v[i].RG<<"\ncidade: "<<v[i].cidade<<
-                "\nestado: "<<v[i].estado<<"\ntelefone: "<<v[i].telefone<<
-                "\ncelular: "<<v[i].celular<<"\nemail: "<<v[i].email<<
-                "\nsexo: "<<v[i].sexo<<endl;
+                cout<<"nome: "<<v[cont].nome<<"\naniversario: "<<v[cont].dia<<
+                "/"<<v[cont].mes<<"/"<<v[cont].ano<<"\nidede: "<<
+                v[cont].idade<<"\nRG: "<<v[cont].RG<<"\ncidade: "<<v[cont].cidade<<
+                "\nestado: "<<v[cont].estado<<"\ntelefone: "<<v[cont].telefone<<
+                "\ncelular: "<<v[cont].celular<<"\nemail: "<<v[cont].email<<
+                "\nsexo: "<<v[cont].sexo<<endl;
             }
+            cont++;
         }
+        i = (cont+1);
     }
 
     //esta removendo apenas o 1º

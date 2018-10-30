@@ -10,8 +10,10 @@ int main() {
     oi.addFILA("quarto",7,12,213,1,"w","bbbbbbb","cccccc","sfdsfsd","sfsdfsd","rwerwerew",true);
     oi.addFILA("quinto",7,12,213,1,"e","sdfsdfsdf","sfsdsdf","sfdsfsd","sfsdfsd","rwerwerew",true);
     oi.imprimeClientes();
-    oi.removeCliente("caio","a");
-    oi.imprimeClientes();
+    //oi.busca("caio","a");
+    oi.busca("djalma","c");
+    //oi.removeCliente("caio","a");
+    //oi.imprimeClientes();
 
     return 0;
 }

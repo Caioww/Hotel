@@ -19,11 +19,6 @@ public:
 /*
      * essa funcao adiciona novos clientes
      */
-    void adciona(string nome, int dia, int mes, int ano,int idade,
-                 string doc,string city,string estado,string tel, string cel,string email,bool sexo){
-
-    }
-    
     void addFILA(string nome, int dia, int mes, int ano,int idade,
                  string doc,string city,string estado,string tel, string cel,string email,bool sexo){
         gente.insere(nome,dia,mes,ano,idade,doc,city,estado,tel,cel,email,sexo);
