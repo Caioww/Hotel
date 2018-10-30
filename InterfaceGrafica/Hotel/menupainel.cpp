@@ -89,7 +89,7 @@ void menupainel::on_btnConfirmar_clicked()
 
 void menupainel::on_btnConfirmar_2_clicked()
 {
-    Quarto *q = new Quarto();
+
 
     QDate IniDate =ui->dateInicial->date();
     QDate FimDate =ui->dateFim->date();
@@ -564,6 +564,32 @@ void menupainel::on_btnRemover_clicked()
         sr3.close();
         sw3.close();
 
+
+        borrar();
+
+        QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+            if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
+                    return;
+
+         QTextStream files(&arch);
+
+        QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+
+            if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+                return;
+
+            QTextStream fin(&file);
+
+            while(!fin.atEnd()){
+                QString line =fin.readLine();
+                QString linha =files.readLine();
+
+                lis(line,linha);
+            }
+
+           file.close();
+           arch.close();
+
 }
 
 
@@ -830,6 +856,20 @@ void menupainel::on_btnFRemover_clicked()
         sr3.close();
         sw3.close();
 
+        borrarFunc();
+
+        QFile func("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+
+            if(!func.open(QIODevice::ReadOnly|QIODevice::Text))
+                return;
+
+            QTextStream list(&func);
+            while(!list.atEnd()){
+                QString line =list.readLine();
+                listarFuncionario(line);
+            }
+           func.close();
+
 }
 
 void menupainel::on_btnCalcularValor_clicked()
@@ -979,6 +1019,20 @@ void menupainel::on_btnRemoveIt_clicked()
         sw4.close();
         sr3.close();
         sw3.close();
+
+        borrarItem();
+
+        QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+
+            if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+                return;
+
+            QTextStream fin(&file);
+            while(!fin.atEnd()){
+                QString line =fin.readLine();
+                listar(line);
+            }
+           file.close();
 
 }
 
