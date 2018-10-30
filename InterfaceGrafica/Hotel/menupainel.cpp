@@ -60,10 +60,10 @@ void menupainel::on_btnConfirmar_clicked()
     LDE l;
     l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
 
-    l.salvaClientes();
 
 
-    /*QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+
+    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
              if(!file.open(QIODevice::Append|QIODevice::Text))
                 return;
              QTextStream out(&file);
@@ -78,7 +78,7 @@ void menupainel::on_btnConfirmar_clicked()
                      QString::fromStdString(telefone.toStdString())<<"-"<<
                      QString::fromStdString(celular.toStdString())<<"-"<<
                      QString::fromStdString(email.toStdString())<<"\n";
-           file.close();*/
+           file.close();
 
 
 
