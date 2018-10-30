@@ -6,7 +6,7 @@
 #define HOTEL_QUARTO_HPP
 #include <iostream>
 #include "Configuracoes.hpp"
-#include "Pilha.hpp"
+#include "Fila.hpp"
 #include "Senha.hpp"
 using namespace std;
 /**
@@ -22,82 +22,6 @@ public:
         puts("Insira sua senha");
         //cin>>code;
         code = "zseqsc";
-        Senha oi;
-        if(oi.confereSenha(code)){
-            FILE* arquivo;
-            if ((arquivo = fopen("Caracteristicas_Quartos.txt", "r")) == NULL) {
-                fclose(arquivo);
-                arquivo = fopen("Caracteristicas_Quartos.txt", "w");
-                fprintf(arquivo, "0\n");
-                fclose(arquivo);
-            }
-            arquivo = fopen("Caracteristicas_Quartos.txt", "r");
-            char txt[5];
-            bool libera = false;
-            fscanf(arquivo, "%s", txt);
-            int quant = stod(txt);
-            fclose(arquivo);
-            if (quant == 0) {
-                fclose(arquivo);
-                quant++;
-                arquivo = fopen("Caracteristicas_Quartos.txt", "w");
-                fprintf(arquivo, "%i\n", quant);
-                fprintf(arquivo, "%s\n%s\n%f\n%i\n%i\n%i\n%i\n", tipo.c_str(), descricao.c_str(), valor,
-                        quantidade,andar,1,(1+quantidade));
-                fclose(arquivo);
-                puts("quarto salvo");
-            } else {
-                fclose(arquivo);
-                arquivo = fopen("Caracteristicas_Quartos.txt", "r");
-                caracteristica vet[quant];
-                char sem[50];
-                //esse primeiro fgets serve simplismente para não salvar o numero inicial
-                fgets(sem, 50, arquivo);
-                for (int i = 0; i < quant; i++) {
-                    fgets(sem, 50, arquivo);
-                    vet[i].tipoQuarto = sem;
-                    fgets(sem, 50, arquivo);
-                    vet[i].descricao = sem;
-                    fgets(sem, 50, arquivo);
-                    double ola = stod(sem);
-                    vet[i].valor_diaria = ola;
-                    fgets(sem, 50, arquivo);
-                    int dois = stod(sem);
-                    vet[i].existentes = dois;
-                    fgets(sem, 50, arquivo);
-                    dois = stod(sem);
-                    vet[i].andar = dois;
-                    fgets(sem, 50, arquivo);
-                    vet[i].inicial = (vet[(i - 1)].faixa_de_numeros) + 1;
-                    fgets(sem, 50, arquivo);
-                    vet[i].faixa_de_numeros = vet[i].inicial + vet[i].existentes;
-                    prato->empilha(vet[i].valor_diaria,vet[i].nPessoas,vet[i].estado,vet[i].tipoQuarto,
-                            vet[i].descricao,vet[i].numero,vet[i].andar,vet[i].disponiveis,vet[i].existentes,
-                            vet[i].inicial,vet[i].faixa_de_numeros);
-                    auxiliar = vet[i];
-                }
-                arquivo = fopen("Caracteristicas_Quartos.txt", "w");
-                /*
-                 * falta implementar melhor
-                 */
-                quant++;
-                fprintf(arquivo, "%i\n", quant);
-                for (int i = 0; i < (quant - 1); i++) {
-                    fprintf(arquivo, "%s%s%f\n%i\n%i\n%i\n%i\n", vet[i].tipoQuarto.c_str(),
-                            vet[i].descricao.c_str(), vet[i].valor_diaria,
-                            vet[i].existentes, vet[i].andar, vet[i].inicial, vet[i].faixa_de_numeros);
-                }
-                fprintf(arquivo, "%s\n%s\n%f\n%i\n%i\n%i\n%i\n%i\n", tipo.c_str(), descricao.c_str(), valor,
-                        quantidade, andar, 0, vet[(quant - 1)].faixa_de_numeros + 1,
-                        (vet[(quant - 1)].faixa_de_numeros + 1) + quantidade);
-                fclose(arquivo);
-                ocuparQuarto();
-                puts("quarto criado");
-            }
-        }
-        else{
-            puts("voce nao tem permissao para adcionar quartos");
-        }
 
     }
 
@@ -156,6 +80,7 @@ public:
 
     
     void imprime(){
+        /*
         while(prato->desemplilha(&auxiliar.valor_diaria,&auxiliar.nPessoas,&auxiliar.estado,
                 &auxiliar.tipoQuarto,&auxiliar.descricao,&auxiliar.numero,&auxiliar.andar,
                 &auxiliar.disponiveis,&auxiliar.existentes,&auxiliar.inicial,&auxiliar.faixa_de_numeros)){
@@ -163,6 +88,7 @@ public:
                     auxiliar.descricao.c_str(), auxiliar.valor_diaria,
                     auxiliar.existentes, auxiliar.andar, auxiliar.inicial, auxiliar.faixa_de_numeros);
         }
+         */
     }
 
 private:
@@ -182,7 +108,7 @@ private:
     };
     typedef struct caracteristica caracteristica;
 
-    Pilha *prato;
+    Fila *gente;
     caracteristica auxiliar;
 
     void fazVetor(caracteristica* aux, caracteristica* vet){
