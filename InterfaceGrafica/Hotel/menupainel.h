@@ -99,7 +99,6 @@ private slots:
 
 
 
-    void on_btnLimpar_clicked();
 
 private:
     Ui::menupainel *ui;
