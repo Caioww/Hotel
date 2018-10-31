@@ -46,12 +46,6 @@ void Login::on_btnEntrar_clicked()
          }
      }
 
-     QString line = in.readLine();
-     QStringList A = line.split("\n");
-     QString pro=A[0];
-     if(pro.contains(usuario)==false){
-        QMessageBox::warning(this,"Login","Usuario ou senha incorretos");
-     }
      sr.close();
 }
 

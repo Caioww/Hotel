@@ -36,7 +36,11 @@ HEADERS += \
     menupainel.h \
     Pessoa.hpp \
     ../../Quarto.hpp \
-    cadastro.hpp
+    cadastro.hpp \
+    LDE.hpp \
+    Fila.hpp \
+    Item.hpp \
+    FuncionariosAdd.hpp
 
 FORMS += \
     login.ui \
