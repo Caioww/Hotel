@@ -6,7 +6,7 @@
 #include <memory>
 #include "Item.hpp"
 #include "login.h"
-#include "LDE.hpp"
+
 
 
 
@@ -560,10 +560,10 @@ void menupainel::on_btnRemover_clicked()
             if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
                 return;
 
-            QTextStream in(&file);
+            QTextStream fin(&file);
 
-            while(!in.atEnd()){
-                QString line =in.readLine();
+            while(!fin.atEnd()){
+                QString line =fin.readLine();
                 QString linha =files.readLine();
 
                 lis(line,linha);
