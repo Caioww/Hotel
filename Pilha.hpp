@@ -1,7 +1,3 @@
-//
-// Created by djalma cunha on 05/09/2018.
-//
-
 #ifndef PILHA_PILHA_HPP
 #define PILHA_PILHA_HPP
 #include <iostream>
@@ -73,6 +69,40 @@ public:
 
     void imprime(int z){
         cout<<v[z].descricao<<endl;
+    }
+
+
+    bool confereN(int n,int z){
+        bool ok = true;
+        if(v[z].numero == n){
+            ok = false;
+        }
+        return ok;
+    }
+
+    void busca(int n,int z){
+        if(v[z].numero == n){
+            cout<<v[z].numero<<"\n"<<v[z].descricao<<"\n"<<v[z].andar<<"\n"
+            <<v[z].existentes<<"\n"<<v[z].valor_diaria<<"\n"<<v[z].tipoQuarto<<"\n"<<
+            v[z].nPessoas<<"\n"<<v[z].faixa_de_numeros<<"\n"<<v[z].inicial<<v[z].disponiveis<<v[z].estado<<endl;
+        }
+    }
+
+
+    bool remove(int n,int z,Caracteristicas* vet,int tam){
+        if(v[z].numero != n){
+            vet[z] = v[z];
+            return true;
+        }
+        else{
+            vet[z] = vet[tam];
+            return false;
+
+        }
+    }
+
+    void copia(int n,int z,Caracteristicas* vet,int tam){
+            vet[z] = v[z];
     }
 
 

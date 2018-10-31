@@ -1,8 +1,4 @@
-//
-// Created by djalma cunha on 16/09/2018.
-//
-
-#ifndef HOTEL_QUARTO_HPP
+﻿#ifndef HOTEL_QUARTO_HPP
 #define HOTEL_QUARTO_HPP
 #include <iostream>
 #include "Configuracoes.hpp"
@@ -10,17 +6,8 @@
 #include "Senha.hpp"
 #include "Caracteristicas.hpp"
 using namespace std;
-/**
- * melhor colocar o criar quartos nas configuracoes ou seja num arquivo a parte
- * por isso esta bugando
- */
 class Quarto{
 public:
-
-    //para adcionar quartos, porem os unicos que pode fazer isso é o gerente e o dono
-    void criarQuarto(string tipo,string descricao,double valor,int quantidade,int andar){
-       //prato.empilha(0,0,true,tipo,descricao,0,andar,quantidade,quantidade,0,0);
-    }
 
     //para criar inicialmente os quartos pré estipulados, inicialmente todos livres
     void ocuparQuarto(int numero,int pessoas,string tipo,string descricao,double valor,int quantidade,int andar){
@@ -32,27 +19,53 @@ public:
         auxiliar.existentes = quantidade;
         auxiliar.andar = andar;
         prato.empilha(auxiliar);
+        quant++;
     }
 
-    void buscaQuarto(){
+
+    void buscaQuarto(int numero){
+        int l = 0;
+        while (l < quant){
+            //nao inverter os valores
+            prato.busca(numero,l);
+            l++;
+        }
 
     }
 
     //esta imprimindo apenas 1
     void imprime(){
         //bolar esquema para descobrir quantidade de quartos
-        puts("quantidade de quartos");
-        int q;
-        cin>>q;
+
         int l = 0;
-        while (prato.desemplilha(&auxiliar) && l < q){
+        while (l < quant){
+
             prato.imprime(l);
             l++;
         }
     }
 
+
+    void remove1(int numero){
+        Caracteristicas temp[quant];
+        int init = quant;
+        for (int k = 0; k < quant; k++) {
+            prato.copia(numero,k,temp,quant);
+        }
+        for (int i = 0; i < init; i++) {
+            if(prato.remove(numero,i,temp,quant)){
+                quant = init -1;
+            }
+        }
+        prato.topo = 0;
+        for (int j = 0; j < quant; j++) {
+            prato.empilha(temp[j]);
+        }
+    }
+
 private:
-    
+    int quant = 0;
+
     Pilha prato;
     Caracteristicas auxiliar;
 };
