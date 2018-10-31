@@ -71,6 +71,10 @@ public:
         return true;
     }
 
+    void imprime(int z){
+        cout<<v[z].descricao<<endl;
+    }
+
 
     //bolar esquema
     bool desemplilha(Caracteristicas *des = NULL) {

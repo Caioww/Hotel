@@ -26,7 +26,7 @@ public:
     typedef struct money money;
     money v[max+1];
     int i,n,f;
-    
+
 
     Fila() : i(0), f(0),n(max+1){
 
