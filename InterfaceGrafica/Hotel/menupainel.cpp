@@ -60,12 +60,12 @@ void menupainel::on_btnConfirmar_clicked()
 
 
 
-
     LDE l;
     l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
 
 
     QFile file("cliente.txt");
+
              if(!file.open(QIODevice::Append|QIODevice::Text))
                 return;
              QTextStream out(&file);
@@ -536,7 +536,9 @@ void menupainel::on_btnRemover_clicked()
       }
 
 
-    QFile qrto3("temp1.txt");
+
+    QFile qrto3("temp10.txt");
+
         if(!qrto3.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         qrto3.close();
@@ -710,19 +712,16 @@ void menupainel::on_btnEntrarV_clicked()
             if(pro.contains(edtNome)==true&&cargo.contains("Gerente")==true){
                 ui->stackedWidget->setCurrentIndex(9);
 
+            }else{
+                QMessageBox::warning(this,"Login","Você não tem autorização para acessar essa funcionalidade");
+            }
+
             }
 
 
        }
 
-        /*QString line = in.readLine();
-        QStringList A = line.split("-");
-        QString pro=A[0];
-        QString cargo =A[2];
-        if(pro.contains(edtNome)==false&&cargo.contains("Gerente")==false){
-            QMessageBox::warning(this,"Login","Você não tem autorização para acessar essa funcionalidade");
 
-        }*/
 
 }
 
