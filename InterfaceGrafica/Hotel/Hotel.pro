@@ -38,7 +38,9 @@ HEADERS += \
     ../../Quarto.hpp \
     cadastro.hpp \
     Fila.hpp \
-    Item.hpp
+    Item.hpp \
+    LDE.hpp \
+    FuncionariosAdd.hpp
 
 FORMS += \
     login.ui \

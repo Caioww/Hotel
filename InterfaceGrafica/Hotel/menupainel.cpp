@@ -6,6 +6,7 @@
 #include <memory>
 #include "Item.hpp"
 #include "login.h"
+#include "LDE.hpp"
 
 
 
@@ -60,6 +61,8 @@ void menupainel::on_btnConfirmar_clicked()
 
 
 
+    LDE l;
+    l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
 
 
     QFile file("cliente.txt");
@@ -476,7 +479,7 @@ void menupainel::on_btnRemover_clicked()
             QStringList B = linea.split("-");
             QString idd = B[0];
 
-            if(id.compare(txt)!=0&&idd.compare(txt)!=0){
+            if(id.compare(txt)!=0){
                 out<<line<<"\n";
                 cd1<<linea<<"\n";
             }
@@ -782,7 +785,7 @@ void menupainel::on_btnFRemover_clicked()
 {
     QString txt = ui->tableWidget_3->item(ui->tableWidget_3->currentRow(),0)->text();
 
-    //CLIENTE
+
     QFile sr("cadastrar.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;

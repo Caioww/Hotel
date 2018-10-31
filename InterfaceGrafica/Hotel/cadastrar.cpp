@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include "login.h"
+#include "Fila.hpp"
 
 
 cadastrar::cadastrar(QWidget *parent) :
@@ -26,7 +27,8 @@ void cadastrar::on_btnConfirmar_clicked()
     QString cargo = ui->comboCargo->currentText();
 
 
-
+    Fila f;
+    f.insere(nome.toStdString(),senha.toStdString(),cargo.toStdString());
 
     using namespace std;
 
