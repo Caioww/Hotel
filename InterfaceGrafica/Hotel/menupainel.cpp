@@ -7,6 +7,7 @@
 #include "Item.hpp"
 #include "login.h"
 #include "LDE.hpp"
+#include "Fila.hpp"
 
 
 
@@ -695,8 +696,6 @@ void menupainel::on_btnConfig_clicked()
 
 void menupainel::on_btnEntrarV_clicked()
 {
-    QString edtNome = ui->edtNome->text();
-    QString edtSenha = ui->edtSenha->text();
 
     QFile sr("cadastrar.txt");
 
@@ -704,6 +703,10 @@ void menupainel::on_btnEntrarV_clicked()
             return;
 
         QTextStream in(&sr);
+
+        QString edtNome = ui->edtNome->text();
+        QString edtSenha = ui->edtSenha->text();
+
         while(!in.atEnd()){
             QString line = in.readLine();
             QStringList A = line.split("-");
@@ -712,8 +715,12 @@ void menupainel::on_btnEntrarV_clicked()
             if(pro.contains(edtNome)==true&&cargo.contains("Gerente")==true){
                 ui->stackedWidget->setCurrentIndex(9);
 
-            }else{
+            }else if(pro.contains(edtNome)==false&&cargo.contains("Gerente")==false){
                 QMessageBox::warning(this,"Login","Você não tem autorização para acessar essa funcionalidade");
+                break;
+            }
+            else{
+                ui->stackedWidget->setCurrentIndex(8);
             }
 
             }
@@ -723,7 +730,6 @@ void menupainel::on_btnEntrarV_clicked()
 
 
 
-}
 
 void menupainel::on_btnFAtualizar_clicked()
 {
@@ -785,6 +791,8 @@ void menupainel::on_btnFRemover_clicked()
     QString txt = ui->tableWidget_3->item(ui->tableWidget_3->currentRow(),0)->text();
 
 
+
+
     QFile sr("cadastrar.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
@@ -803,6 +811,8 @@ void menupainel::on_btnFRemover_clicked()
             QStringList A = line.split("-");
             QString id = A[0];
             if(id.compare(txt)!=0){
+                Fila f;
+                f.remove1(id.toStdString());
                 out<<line<<"\n";
 
             }
