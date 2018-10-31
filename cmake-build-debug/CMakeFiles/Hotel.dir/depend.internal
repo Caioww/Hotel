@@ -4,9 +4,6 @@
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.o
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.cpp
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.hpp
-CMakeFiles/Hotel.dir/LDDE.cpp.o
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.hpp
 CMakeFiles/Hotel.dir/LDE.cpp.o
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.cpp
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.hpp
@@ -24,11 +21,6 @@ CMakeFiles/Hotel.dir/Pilha.cpp.o
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.hpp
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.cpp
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.hpp
-CMakeFiles/Hotel.dir/Recepcao.cpp.o
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Fila.hpp
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Money.hpp
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.cpp
- /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.hpp
 CMakeFiles/Hotel.dir/Senha.cpp.o
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.hpp
  /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/No.hpp

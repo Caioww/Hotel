@@ -4,9 +4,6 @@
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.o: ../Caracteristicas.cpp
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.o: ../Caracteristicas.hpp
 
-CMakeFiles/Hotel.dir/LDDE.cpp.o: ../LDDE.cpp
-CMakeFiles/Hotel.dir/LDDE.cpp.o: ../LDDE.hpp
-
 CMakeFiles/Hotel.dir/LDE.cpp.o: ../LDE.cpp
 CMakeFiles/Hotel.dir/LDE.cpp.o: ../LDE.hpp
 CMakeFiles/Hotel.dir/LDE.cpp.o: ../No.hpp
@@ -23,11 +20,6 @@ CMakeFiles/Hotel.dir/No.cpp.o: ../No.hpp
 CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Caracteristicas.hpp
 CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Pilha.cpp
 CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Pilha.hpp
-
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Fila.hpp
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Money.hpp
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.cpp
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.hpp
 
 CMakeFiles/Hotel.dir/Senha.cpp.o: ../LDE.hpp
 CMakeFiles/Hotel.dir/Senha.cpp.o: ../No.hpp

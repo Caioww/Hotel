@@ -150,33 +150,6 @@ Caracteristicas.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Caracteristicas.cpp.s
 .PHONY : Caracteristicas.cpp.s
 
-LDDE.o: LDDE.cpp.o
-
-.PHONY : LDDE.o
-
-# target to build an object file
-LDDE.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.o
-.PHONY : LDDE.cpp.o
-
-LDDE.i: LDDE.cpp.i
-
-.PHONY : LDDE.i
-
-# target to preprocess a source file
-LDDE.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.i
-.PHONY : LDDE.cpp.i
-
-LDDE.s: LDDE.cpp.s
-
-.PHONY : LDDE.s
-
-# target to generate assembly for a file
-LDDE.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LDDE.cpp.s
-.PHONY : LDDE.cpp.s
-
 LDE.o: LDE.cpp.o
 
 .PHONY : LDE.o
@@ -312,33 +285,6 @@ Pilha.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Pilha.cpp.s
 .PHONY : Pilha.cpp.s
 
-Recepcao.o: Recepcao.cpp.o
-
-.PHONY : Recepcao.o
-
-# target to build an object file
-Recepcao.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.o
-.PHONY : Recepcao.cpp.o
-
-Recepcao.i: Recepcao.cpp.i
-
-.PHONY : Recepcao.i
-
-# target to preprocess a source file
-Recepcao.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.i
-.PHONY : Recepcao.cpp.i
-
-Recepcao.s: Recepcao.cpp.s
-
-.PHONY : Recepcao.s
-
-# target to generate assembly for a file
-Recepcao.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Recepcao.cpp.s
-.PHONY : Recepcao.cpp.s
-
 Senha.o: Senha.cpp.o
 
 .PHONY : Senha.o
@@ -405,9 +351,6 @@ help:
 	@echo "... Caracteristicas.o"
 	@echo "... Caracteristicas.i"
 	@echo "... Caracteristicas.s"
-	@echo "... LDDE.o"
-	@echo "... LDDE.i"
-	@echo "... LDDE.s"
 	@echo "... LDE.o"
 	@echo "... LDE.i"
 	@echo "... LDE.s"
@@ -423,9 +366,6 @@ help:
 	@echo "... Pilha.o"
 	@echo "... Pilha.i"
 	@echo "... Pilha.s"
-	@echo "... Recepcao.o"
-	@echo "... Recepcao.i"
-	@echo "... Recepcao.s"
 	@echo "... Senha.o"
 	@echo "... Senha.i"
 	@echo "... Senha.s"

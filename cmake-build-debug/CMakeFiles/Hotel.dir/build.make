@@ -83,22 +83,9 @@ CMakeFiles/Hotel.dir/LDE.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel.dir/LDE.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDE.cpp -o CMakeFiles/Hotel.dir/LDE.cpp.s
 
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: CMakeFiles/Hotel.dir/flags.make
-CMakeFiles/Hotel.dir/Recepcao.cpp.o: ../Recepcao.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Hotel.dir/Recepcao.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/Recepcao.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.cpp
-
-CMakeFiles/Hotel.dir/Recepcao.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel.dir/Recepcao.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.cpp > CMakeFiles/Hotel.dir/Recepcao.cpp.i
-
-CMakeFiles/Hotel.dir/Recepcao.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel.dir/Recepcao.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Recepcao.cpp -o CMakeFiles/Hotel.dir/Recepcao.cpp.s
-
 CMakeFiles/Hotel.dir/Pilha.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/Pilha.cpp.o: ../Pilha.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hotel.dir/Pilha.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Hotel.dir/Pilha.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/Pilha.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.cpp
 
 CMakeFiles/Hotel.dir/Pilha.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/Hotel.dir/Pilha.cpp.s: cmake_force
 
 CMakeFiles/Hotel.dir/Senha.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/Senha.cpp.o: ../Senha.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Hotel.dir/Senha.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Hotel.dir/Senha.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/Senha.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.cpp
 
 CMakeFiles/Hotel.dir/Senha.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/Hotel.dir/Senha.cpp.s: cmake_force
 
 CMakeFiles/Hotel.dir/No.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/No.cpp.o: ../No.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Hotel.dir/No.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Hotel.dir/No.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/No.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/No.cpp
 
 CMakeFiles/Hotel.dir/No.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/Hotel.dir/No.cpp.s: cmake_force
 
 CMakeFiles/Hotel.dir/LES.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/LES.cpp.o: ../LES.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Hotel.dir/LES.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Hotel.dir/LES.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/LES.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LES.cpp
 
 CMakeFiles/Hotel.dir/LES.cpp.i: cmake_force
@@ -148,22 +135,9 @@ CMakeFiles/Hotel.dir/LES.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel.dir/LES.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LES.cpp -o CMakeFiles/Hotel.dir/LES.cpp.s
 
-CMakeFiles/Hotel.dir/LDDE.cpp.o: CMakeFiles/Hotel.dir/flags.make
-CMakeFiles/Hotel.dir/LDDE.cpp.o: ../LDDE.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Hotel.dir/LDDE.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/LDDE.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp
-
-CMakeFiles/Hotel.dir/LDDE.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Hotel.dir/LDDE.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp > CMakeFiles/Hotel.dir/LDDE.cpp.i
-
-CMakeFiles/Hotel.dir/LDDE.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Hotel.dir/LDDE.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/LDDE.cpp -o CMakeFiles/Hotel.dir/LDDE.cpp.s
-
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.o: ../Caracteristicas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Hotel.dir/Caracteristicas.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Hotel.dir/Caracteristicas.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/Caracteristicas.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.cpp
 
 CMakeFiles/Hotel.dir/Caracteristicas.cpp.i: cmake_force
@@ -176,7 +150,7 @@ CMakeFiles/Hotel.dir/Caracteristicas.cpp.s: cmake_force
 
 CMakeFiles/Hotel.dir/Money.cpp.o: CMakeFiles/Hotel.dir/flags.make
 CMakeFiles/Hotel.dir/Money.cpp.o: ../Money.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Hotel.dir/Money.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Hotel.dir/Money.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Hotel.dir/Money.cpp.o -c /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Money.cpp
 
 CMakeFiles/Hotel.dir/Money.cpp.i: cmake_force
@@ -191,12 +165,10 @@ CMakeFiles/Hotel.dir/Money.cpp.s: cmake_force
 Hotel_OBJECTS = \
 "CMakeFiles/Hotel.dir/main.cpp.o" \
 "CMakeFiles/Hotel.dir/LDE.cpp.o" \
-"CMakeFiles/Hotel.dir/Recepcao.cpp.o" \
 "CMakeFiles/Hotel.dir/Pilha.cpp.o" \
 "CMakeFiles/Hotel.dir/Senha.cpp.o" \
 "CMakeFiles/Hotel.dir/No.cpp.o" \
 "CMakeFiles/Hotel.dir/LES.cpp.o" \
-"CMakeFiles/Hotel.dir/LDDE.cpp.o" \
 "CMakeFiles/Hotel.dir/Caracteristicas.cpp.o" \
 "CMakeFiles/Hotel.dir/Money.cpp.o"
 
@@ -205,17 +177,15 @@ Hotel_EXTERNAL_OBJECTS =
 
 Hotel: CMakeFiles/Hotel.dir/main.cpp.o
 Hotel: CMakeFiles/Hotel.dir/LDE.cpp.o
-Hotel: CMakeFiles/Hotel.dir/Recepcao.cpp.o
 Hotel: CMakeFiles/Hotel.dir/Pilha.cpp.o
 Hotel: CMakeFiles/Hotel.dir/Senha.cpp.o
 Hotel: CMakeFiles/Hotel.dir/No.cpp.o
 Hotel: CMakeFiles/Hotel.dir/LES.cpp.o
-Hotel: CMakeFiles/Hotel.dir/LDDE.cpp.o
 Hotel: CMakeFiles/Hotel.dir/Caracteristicas.cpp.o
 Hotel: CMakeFiles/Hotel.dir/Money.cpp.o
 Hotel: CMakeFiles/Hotel.dir/build.make
 Hotel: CMakeFiles/Hotel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Hotel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Hotel"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Hotel.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
