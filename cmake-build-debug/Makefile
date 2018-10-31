@@ -123,6 +123,33 @@ Hotel/fast:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/build
 .PHONY : Hotel/fast
 
+Caracteristicas.o: Caracteristicas.cpp.o
+
+.PHONY : Caracteristicas.o
+
+# target to build an object file
+Caracteristicas.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Caracteristicas.cpp.o
+.PHONY : Caracteristicas.cpp.o
+
+Caracteristicas.i: Caracteristicas.cpp.i
+
+.PHONY : Caracteristicas.i
+
+# target to preprocess a source file
+Caracteristicas.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Caracteristicas.cpp.i
+.PHONY : Caracteristicas.cpp.i
+
+Caracteristicas.s: Caracteristicas.cpp.s
+
+.PHONY : Caracteristicas.s
+
+# target to generate assembly for a file
+Caracteristicas.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Caracteristicas.cpp.s
+.PHONY : Caracteristicas.cpp.s
+
 Cola.o: Cola.cpp.o
 
 .PHONY : Cola.o
@@ -375,6 +402,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Hotel"
+	@echo "... Caracteristicas.o"
+	@echo "... Caracteristicas.i"
+	@echo "... Caracteristicas.s"
 	@echo "... Cola.o"
 	@echo "... Cola.i"
 	@echo "... Cola.s"

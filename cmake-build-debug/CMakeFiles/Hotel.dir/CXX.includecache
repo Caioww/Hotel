@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.hpp
+iostream
+-
+
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Cliente.hpp
 utility
 -
@@ -36,13 +40,27 @@ No.hpp
 iostream
 -
 
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.hpp
+iostream
+-
+cstdlib
+-
+cstring
+-
+Caracteristicas.hpp
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.hpp
+
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Quarto.hpp
 iostream
 -
 Configuracoes.hpp
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Configuracoes.hpp
+Pilha.hpp
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Pilha.hpp
 Senha.hpp
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.hpp
+Caracteristicas.hpp
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Caracteristicas.hpp
 
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/Quarto_semestre/Estrutura_de_dados/Hotel/Senha.hpp
 iostream

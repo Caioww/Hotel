@@ -7,55 +7,38 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-#define num 2
+#include "Caracteristicas.hpp"
+#define num 10
 using namespace std;
 
 
 class Pilha {
-private:
+public:
     int topo;
-    int max;
-
-    struct caracteristica {
-        float valor_diaria;
-        int nPessoas;
-        bool estado; //Disponivel ou Ocupado;
-        string tipoQuarto;
-        string descricao;//Exemplo:Quarto de frente pro mar
-        int numero;
-        int andar;
-        //Fazer um List que armazena os quartos cadastrados,
-        int disponiveis;
-        int existentes;
-        int inicial;
-        int faixa_de_numeros;
-    };
-    
-    typedef struct caracteristica caracteristica;
-
-    caracteristica* v;
+    int maximo;
+    Caracteristicas* v;
 
     bool realoca(){
         puts("dobrou");
-        caracteristica* vTemp = new caracteristica[max*2];
+        Caracteristicas* vTemp = new Caracteristicas[maximo*2];
         if(vTemp == NULL){
             return true;
         }
-        memcpy(vTemp,v, sizeof(caracteristica)*max);
-        max *=2;
+        memcpy(vTemp,v, sizeof(Caracteristicas)*maximo);
+        maximo *=2;
         delete [] v;
         v = vTemp;
         return true;
     }
-public:
-    Pilha() : v(new caracteristica[num]), topo(0),max(num) {
+
+    Pilha() : v(new Caracteristicas[num]),topo(0),maximo(num){
 
     }
 
     bool empilha(float valor_diaria, int nPessoas, bool estado, string tipoQuarto, string descricao,
-    int numero, int andar, int disponiveis, int existentes, int inicial, int faixa_de_numeros){
+                 int numero, int andar, int disponiveis, int existentes, int inicial, int faixa_de_numeros){
 
-        caracteristica valor;
+        Caracteristicas valor;
         valor.valor_diaria = valor_diaria;
         valor.nPessoas = nPessoas;
         valor.estado = estado;
@@ -67,7 +50,7 @@ public:
         valor.existentes = existentes;
         valor.inicial = inicial;
         valor.faixa_de_numeros = faixa_de_numeros;
-        if (topo == max)
+        if (topo == maximo)
             if(!realoca()){
                 return false;
             }
@@ -77,18 +60,26 @@ public:
         return true;
     }
 
-    virtual ~Pilha(){
-        delete [] v;
+    bool empilha(Caracteristicas valor){
+        if (topo == maximo)
+            if(!realoca()){
+                return false;
+            }
+
+
+        v[topo++] = valor;
+        return true;
     }
 
-    bool desemplilha(float *valor_diaria, int *nPessoas, bool *estado, string *tipoQuarto, string *descricao,
-                     int *numero, int *andar, int *disponiveis, int *existentes, int *inicial, int *faixa_de_numeros) {
-        caracteristica *des;
+
+    //bolar esquema
+    bool desemplilha(Caracteristicas *des = NULL) {
         if (topo == 0) {
             return false;
         }
         topo--;
         if(des)
+
             *des = v[topo];
         return true;
     }

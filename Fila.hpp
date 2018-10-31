@@ -6,9 +6,9 @@
 #define FILA_FILA_HPP
 #include <iostream>
 using namespace std;
-#define max 999999
+#define max 999
 class Fila {
-private:
+public:
     struct money {
         string nome;
         int dia;
@@ -25,16 +25,11 @@ private:
     };
     typedef struct money money;
     money v[max+1];
-public:
     int i,n,f;
-    Fila(){
-        inicia();
-    }
+    
 
-    void inicia(){
-        i = 0;
-        f = 0;
-        n = max + 1;
+    Fila() : i(0), f(0),n(max+1){
+
     }
     bool insere(money valor) {
         f++;
@@ -52,7 +47,7 @@ public:
 
     bool insere(string nome, int dia, int mes, int ano,int idade,
     string RG,string cidade,string estado,string telefone, string celular,string email,bool sexo) {
-        inicia();
+        f++;
         money valor;
         valor.nome = nome;
         valor.dia = dia;
@@ -66,7 +61,6 @@ public:
         valor.celular = celular;
         valor.email = email;
         valor.sexo = sexo;
-        f++;
         if (((f) % n) == i) {
             return false;
         }
@@ -81,42 +75,44 @@ public:
 
     void imprime(){
         money temp;
-        money v2[max+1];
-        int i = 0;
+        int t = i;
         while(desinfileira(&temp)){
-            v2[i] = v[i];
             cout<<temp.nome<<endl;
         }
-        *v = *v2;
+        i = (t+1);
     }
 
+    //problema para imprimir o 1º
     void busca(string nome, string RG){
         money temp;
-        int i = 0;
+        int cont = i;
         while (desinfileira(&temp)){
             if(temp.nome == nome && temp.RG == RG){
-                cout<<"nome: "<<v->nome<<"\naniversario: "<<v->dia<<
-                "/"<<v->mes<<"/"<<v->ano<<"\nidede: "<<
-                v->idade<<"\nRG: "<<v->RG<<"\ncidade: "<<v->cidade<<
-                "\nestado: "<<v->estado<<"\ntelefone: "<<v->telefone<<
-                "\ncelular: "<<v->celular<<"\nemail: "<<v->email<<
-                "\nsexo: "<<v->sexo<<endl;
+                cout<<"nome: "<<v[cont].nome<<"\naniversario: "<<v[cont].dia<<
+                "/"<<v[cont].mes<<"/"<<v[cont].ano<<"\nidede: "<<
+                v[cont].idade<<"\nRG: "<<v[cont].RG<<"\ncidade: "<<v[cont].cidade<<
+                "\nestado: "<<v[cont].estado<<"\ntelefone: "<<v[cont].telefone<<
+                "\ncelular: "<<v[cont].celular<<"\nemail: "<<v[cont].email<<
+                "\nsexo: "<<v[cont].sexo<<endl;
             }
-            i++;
+            cont++;
         }
+        i = (cont+1);
     }
 
+    //esta removendo apenas o 1º
     void remove1(string nome, string RG){
         money temp;
         money v2[max+1];
-        int i = 0,j = 0;
+        int j = 0;
+        int C = 0;
         while (desinfileira(&temp)){
             if(temp.nome == nome && temp.RG == RG){
                 j++;
             }
-            i++;
+            C++;
             j++;
-            v2[i] = v[j];
+            v2[C] = v[j];
         }
         *v = *v2;
         imprime();

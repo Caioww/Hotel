@@ -50,16 +50,17 @@ private:
             }
         }
         if(ok == true){
-            FILE* arquivo;
-            arquivo = fopen("Senhas.txt", "w");
-            fprintf(arquivo,"%i\n",tam);
+            //FILE* arquivo;
+            //aqui tem que bolar um esquema de adicionar os dados antigos
+            //arquivo = fopen("Senhas.txt", "w");
+            printf("%i\n",tam);
             for (int i = 0; i < tam; i++) {
-                fprintf(arquivo, "%s\n%s\n%s\n%i\n", vet[i].senha.c_str(),
+                printf("%s\n%s\n%s\n%i\n", vet[i].senha.c_str(),
                         vet[i].cargo.c_str(), vet[i].nome.c_str(),
                         vet[i].nivel);
             }
             puts("dados alterados com sucesso");
-            fclose(arquivo);
+            //fclose(arquivo);
         }
         else{
             puts("Algum dado não bate");
@@ -78,12 +79,15 @@ public:
     void novaPessoa(string nome,string cargo,string senha,int nivel) {
         FILE *arquivo;
         //caso nao exista um arquivo na maquina esse if cria um e salva um 0 inicialmente
+        /*
+         * o que esta abaixo tem que bolar um esquema no QT
         if ((arquivo = fopen("Senhas.txt", "r")) == NULL) {
             fclose(arquivo);
             arquivo = fopen("Senhas.txt", "w");
             fprintf(arquivo, "0\n");
             fclose(arquivo);
         }
+         */
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         bool libera = false;
@@ -91,15 +95,16 @@ public:
         int quant = stod(txt);
         if (quant == 0) {
             fclose(arquivo);
-            arquivo = fopen("Senhas.txt", "w");
+            //arquivo = fopen("Senhas.txt", "w");
             /*
              * primeiro a ser impresso é a senha depois,cargo,nome,nivel
              */
             quant++;
-            fprintf(arquivo, "%i\n", quant);
-            fprintf(arquivo, "%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
+            //bolar esquema para adicionar os dados ja salvos
+            printf("%i\n", quant);
+            printf("%s\n%s\n%s\n%i\n", senha.c_str(), cargo.c_str(), nome.c_str(),
                     nivel);
-            fclose(arquivo);
+            //fclose(arquivo);
             puts("contato salvo");
         } else {
             fclose(arquivo);
@@ -135,13 +140,13 @@ public:
                 }
             }
             if (libera) {
-                arquivo = fopen("Senhas.txt", "w");
+
                 /*
                  * primeiro a ser impresso é a senha depois,cargo,nome,nivel
                  */
                 quant++;
-                fprintf(arquivo, "%i\n", quant);
-                fclose(arquivo);
+                printf("%i\n", quant);
+                //bolar esquema para adicionar os dados salvos anteriormente
                 arquivo = fopen("Senhas.txt", "r");
                 fgets(sem, 50, arquivo);
                 for (int i = 0; i < (quant-1); i++) {
@@ -157,6 +162,7 @@ public:
                     jo.insere(eu.senha,eu.cargo,eu.nome,eu.nivel);
                 }
                 fclose(arquivo);
+                //aqui simplismente era para salvar no arquivo
                 arquivo = fopen("Senhas.txt", "a");
                 jo.salva((quant-1));
                 jo.imprime();
@@ -177,6 +183,7 @@ public:
     //o unico que pode remover um funcionario é o patrao ou o gerente(basicamente nivel 1 ou 2)
     void removeFuncionario(string nome,string cargo,string senha){
         FILE* arquivo;
+        //bolar esquema para ler do arquivo
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
@@ -236,6 +243,7 @@ public:
         funcionario vetor;
         FILE* arquivo;
         LDE aux;
+        //bolar esquema para ler do arquivo
         arquivo = fopen("Senhas.txt", "r");
         char txt[5];
         fscanf(arquivo, "%s", txt);
