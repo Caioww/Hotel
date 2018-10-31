@@ -29,7 +29,7 @@ void Login::on_btnEntrar_clicked()
     QString senha = ui->txtSenha->text();
 
 
-    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile sr("cadastrar.txt");
 
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;

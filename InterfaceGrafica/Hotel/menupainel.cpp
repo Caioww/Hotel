@@ -62,7 +62,7 @@ void menupainel::on_btnConfirmar_clicked()
 
 
 
-    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile file("cliente.txt");
              if(!file.open(QIODevice::Append|QIODevice::Text))
                 return;
              QTextStream out(&file);
@@ -115,7 +115,7 @@ void menupainel::on_btnConfirmar_2_clicked()
 
     QString valorTotal = QString::number(FimDate.daysTo(IniDate) * valor.toFloat()) ;
 
-    QFile file("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+    QFile file("cadastroQuarto.txt");
 
         if(!file.open(QIODevice::Append|QIODevice::Text))
             return;
@@ -209,13 +209,13 @@ void menupainel::on_btnBuscar_clicked()
     borrar();
 
     QString nomeBusca = ui->txtNCliente->text();
-    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
      QTextStream in(&sr);
 
 
-     QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+     QFile arch("cadastroQuarto.txt");
          if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
                  return;
       QTextStream file(&arch);
@@ -264,18 +264,18 @@ void menupainel::on_btnConfirmar3_clicked()
     QString txt = ui->tableWidget_4->item(0,0)->text();
 
     //CLIENTE
-    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
-     QFile sw("C:\\Users\\Caio\\Documents\\temp1.txt");
+     QFile sw("temp1.txt");
         if(!sw.open(QIODevice::Append | QIODevice::Text))
             return;
 
      //QUARTO
-        QFile qr("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qr("cadastroQuarto.txt");
             if(!qr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
-         QFile qrto("C:\\Users\\Caio\\Documents\\temp10.txt");
+         QFile qrto("temp10.txt");
             if(!qrto.open(QIODevice::Append | QIODevice::Text))
                 return;
 
@@ -310,32 +310,32 @@ void menupainel::on_btnConfirmar3_clicked()
         qrto.close();
 
         //QUARTO
-        QFile qrto1("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qrto1("cadastroQuarto.txt");
             if(!qrto1.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             qrto1.close();
 
-        QFile qrto2("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qrto2("cadastroQuarto.txt");
                 if(!qrto2.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile qr1("C:\\Users\\Caio\\Documents\\temp10.txt");
+        QFile qr1("temp10.txt");
                 if(!qr1.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
 
 
         //CLIENTE
-        QFile sw2("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        QFile sw2("cliente.txt");
             if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             sw2.close();
 
-        QFile sw3("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        QFile sw3("cliente.txt");
                 if(!sw3.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile sr3("C:\\Users\\Caio\\Documents\\temp1.txt");
+        QFile sr3("temp1.txt");
                 if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
@@ -354,21 +354,21 @@ void menupainel::on_btnConfirmar3_clicked()
       }
 
 
-    QFile qrto3("C:\\Users\\Caio\\Documents\\temp1.txt");
+    QFile qrto3("temp10.txt");
         if(!qrto3.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         qrto3.close();
         qrto2.close();
         qr1.close();
 
-    QFile sw4("C:\\Users\\Caio\\Documents\\temp1.txt");
+    QFile sw4("temp1.txt");
         if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         sw4.close();
         sr3.close();
         sw3.close();
 
-        QFile::remove("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+        QFile::remove("cadastroItem.txt");
 
 
 
@@ -388,36 +388,19 @@ void menupainel::on_btnConfirmar4_clicked()
     QString FimDate = dateFi.toString();
     QString newValue = ui->edtRValor->text();
 
-    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
      QTextStream in(&sr);
 
-     QFile arch("C:\\Users\\Caio\\Documents\\cadastrarQuarto.txt");
+     QFile arch("cadastrarQuarto.txt");
          if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                  return;
       QTextStream out(&arch);
 
 
 
-     /*while(!in.atEnd()){
-         QString line = in.readLine();
-         QStringList A = line.split("-");
 
-         QString linha = out.readLine();
-         QStringList B = linha.split("-");
-
-         QString pro=A[0];
-         if(pro.contains(RNomeCliente)==true){
-
-             B[6] = dateFi.toString();
-             B[5] = dateIn.toString();
-             A[0]=RNomeCliente;
-             B[8]= QString::number(dateIn.daysTo(dateFi)*newValue.toFloat());
-
-
-         }
-     }*/
 
 
 
@@ -431,13 +414,13 @@ void menupainel::on_btnAtualizar_clicked()
 {
     borrar();
 
-    QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+    QFile arch("cadastroQuarto.txt");
         if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
 
      QTextStream files(&arch);
 
-    QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile file("cliente.txt");
 
         if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
@@ -460,18 +443,18 @@ void menupainel::on_btnRemover_clicked()
     QString txt = ui->tableWidget->item(ui->tableWidget->currentRow(),0)->text();
 
     //CLIENTE
-    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
-     QFile sw("C:\\Users\\Caio\\Documents\\temp1.txt");
+     QFile sw("temp1.txt");
         if(!sw.open(QIODevice::Append | QIODevice::Text))
             return;
 
      //QUARTO
-        QFile qr("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qr("cadastroQuarto.txt");
             if(!qr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
-         QFile qrto("C:\\Users\\Caio\\Documents\\temp10.txt");
+         QFile qrto("temp10.txt");
             if(!qrto.open(QIODevice::Append | QIODevice::Text))
                 return;
 
@@ -506,32 +489,32 @@ void menupainel::on_btnRemover_clicked()
         qrto.close();
 
         //QUARTO
-        QFile qrto1("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qrto1("cadastroQuarto.txt");
             if(!qrto1.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             qrto1.close();
 
-        QFile qrto2("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+        QFile qrto2("cadastroQuarto.txt");
                 if(!qrto2.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile qr1("C:\\Users\\Caio\\Documents\\temp10.txt");
+        QFile qr1("temp10.txt");
                 if(!qr1.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
 
 
         //CLIENTE
-        QFile sw2("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        QFile sw2("cliente.txt");
             if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             sw2.close();
 
-        QFile sw3("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+        QFile sw3("cliente.txt");
                 if(!sw3.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile sr3("C:\\Users\\Caio\\Documents\\temp1.txt");
+        QFile sr3("temp1.txt");
                 if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
@@ -550,14 +533,14 @@ void menupainel::on_btnRemover_clicked()
       }
 
 
-    QFile qrto3("C:\\Users\\Caio\\Documents\\temp1.txt");
+    QFile qrto3("temp1.txt");
         if(!qrto3.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         qrto3.close();
         qrto2.close();
         qr1.close();
 
-    QFile sw4("C:\\Users\\Caio\\Documents\\temp1.txt");
+    QFile sw4("temp10.txt");
         if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         sw4.close();
@@ -565,30 +548,6 @@ void menupainel::on_btnRemover_clicked()
         sw3.close();
 
 
-        borrar();
-
-        QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
-            if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
-                    return;
-
-         QTextStream files(&arch);
-
-        QFile file("C:\\Users\\Caio\\Documents\\testeRemover.txt");
-
-            if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
-                return;
-
-            QTextStream fin(&file);
-
-            while(!fin.atEnd()){
-                QString line =fin.readLine();
-                QString linha =files.readLine();
-
-                lis(line,linha);
-            }
-
-           file.close();
-           arch.close();
 
 }
 
@@ -614,7 +573,7 @@ void menupainel::on_btnAdicionarItem2_clicked()
 
 
 
-    QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+    QFile file("cadastroItem.txt");
 
         if(!file.open(QIODevice::Append|QIODevice::Text))
             return;
@@ -639,7 +598,7 @@ void menupainel::on_btnAttItem_clicked()
 {
     borrarItem();
 
-    QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+    QFile file("cadastroItem.txt");
 
         if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
@@ -709,7 +668,7 @@ void menupainel::on_btnEntrarV_clicked()
     QString edtNome = ui->edtNome->text();
     QString edtSenha = ui->edtSenha->text();
 
-    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile sr("cadastrar.txt");
 
         if(!sr.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
@@ -743,7 +702,7 @@ void menupainel::on_btnFAtualizar_clicked()
 {
     borrarFunc();
 
-    QFile func("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile func("cadastrar.txt");
 
         if(!func.open(QIODevice::ReadOnly|QIODevice::Text))
             return;
@@ -774,7 +733,7 @@ void menupainel::on_btnFBuscar_clicked()
     borrarFunc();
 
     QString nomeBusca = ui->txtNCliente->text();
-    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile sr("cadastrar.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
      QTextStream in(&sr);
@@ -799,10 +758,10 @@ void menupainel::on_btnFRemover_clicked()
     QString txt = ui->tableWidget_3->item(ui->tableWidget_3->currentRow(),0)->text();
 
     //CLIENTE
-    QFile sr("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile sr("cadastrar.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
-     QFile sw("C:\\Users\\Caio\\Documents\\temp30.txt");
+     QFile sw("temp30.txt");
         if(!sw.open(QIODevice::Append | QIODevice::Text))
             return;
 
@@ -826,16 +785,16 @@ void menupainel::on_btnFRemover_clicked()
         sw.close();
 
 
-        QFile sw2("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+        QFile sw2("cadastrar.txt");
             if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             sw2.close();
 
-        QFile sw3("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+        QFile sw3("cadastrar.txt");
                 if(!sw3.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile sr3("C:\\Users\\Caio\\Documents\\temp30.txt");
+        QFile sr3("temp30.txt");
                 if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
@@ -849,7 +808,7 @@ void menupainel::on_btnFRemover_clicked()
 
       }
 
-    QFile sw4("C:\\Users\\Caio\\Documents\\temp30.txt");
+    QFile sw4("temp30.txt");
         if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         sw4.close();
@@ -858,7 +817,7 @@ void menupainel::on_btnFRemover_clicked()
 
         borrarFunc();
 
-        QFile func("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+        QFile func("cadastrar.txt");
 
             if(!func.open(QIODevice::ReadOnly|QIODevice::Text))
                 return;
@@ -896,13 +855,13 @@ void menupainel::on_pushButton_4_clicked()
     QString quarto = ui->txtCQuarto->text();
 
 
-    QFile sr("C:\\Users\\Caio\\Documents\\testeRemover.txt");
+    QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
                 return;
      QTextStream in(&sr);
 
 
-     QFile arch("C:\\Users\\Caio\\Documents\\cadastroQuarto.txt");
+     QFile arch("cadastroQuarto.txt");
          if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
                  return;
       QTextStream file(&arch);
@@ -958,10 +917,10 @@ void menupainel::on_btnRemoveIt_clicked()
     QString txt = ui->tableWidget_2->item(ui->tableWidget_2->currentRow(),0)->text();
 
     //CLIENTE
-    QFile sr("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+    QFile sr("cadastroItem.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
-     QFile sw("C:\\Users\\Caio\\Documents\\temp80.txt");
+     QFile sw("temp80.txt");
         if(!sw.open(QIODevice::Append | QIODevice::Text))
             return;
 
@@ -987,16 +946,16 @@ void menupainel::on_btnRemoveIt_clicked()
         sr.close();
         sw.close();
 
-        QFile sw2("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+        QFile sw2("cadastroItem.txt");
             if(!sw2.open(QIODevice::WriteOnly | QIODevice::Text))
                    return;
             sw2.close();
 
-        QFile sw3("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+        QFile sw3("cadastroItem.txt");
                 if(!sw3.open(QIODevice::Append | QIODevice::Text))
                     return;
 
-        QFile sr3("C:\\Users\\Caio\\Documents\\temp80.txt");
+        QFile sr3("temp80.txt");
                 if(!sr3.open(QIODevice::ReadOnly | QIODevice::Text))
             return;
 
@@ -1013,7 +972,7 @@ void menupainel::on_btnRemoveIt_clicked()
       }
 
 
-    QFile sw4("C:\\Users\\Caio\\Documents\\temp80.txt");
+    QFile sw4("temp80.txt");
         if(!sw4.open(QIODevice::WriteOnly | QIODevice::Text))
                 return;
         sw4.close();
@@ -1022,7 +981,7 @@ void menupainel::on_btnRemoveIt_clicked()
 
         borrarItem();
 
-        QFile file("C:\\Users\\Caio\\Documents\\cadastroItem.txt");
+        QFile file("cadastroItem.txt");
 
             if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
                 return;
@@ -1058,29 +1017,3 @@ void menupainel::on_btnFuncVolt_clicked()
 
 
 
-void menupainel::on_btnLimpar_clicked()
-{
-    QDate Mydate =ui->dateNasc->date();
-    QString date = Mydate.toString();
-
-    QString nome = ui->txtNome->text();
-    QString idade = ui->txtIdade->text();
-    QString sexo = ui->comboSexo->currentText();
-    QString rg = ui->txtRG->text();
-    QString email = ui->txtEmail->text();
-    QString cidade = ui->txtCity->text();
-    QString estado = ui->txtEstado->text();
-    QString telefone = ui->txtTelefone->text();
-    QString celular = ui->txtCel->text();
-
-    nome.clear();
-    idade.clear();
-    sexo.clear();
-    rg.clear();
-    date.clear();
-    estado.clear();
-    cidade.clear();
-    telefone.clear();
-    celular.clear();
-    email.clear();
-}

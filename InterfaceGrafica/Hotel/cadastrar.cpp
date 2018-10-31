@@ -30,7 +30,7 @@ void cadastrar::on_btnConfirmar_clicked()
 
     using namespace std;
 
-    QFile file("C:\\Users\\Caio\\Documents\\cadastrar.txt");
+    QFile file("cadastrar.txt");
 
         if(!file.open(QIODevice::Append|QIODevice::Text))
             return;
