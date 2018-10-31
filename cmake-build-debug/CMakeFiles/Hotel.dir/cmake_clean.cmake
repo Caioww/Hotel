@@ -7,8 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hotel.dir/No.cpp.o"
   "CMakeFiles/Hotel.dir/LES.cpp.o"
   "CMakeFiles/Hotel.dir/LDDE.cpp.o"
-  "CMakeFiles/Hotel.dir/Cola.cpp.o"
   "CMakeFiles/Hotel.dir/Caracteristicas.cpp.o"
+  "CMakeFiles/Hotel.dir/Money.cpp.o"
   "Hotel.pdb"
   "Hotel"
 )

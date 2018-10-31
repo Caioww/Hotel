@@ -87,6 +87,7 @@ public:
         }
     }
 
+
     bool remove(int n,int z,Caracteristicas* vet,int tam){
         if(v[z].numero != n){
             vet[z] = v[z];

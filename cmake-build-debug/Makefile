@@ -150,33 +150,6 @@ Caracteristicas.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Caracteristicas.cpp.s
 .PHONY : Caracteristicas.cpp.s
 
-Cola.o: Cola.cpp.o
-
-.PHONY : Cola.o
-
-# target to build an object file
-Cola.cpp.o:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.o
-.PHONY : Cola.cpp.o
-
-Cola.i: Cola.cpp.i
-
-.PHONY : Cola.i
-
-# target to preprocess a source file
-Cola.cpp.i:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.i
-.PHONY : Cola.cpp.i
-
-Cola.s: Cola.cpp.s
-
-.PHONY : Cola.s
-
-# target to generate assembly for a file
-Cola.cpp.s:
-	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Cola.cpp.s
-.PHONY : Cola.cpp.s
-
 LDDE.o: LDDE.cpp.o
 
 .PHONY : LDDE.o
@@ -257,6 +230,33 @@ LES.s: LES.cpp.s
 LES.cpp.s:
 	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/LES.cpp.s
 .PHONY : LES.cpp.s
+
+Money.o: Money.cpp.o
+
+.PHONY : Money.o
+
+# target to build an object file
+Money.cpp.o:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Money.cpp.o
+.PHONY : Money.cpp.o
+
+Money.i: Money.cpp.i
+
+.PHONY : Money.i
+
+# target to preprocess a source file
+Money.cpp.i:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Money.cpp.i
+.PHONY : Money.cpp.i
+
+Money.s: Money.cpp.s
+
+.PHONY : Money.s
+
+# target to generate assembly for a file
+Money.cpp.s:
+	$(MAKE) -f CMakeFiles/Hotel.dir/build.make CMakeFiles/Hotel.dir/Money.cpp.s
+.PHONY : Money.cpp.s
 
 No.o: No.cpp.o
 
@@ -405,9 +405,6 @@ help:
 	@echo "... Caracteristicas.o"
 	@echo "... Caracteristicas.i"
 	@echo "... Caracteristicas.s"
-	@echo "... Cola.o"
-	@echo "... Cola.i"
-	@echo "... Cola.s"
 	@echo "... LDDE.o"
 	@echo "... LDDE.i"
 	@echo "... LDDE.s"
@@ -417,6 +414,9 @@ help:
 	@echo "... LES.o"
 	@echo "... LES.i"
 	@echo "... LES.s"
+	@echo "... Money.o"
+	@echo "... Money.i"
+	@echo "... Money.s"
 	@echo "... No.o"
 	@echo "... No.i"
 	@echo "... No.s"

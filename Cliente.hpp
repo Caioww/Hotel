@@ -9,6 +9,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "Fila.hpp"
+#include "Money.hpp"
 using namespace std;
 /*
  * essa classe é para administar o estoque, toalhas, papel, comida por exemplo
@@ -39,23 +40,6 @@ public:
     }
     
 private:
-
-    struct money {
-        string nome;
-        int dia;
-        int mes;
-        int ano;
-        int idade;
-        string RG;
-        string cidade;
-        string estado;
-        string telefone;
-        string celular;
-        string email;
-        bool sexo = false;
-    };
-
-    typedef struct money money;
 
     Fila gente;
 
