@@ -519,7 +519,7 @@ void menupainel::on_btnRemover_clicked()
             return;
 
 
-     QTextStream cdd1(&qr1);
+    QTextStream cdd1(&qr1);
     QTextStream cdd2(&qrto2);
     QTextStream in3(&sr3);
     QTextStream out3(&sw3);
@@ -546,6 +546,31 @@ void menupainel::on_btnRemover_clicked()
         sw4.close();
         sr3.close();
         sw3.close();
+
+        borrar();
+
+        QFile arch("cadastroQuarto.txt");
+            if(!arch.open(QIODevice::ReadOnly | QIODevice::Text))
+                    return;
+
+         QTextStream files(&arch);
+
+        QFile file("cliente.txt");
+
+            if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+                return;
+
+            QTextStream in(&file);
+
+            while(!in.atEnd()){
+                QString line =in.readLine();
+                QString linha =files.readLine();
+
+                lis(line,linha);
+            }
+
+           file.close();
+           arch.close();
 
 
 
