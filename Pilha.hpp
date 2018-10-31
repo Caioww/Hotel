@@ -59,6 +59,7 @@ public:
         v[topo++] = valor;
         return true;
     }
+
     bool empilha(Caracteristicas valor){
         if (topo == maximo)
             if(!realoca()){

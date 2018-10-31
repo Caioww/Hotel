@@ -24,15 +24,26 @@ public:
 
     //para criar inicialmente os quartos pré estipulados, inicialmente todos livres
     void ocuparQuarto(int numero,int pessoas,string tipo,string descricao,double valor,int quantidade,int andar){
-        prato.empilha(250,pessoas, false,tipo,descricao,200,2,3,3,200,200);
+        auxiliar.numero = numero;
+        auxiliar.nPessoas = pessoas;
+        auxiliar.tipoQuarto = tipo;
+        auxiliar.descricao = descricao;
+        auxiliar.valor_diaria = valor;
+        auxiliar.existentes = quantidade;
+        auxiliar.andar = andar;
+        prato.empilha(auxiliar);
     }
 
-    
+
+
+    //esta imprimindo apenas 1
     void imprime(){
         Pilha q;
-        q = prato;
-        while (prato.desemplilha(&auxiliar)){
+        int l = 0;
+        while (prato.desemplilha(&auxiliar) && l < 3){
             prato.empilha(auxiliar);
+            cout<<auxiliar.descricao<<endl;
+            l++;
         }
     }
 
