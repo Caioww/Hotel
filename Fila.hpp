@@ -66,6 +66,14 @@ public:
         }
         i = (t + 1);
     }
+    void imprime2() {
+        Money temp;
+        //int t = i;
+        for (int j = 0; j < f; j++) {
+            cout<<v[j].nome<<endl;
+        }
+        //i = (t + 1);
+    }
 
     void busca(string nome, string RG) {
         Money temp;
@@ -99,32 +107,21 @@ public:
 
     //esta removendo apenas o 1º
     void remove1(string nome, string RG) {
-        int tam = f;
-        Money v2[tam];
-            copia(v2, tam);
-        for (int m = 0; m < f; m++) {
-            if (confere(RG, m, v2[m], tam)) {
-                f = tam -1;
+        Money aux[max+1];
+        int y = 0;
+        for (int j = 0; j < f; j++) {
+            if(v[j].nome == nome && v[j].RG == RG){
+                y++;
+                f = f -1;
             }
+                aux[j] = v[y];
+                //cout<<v[j].nome<<endl;
+            y++;
         }
-        for (int z = 0; z < tam; z++) {
-            if (v2[z].RG != RG) {
-                v2[z] = v[z];
-            } else {
-                v2[z].nome = "000\n";
-            }
-        }
+        for (int k = 0; k < f; k++) {
+            v[k] = aux[k];
 
-        for (int j = 0; j < tam; j++) {
-            if(v2[j].nome == "000\n"){
-
-            }
-            else {
-                cout << v2[j].nome << endl;
-            }
         }
-        f = 0;
-        i = 0;
     }
 
     bool desinfileira(Money *err=NULL){

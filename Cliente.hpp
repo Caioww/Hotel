@@ -27,7 +27,7 @@ public:
 
     //essa funcao como o proprio nome sugere apenas imprime o estoque ja cadastrado
     void imprimeClientes(){
-       gente.imprime();
+       gente.imprime2();
     }
 
     void removeCliente(string nome,string doc){
