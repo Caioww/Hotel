@@ -40,9 +40,7 @@ HEADERS += \
     Fila.hpp \
     Item.hpp \
     LDE.hpp \
-    FuncionariosAdd.hpp \
-    Quarto.hpp \
-    Quarto.hpp
+    FuncionariosAdd.hpp
 
 FORMS += \
     login.ui \
