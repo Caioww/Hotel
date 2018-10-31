@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by djalma cunha on 29/08/2018.
 //
 
@@ -10,29 +10,10 @@ using namespace std;
 #define max 999
 class Fila {
 public:
-<<<<<<< HEAD
-    struct money {
-        string nome;
-        int dia;
-        int mes;
-        int ano;
-        int idade;
-        string RG;
-        string cidade;
-        string estado;
-        string telefone;
-        string celular;
-        string email;
-        bool sexo = false;
-    };
-    typedef struct money money;
-    money v[max+1];
-    int i,n,f;
 
-=======
     Money v[max + 1];
     int i, n, f;
->>>>>>> pilha
+
 
 
     Fila() : i(0), f(0), n(max + 1) {

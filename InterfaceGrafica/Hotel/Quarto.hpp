@@ -1,92 +1,74 @@
-//
-// Created by Caio on 20/10/2018.
-//
-
-#ifndef HOTEL_QUARTO_HPP
+﻿#ifndef HOTEL_QUARTO_HPP
 #define HOTEL_QUARTO_HPP
-
 #include <iostream>
+#include "Configuracoes.hpp"
+#include "Pilha.hpp"
+#include "Senha.hpp"
+#include "Caracteristicas.hpp"
 using namespace std;
-
 class Quarto{
-    public:
-        Quarto(){
+public:
 
+    //para criar inicialmente os quartos pré estipulados, inicialmente todos livres
+    void ocuparQuarto(int numero,int pessoas,string tipo,string descricao,double valor,int quantidade,int andar){
+        auxiliar.numero = numero;
+        auxiliar.nPessoas = pessoas;
+        auxiliar.tipoQuarto = tipo;
+        auxiliar.descricao = descricao;
+        auxiliar.valor_diaria = valor;
+        auxiliar.existentes = quantidade;
+        auxiliar.andar = andar;
+        prato.empilha(auxiliar);
+        quant++;
+    }
+
+
+    void buscaQuarto(int numero){
+        int l = 0;
+        while (l < quant){
+            //nao inverter os valores
+            prato.busca(numero,l);
+            l++;
         }
 
-    void setNumero(string model){
-        numero = model;
     }
 
-    string getNumero(){
-        return numero;
+    //esta imprimindo apenas 1
+    void imprime(){
+        //bolar esquema para descobrir quantidade de quartos
+
+        int l = 0;
+        while (l < quant){
+
+            prato.imprime(l);
+            l++;
+        }
     }
 
-    void setAndar(string model){
-        andar = model;
+
+    void remove1(int numero){
+        Caracteristicas temp[quant];
+        int init = quant;
+        for (int k = 0; k < quant; k++) {
+            prato.copia(numero,k,temp,quant);
+        }
+        for (int i = 0; i < init; i++) {
+            if(prato.remove(numero,i,temp,quant)){
+                quant = init -1;
+            }
+        }
+        prato.topo = 0;
+        for (int j = 0; j < quant; j++) {
+            prato.empilha(temp[j]);
+        }
     }
 
-    string getAndar(){
-        return andar;
-    }
+private:
+    int quant = 0;
 
-    void setTipoQuarto(string model){
-        tipoQuarto = model;
-    }
-
-    string getTipoQuarto(){
-        return tipoQuarto;
-    }
-
-    void setEstado(string model){
-        estado = model;
-    }
-
-    string getEstado(){
-        return estado;
-    }
-
-    void setDateInicial(string model){
-        dateInicial = model;
-    }
-
-    string getDateInicial(){
-        return dateInicial;
-    }
-
-    void setDateFim(string model){
-        dateFim = model;
-    }
-
-    string getDateFim(){
-        return dateFim;
-    }
-
-    void setPessoas(string model){
-        pessoas = model;
-    }
-
-    string getPessoas(){
-        return pessoas;
-    }
-
-    void setValor(string model){
-        valor = model;
-    }
-
-    string getValor(){
-        return valor;
-    }
-
-    private:
-        string id;
-        string numero;
-        string andar;
-        string tipoQuarto;
-        string estado;
-        string valor;
-        string dateInicial;
-        string dateFim;
-        string pessoas;
+    Pilha prato;
+    Caracteristicas auxiliar;
 };
+
+
 #endif //HOTEL_QUARTO_HPP

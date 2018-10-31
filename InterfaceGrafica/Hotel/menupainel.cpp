@@ -7,6 +7,7 @@
 #include "Item.hpp"
 #include "login.h"
 #include "LDE.hpp"
+#include "Quarto.hpp"
 
 
 
