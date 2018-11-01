@@ -1,37 +1,30 @@
+﻿//
+// Created by djalma cunha on 29/08/2018.
+//
+
 #ifndef FILA_FILA_HPP
 #define FILA_FILA_HPP
 #include <iostream>
-#include "menupainel.h"
-#include "login.h"
-
-#include <string>
+#include "Money.hpp"
 using namespace std;
 #define max 999
-
-
 class Fila {
-private:
-    struct money {
-        string nome;
-        string senha;
-        string cargo;
-
-        bool sexo = false;
-    };
-    typedef struct money money;
-    money v[max+1];
-    int i,n,f;
-
 public:
-    Fila() : i(0), f(0),n(max+1){
+
+    Money v[max + 1];
+    int i, n, f;
+
+
+
+    Fila() : i(0), f(0), n(max + 1) {
 
     }
-    bool inserido(money valor) {
+
+    bool insere(Money valor) {
         f++;
         if (((f) % n) == i) {
             return false;
-        }
-        else{
+        } else {
             f--;
         }
 
@@ -40,19 +33,24 @@ public:
         return true;
     }
 
-    bool insere(string nome,
-    string senha,
-    string cargo) {
+    bool insere(string nome, string data, string idade,
+                string RG, string cidade, string estado, string telefone, string celular, string email,string sexo) {
         f++;
-        money valor;
+        Money valor;
         valor.nome = nome;
-        valor.senha = senha;
-        valor.cargo=cargo;
+        valor.data = data;
 
+        valor.idade = idade;
+        valor.RG = RG;
+        valor.cidade = cidade;
+        valor.estado = estado;
+        valor.telefone = telefone;
+        valor.celular = celular;
+        valor.email = email;
+        valor.sexo = sexo;
         if (((f) % n) == i) {
             return false;
-        }
-        else{
+        } else {
             f--;
         }
 
@@ -61,66 +59,73 @@ public:
         return true;
     }
 
-
-    void salvaPilha(){
-        f++;
-        money valor;
-        QFile file("C:\\Users\\Caio\\Documents\\cadastrar.txt");
-
-            if(!file.open(QIODevice::Append|QIODevice::Text))
-                return;
-
-            QTextStream out(&file);
-                out<<
-                     QString::fromStdString(valor.nome)<<"-"<<
-                     QString::fromStdString(valor.senha)<<"-"<<
-                     QString::fromStdString(valor.cargo)<<"\n";
-           file.close();
-    }
-
-    void imprime(){
-        money temp;
-        money v2[max+1];
+    void imprime() {
+        Money temp;
         int t = i;
-        while(desinfileira(&temp)){
-            cout<<temp.nome<<endl;
+        while (desinfileira(&temp)) {
+            cout << temp.nome << endl;
         }
-        i = (t+1);
+        i = (t + 1);
+    }
+    void imprime2() {
+        Money temp;
+        //int t = i;
+        for (int j = 0; j < f; j++) {
+            cout<<v[j].nome<<endl;
+        }
+        //i = (t + 1);
     }
 
-
-
-    //problema para imprimir o 1º
-    void busca(string nome){
-        money temp;
-        int i = 0;
-        while (desinfileira(&temp)){
-            i++;
-            if(temp.nome == nome){
-                cout<<"nome: "<<v[i].nome<<""<<v[i].sexo<<endl;
+    void busca(string nome) {
+        Money temp;
+        int cont = 0;
+        while (cont < f) {
+            if (v[cont].nome == nome) {
+                cout << "nome: " << v[cont].nome << "\naniversario: " <<
+                     "/"  << "/" <<v[cont].data<< "\nidede: " <<
+                     v[cont].idade << "\nRG: " << v[cont].RG << "\ncidade: " << v[cont].cidade <<
+                     "\nestado: " << v[cont].estado << "\ntelefone: " << v[cont].telefone <<
+                     "\ncelular: " << v[cont].celular << "\nemail: " << v[cont].email <<
+                     "\nsexo: " << v[cont].sexo << endl;
             }
+            cont++;
         }
+        i = (cont + 1);
+    }
+
+    void copia(Money* vet, int gg){
+        for (int j = i; j < gg; j++) {
+            vet[j] = v[j];
+        }
+    }
+    bool confere(string RG,int po,Money v2,int tam){
+        bool ok = true;
+        if(v[po].RG == RG){
+            ok = false;
+        }
+        return ok;
     }
 
     //esta removendo apenas o 1º
-    void remove1(string nome){
-        money temp;
-        money v2[max+1];
-        int j = 0;
-        int C = 0;
-        while (desinfileira(&temp)){
-            if(temp.nome == nome){
-                j++;
+    void remove1(string nome, string RG) {
+        Money aux[max+1];
+        int y = 0;
+        for (int j = 0; j < f; j++) {
+            if(v[j].nome == nome && v[j].RG == RG){
+                y++;
+                f = f -1;
             }
-            C++;
-            j++;
-            v2[C] = v[j];
+                aux[j] = v[y];
+                //cout<<v[j].nome<<endl;
+            y++;
         }
-        *v = *v2;
-        imprime();
+        for (int k = 0; k < f; k++) {
+            v[k] = aux[k];
+
+        }
     }
 
-    bool desinfileira(money *err=NULL){
+    bool desinfileira(Money *err=NULL){
         if(i == f){
             return false;
         }

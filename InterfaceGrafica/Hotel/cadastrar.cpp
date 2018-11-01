@@ -4,6 +4,8 @@
 #include <fstream>
 #include "login.h"
 #include "Fila.hpp"
+#include "LDE.hpp"
+#include "Senha.hpp"
 
 
 cadastrar::cadastrar(QWidget *parent) :
@@ -20,6 +22,8 @@ cadastrar::~cadastrar()
 
 
 void cadastrar::on_btnConfirmar_clicked()
+
+
 {
     QString nome=ui->txtNome->text();
     QString senha=ui->txtSenha->text();
@@ -27,8 +31,12 @@ void cadastrar::on_btnConfirmar_clicked()
     QString cargo = ui->comboCargo->currentText();
 
 
-    Fila f;
-    f.insere(nome.toStdString(),senha.toStdString(),cargo.toStdString());
+    Senha s;
+    s.novaPessoa(nome.toStdString(),senha.toStdString(),cargo.toStdString());
+
+
+
+
 
     using namespace std;
 

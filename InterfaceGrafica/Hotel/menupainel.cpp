@@ -8,6 +8,7 @@
 #include "login.h"
 #include "LDE.hpp"
 #include "Fila.hpp"
+#include "Pilha.hpp"
 
 
 
@@ -60,9 +61,10 @@ void menupainel::on_btnConfirmar_clicked()
     QString celular = ui->txtCel->text();
 
 
+    Fila f;
+    f.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),estado.toStdString(),cidade.toStdString(),telefone.toStdString(),celular.toStdString(),email.toStdString());
 
-    LDE l;
-    l.insere(nome.toStdString(),idade.toStdString(),sexo.toStdString(),rg.toStdString(),date.toStdString(),email.toStdString(),cidade.toStdString(),estado.toStdString(),telefone.toStdString(),celular.toStdString());
+
 
 
     QFile file("cliente.txt");
@@ -107,6 +109,9 @@ void menupainel::on_btnConfirmar_2_clicked()
     QString dateIni = IniDate.toString();
     QString dateFim = FimDate.toString();
     QString pessoas = ui->comboPessoas->currentText();
+
+    Pilha p;
+    p.empilha(numero.toStdString(),andar.toStdString(),tipoQuarto.toStdString(),estado.toStdString(),valor.toStdString(),dateIni.toStdString(),dateFim.toStdString(),pessoas.toStdString());
 
    /* q->setNumero(numero.toStdString());
     q->setAndar(andar.toStdString());
@@ -212,6 +217,9 @@ void menupainel::on_btnBuscar_clicked()
 {
     borrar();
 
+    Fila f;
+
+
     QString nomeBusca = ui->txtNCliente->text();
     QFile sr("cliente.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -231,8 +239,11 @@ void menupainel::on_btnBuscar_clicked()
          QString linha = file.readLine();
          QStringList B = linha.split("-");
 
+
          QString pro=A[0];
          if(pro.contains(nomeBusca)==true){
+             f.busca(nomeBusca.toStdString());
+
              lis(line,linha);
          }
      }
@@ -791,7 +802,7 @@ void menupainel::on_btnFRemover_clicked()
     QString txt = ui->tableWidget_3->item(ui->tableWidget_3->currentRow(),0)->text();
 
 
-
+    LDE l;
 
     QFile sr("cadastrar.txt");
         if(!sr.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -810,9 +821,10 @@ void menupainel::on_btnFRemover_clicked()
             QString line = in.readLine();
             QStringList A = line.split("-");
             QString id = A[0];
+            QString senha = A[1];
+            QString cargo = A[2];
             if(id.compare(txt)!=0){
-                Fila f;
-                f.remove1(id.toStdString());
+                l.remove(id.toStdString(),cargo.toStdString());
                 out<<line<<"\n";
 
             }
